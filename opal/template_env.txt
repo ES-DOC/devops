@@ -1,0 +1,58 @@
+# --------------------------------------------------------------------
+# PATH extensions
+# --------------------------------------------------------------------
+
+PATH=$PATH:$HOME/bin
+# PATH=~/apps/test_lib_node/bin:$PATH
+# PATH=~/.yarn/bin:$PATH
+export PATH
+
+# Override default tmp dir.
+export TMPDIR=/home/esdoc/tmp
+
+# Pyenv support.
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# --------------------------------------------------------------------
+# CREDENTIALS
+# --------------------------------------------------------------------
+
+# cdf2cim GitHub token
+# export CDF2CIM_WS_GITHUB_ACCESS_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+# esdoc GitHub token
+# export ESDOC_GITHUB_ACCESS_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+# errata publication OAuth settings
+# export ERRATA_OAUTH_CLIENT_ID=90bf49359d3b2d346dae
+# export ERRATA_OAUTH_CLIENT_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+# --------------------------------------------------------------------
+# VARS
+# --------------------------------------------------------------------
+
+# pyessv archive path
+export PYESSV_ARCHIVE_HOME=$HOME/archives/pyessv-archive
+
+# errata env var overrides
+# export ERRATA_DB_NAME=test_ws_errata
+# export ERRATA_DB_USER=test_ws_errata_wsuser
+# export ERRATA_DB_ADMIN=test_ws_errata_dbowner
+
+# --------------------------------------------------------------------
+# SUB-SHELLS
+# --------------------------------------------------------------------
+
+# Activate archives sub-shells
+# source $HOME/archives/esdoc-archive/sh/activate
+# source $HOME/archives/esdoc-cdf2cim-archive/sh/activate
+
+# ES-DOC: activate sub-shells
+# source $HOME/libs/esdoc-py-client/sh/activate
+# source $HOME/apps/test_ws_documentation/sh/activate
+# source $HOME/apps/test_ws_errata/sh/activate
+# source $HOME/apps/test_ws_cdf2cim/sh/activate
+source $HOME/apps/test_ws_pyessv/sh/activate
+
