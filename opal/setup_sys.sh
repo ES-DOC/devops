@@ -12,4 +12,8 @@ eval "$(pyenv virtualenv-init -)"
 pyenv update
 pyenv install 3.9.0
 pyenv install 2.7.18
+
 pyenv global 3.9.0
+pip install --upgrade pip
+pip install --upgrade pipenv
+pip install --upgrade supervisor
