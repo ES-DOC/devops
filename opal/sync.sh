@@ -25,7 +25,7 @@ declare -a _LIBS=(
 #   Application github repo.
 #######################################
 function sync_app() {
-    log "    "$1
+    log "... "$1
 
     if [[ -d $HOME/apps/$1 ]]; then
         cd $HOME/apps/$1
@@ -41,7 +41,7 @@ function sync_app() {
 # Syncs set of applications.
 #######################################
 function sync_apps() {
-    log "syncing apps ..."
+    log "syncing apps:"
 
     if [[ ! -d $HOME/apps ]]; then
         mkdir $HOME/apps
@@ -58,7 +58,7 @@ function sync_apps() {
 #   Archive repo name.
 #######################################
 function sync_archive() {
-    log "    "$1
+    log "... "$1
 
     if [[ -d $HOME/archives/$1 ]]; then
         cd $HOME/archives/$1
@@ -73,7 +73,7 @@ function sync_archive() {
 # Syncs set of archive repos.
 #######################################
 function sync_archives() {
-    log "syncing archives"
+    log "syncing archives:"
 
     if [[ ! -d $HOME/archives ]]; then
         mkdir $HOME/archives
@@ -92,7 +92,7 @@ function sync_archives() {
 #   Library repo name.
 #######################################
 function sync_lib() {
-    log "    "$1
+    log "... "$1
 
     if [[ -d $HOME/libs/$1 ]]; then
         cd $HOME/libs/$1
@@ -107,7 +107,7 @@ function sync_lib() {
 # Syncs set of local library repos.
 #######################################
 function sync_libs() {
-    log "syncing libs"
+    log "syncing libs:"
 
     if [[ ! -d $HOME/libs ]]; then
         mkdir $HOME/libs
