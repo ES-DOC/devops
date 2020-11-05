@@ -40,6 +40,7 @@ function _init_sys_tmp() {
 # Initialises system tmp directory.
 # Globals:
 #   HOME - current user's home directory.
+#   OPAL_HOME - opal bash home directory.
 #######################################
 function _init_esdoc_environment() {
     log "initialising environment vars"
@@ -57,7 +58,7 @@ function _init_esdoc_environment() {
 if [[ ! -d $HOME/tmp ]]; then
     _init_sys_tmp
 fi
-if [[ ! -d $HOME/.pyenv ]]; then
+if [[ ! -d $HOME/.pyenv ]]; then    
     _init_sys_python
 fi
 if [[ ! -d $HOME/.esdoc ]]; then
