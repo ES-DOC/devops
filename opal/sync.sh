@@ -8,7 +8,7 @@
 declare -a _ARCHIVES=(
 	'esdoc-archive'
 	'pyessv-archive'
-	'cdf2cim-archive'
+	'esdoc-cdf2cim-archive'
 )
 
 # Array of local libraries.
