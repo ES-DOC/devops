@@ -1,0 +1,81 @@
+# --------------------------------------------------------------------
+# PATH extensions
+# --------------------------------------------------------------------
+
+# Ensure local binaries are available.
+PATH=$PATH:$HOME/bin
+
+# Node JS paths.
+if [[ -d $HOME/apps/test_lib_node ]]; then
+    PATH=~/apps/test_lib_node/bin:$PATH
+    PATH=~/.yarn/bin:$PATH
+    export PATH
+fi
+
+# Default tmp dir.
+if [[ -d $HOME/tmp ]]; then
+    export TMPDIR=$HOME/tmp
+fi
+
+# Pyenv path.
+if [[ -d $HOME/.pyenv ]]; then
+    export PATH="$HOME/.pyenv/bin:$PATH"
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
+
+# --------------------------------------------------------------------
+# CREDENTIALS
+# --------------------------------------------------------------------
+
+if [[ -f $HOME/.esdoc/credentials ]]; then
+    source $HOME/.esdoc/credentials
+fi
+
+# --------------------------------------------------------------------
+# VARS
+# --------------------------------------------------------------------
+
+# Vocab archive path.
+export PYESSV_ARCHIVE_HOME=$HOME/archives/pyessv-archive
+
+# Errata env vars.
+if [[ -d $HOME/apps/test_ws_errata ]]; then
+    export ERRATA_DB_NAME=test_ws_errata
+    export ERRATA_DB_USER=test_ws_errata_wsuser
+    export ERRATA_DB_ADMIN=test_ws_errata_dbowner
+fi
+
+# --------------------------------------------------------------------
+# SUB-SHELLS
+# --------------------------------------------------------------------
+
+# Archive sub-shells.
+if [[ -d $HOME/archives/esdoc-archive/sh/activate ]]; then
+    source $HOME/archives/esdoc-archive/sh/activate
+fi
+if [[ -d $HOME/archives/esdoc-cdf2cim-archive/sh/activate ]]; then
+    source $HOME/archives/esdoc-cdf2cim-archive/sh/activate
+fi
+
+# Application sub-shells
+if [[ -d $HOME/apps/test_ws_pyessv ]]; then
+    source $HOME/apps/test_ws_pyessv/sh/activate
+fi
+
+if [[ -d $HOME/apps/test_ws_documentation ]]; then
+    source $HOME/apps/test_ws_documentation/sh/activate
+fi
+
+if [[ -d $HOME/apps/test_ws_errata ]]; then
+    source $HOME/apps/test_ws_errata/sh/activate
+fi
+
+if [[ -d $HOME/apps/test_ws_pyessv ]]; then
+    source $HOME/apps/test_ws_pyessv/sh/activate
+fi
+
+# Library sub-shells
+if [[ -d $HOME/libs/esdoc-py-client ]]; then
+    source $HOME/libs/esdoc-py-client/sh/activate
+fi
