@@ -5,6 +5,14 @@
 # Set home.
 export OPAL_HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+# Activate environment + credentials.
+if [[ ! -f $HOME/.esdoc/credentials ]]; then
+    source $HOME/.esdoc/credentials
+fi 
+if [[ ! -f $HOME/.esdoc/environment ]]; then
+    source $HOME/.esdoc/environment
+fi
+
 # Activate utils.
 source $OPAL_HOME/utils.sh
 

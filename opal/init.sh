@@ -6,7 +6,7 @@
 #   HOME - current user's home directory.
 #######################################
 function _init_sys_python() {
-    log "Initialising python + pyenv."
+    log "initialising python + pyenv"
 
     curl https://pyenv.run | bash
     export PATH="$HOME/.pyenv/bin:$PATH"
@@ -29,7 +29,7 @@ function _init_sys_python() {
 #   HOME - current user's home directory.
 #######################################
 function _init_sys_tmp() {
-    log "Initialising temporary directory."
+    log "initialising temporary directory"
 
     mkdir $HOME/tmp
     chmod a+x $HOME/tmp
@@ -42,7 +42,7 @@ function _init_sys_tmp() {
 #   HOME - current user's home directory.
 #######################################
 function _init_esdoc_environment() {
-    log "Initialising environment vars."
+    log "initialising environment vars"
 
     mkdir $HOME/.esdoc
     cp $OPAL_HOME/template_credentials.txt $HOME/.esdoc/credentials
