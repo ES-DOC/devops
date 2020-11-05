@@ -1,9 +1,13 @@
+#!/usr/bin/env bash
+
 #######################################
 # Initialises system python.
 # Globals:
 #   HOME - current user's home directory.
 #######################################
 function _init_sys_python() {
+    log "Initialising python + pyenv."
+
     curl https://pyenv.run | bash
     export PATH="$HOME/.pyenv/bin:$PATH"
     eval "$(pyenv init -)"
@@ -25,6 +29,8 @@ function _init_sys_python() {
 #   HOME - current user's home directory.
 #######################################
 function _init_sys_tmp() {
+    log "Initialising temporary directory."
+
     mkdir $HOME/tmp
     chmod a+x $HOME/tmp
     export TMPDIR=$HOME/tmp
@@ -36,6 +42,8 @@ function _init_sys_tmp() {
 #   HOME - current user's home directory.
 #######################################
 function _init_esdoc_environment() {
+    log "Initialising environment vars."
+
     mkdir $HOME/.esdoc
     cp $OPAL_HOME/template_credentials.txt $HOME/.esdoc/credentials
     cp $OPAL_HOME/template_environment.txt $HOME/.esdoc/environment

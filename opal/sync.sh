@@ -1,3 +1,9 @@
+#!/usr/bin/env bash
+
+#######################################
+# VARS.
+#######################################
+
 # Array of managed archives.
 declare -a _ARCHIVES=(
 	'esdoc-archive'
@@ -33,13 +39,14 @@ function sync_app() {
 # Syncs set of applications.
 #######################################
 function sync_apps() {
+    log "syncing apps"
+
     if [[ ! -d $HOME/apps ]]; then
         mkdir $HOME/apps
     fi    
 
     sync_app "test_ws_pyessv" "pyessv-ws"
 }
-
 
 #######################################
 # Syncs an archive repo.
@@ -62,6 +69,8 @@ function sync_archive() {
 # Syncs set of archive repos.
 #######################################
 function sync_archives() {
+    log "syncing archives"
+
     if [[ ! -d $HOME/archives ]]; then
         mkdir $HOME/archives
     fi    
@@ -70,7 +79,6 @@ function sync_archives() {
         sync_archive $archive
 	done    
 }
-
 
 #######################################
 # Syncs a local library repo.
@@ -93,6 +101,8 @@ function sync_lib() {
 # Syncs set of local library repos.
 #######################################
 function sync_libs() {
+    log "syncing libs"
+
     if [[ ! -d $HOME/libs ]]; then
         mkdir $HOME/libs
     fi    
@@ -102,3 +112,9 @@ function sync_libs() {
 	done    
 }
 
+#######################################
+# Entry point.
+#######################################
+sync_apps
+sync_archives
+sync_libs
