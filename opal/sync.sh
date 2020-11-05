@@ -27,7 +27,7 @@ declare -a _LIBS=(
 function sync_app() {
     if [[ -d $HOME/apps/$1 ]]; then
         cd $HOME/apps/$1
-        git pull
+        git pull > /dev/null 2>&1
     else
         cd $HOME/apps
         git clone https://github.com/ES-DOC/$2.git ./$1
@@ -58,7 +58,7 @@ function sync_apps() {
 function sync_archive() {
     if [[ -d $HOME/archives/$1 ]]; then
         cd $HOME/archives/$1
-        git pull
+        git pull > /dev/null 2>&1
     else
         cd $HOME/archives
         git clone https://github.com/ES-DOC/$1.git
@@ -90,7 +90,7 @@ function sync_archives() {
 function sync_lib() {
     if [[ -d $HOME/libs/$1 ]]; then
         cd $HOME/libs/$1
-        git pull
+        git pull  > /dev/null 2>&1
     else
         cd $HOME/libs
         git clone https://github.com/ES-DOC/$1.git
