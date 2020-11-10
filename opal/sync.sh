@@ -13,7 +13,10 @@ declare -a _ARCHIVES=(
 
 # Array of local libraries.
 declare -a _LIBS=(
+    'esdoc-cdf2cim-ws'
+    'esdoc-errata-ws'
 	'esdoc-py-client'
+	'pyessv-ws'
 )
 
 #######################################
