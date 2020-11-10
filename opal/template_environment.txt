@@ -69,3 +69,6 @@ fi
 if [[ -d $HOME/libs/esdoc-py-client ]]; then
     source $HOME/libs/esdoc-py-client/sh/activate
 fi
+if [[ -d $HOME/libs/pyessv-ws ]]; then
+    source $HOME/libs/pyessv-ws/sh/activate
+fi

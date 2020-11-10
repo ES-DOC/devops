@@ -71,7 +71,7 @@ function sync_archives() {
 #   HOME - current user's home directory.
 #######################################
 function sync_environment() {
-    log "syncing environemt"
+    log "syncing environment"
 
     if [[ ! -d $HOME/.esdoc ]]; then
         mkdir $HOME/.esdoc
