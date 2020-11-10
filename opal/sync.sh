@@ -47,7 +47,7 @@ function sync_archive() {
         git pull > /dev/null 2>&1
     else
         pushd $HOME/archives
-        git clone https://github.com/ES-DOC/$1.git
+        git clone https://github.com/ES-DOC/$1.git > /dev/null 2>&1
     fi
     popd -1
 }
@@ -79,10 +79,10 @@ function sync_lib() {
 
     if [[ -d $HOME/libs/$1 ]]; then
         pushd $HOME/libs/$1
-        git pull  > /dev/null 2>&1
+        git pull > /dev/null 2>&1
     else
         pushd $HOME/libs
-        git clone https://github.com/ES-DOC/$1.git
+        git clone https://github.com/ES-DOC/$1.git > /dev/null 2>&1
     fi
     popd -1
 }
