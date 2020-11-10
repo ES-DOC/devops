@@ -40,7 +40,7 @@ fi
 export PYESSV_ARCHIVE_HOME=$HOME/archives/pyessv-archive
 
 # Errata env vars.
-if [[ -d $HOME/apps/test_ws_errata ]]; then
+if [[ -d $HOME/libs/esdoc-errata-ws ]]; then
     export ERRATA_DB_NAME=test_ws_errata
     export ERRATA_DB_USER=test_ws_errata_wsuser
     export ERRATA_DB_ADMIN=test_ws_errata_dbowner
@@ -59,8 +59,8 @@ if [[ -d $HOME/archives/esdoc-cdf2cim-archive/sh/activate ]]; then
 fi
 
 # Application sub-shells
-if [[ -d $HOME/apps/test_ws_pyessv ]]; then
-    source $HOME/apps/test_ws_pyessv/sh/activate
+if [[ -d $HOME/libs/pyessv-ws ]]; then
+    source $HOME/libs/pyessv-ws/sh/activate
 fi
 
 if [[ -d $HOME/apps/test_ws_documentation ]]; then

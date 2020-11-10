@@ -14,6 +14,7 @@ declare -a _ARCHIVES=(
 # Array of local libraries.
 declare -a _LIBS=(
     # Web-services.
+    'esdoc-api'
     'esdoc-cdf2cim-ws'
     'esdoc-errata-ws'
 	'pyessv-ws'
