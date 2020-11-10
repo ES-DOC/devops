@@ -66,6 +66,20 @@ function sync_archives() {
 }
 
 #######################################
+# Syncs ES-DOC environment file.
+# Globals:
+#   HOME - current user's home directory.
+#######################################
+function sync_environment() {
+    log "syncing environemt"
+
+    if [[ ! -d $HOME/.esdoc ]]; then
+        mkdir $HOME/.esdoc
+    fi
+    cp $OPAL_HOME/template_environment.txt $HOME/.esdoc/environment
+}
+
+#######################################
 # Syncs a local library repo.
 # Globals:
 #   HOME - current user's home directory.
@@ -104,4 +118,5 @@ function sync_libs() {
 # Entry point.
 #######################################
 sync_archives
+sync_environment
 sync_libs
