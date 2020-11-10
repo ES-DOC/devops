@@ -13,10 +13,22 @@ declare -a _ARCHIVES=(
 
 # Array of local libraries.
 declare -a _LIBS=(
+    # Web-services.
     'esdoc-cdf2cim-ws'
     'esdoc-errata-ws'
-	'esdoc-py-client'
 	'pyessv-ws'
+
+    # Front-ends.
+    'esdoc-web-compare'
+    'esdoc-web-explorer'
+    'esdoc-web-search'
+    'esdoc-web-view'
+    'esdoc-web-view-specialization'
+    'esdoc-errata-fe'
+
+    # Other.
+	'esdoc-py-client'
+    'esdoc-web-static'
 )
 
 #######################################
