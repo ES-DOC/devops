@@ -5,14 +5,7 @@
 # Ensure local binaries are available.
 PATH=$PATH:$HOME/bin
 
-# Node JS paths.
-if [[ -d $HOME/apps/test_lib_node ]]; then
-    PATH=~/apps/test_lib_node/bin:$PATH
-    PATH=~/.yarn/bin:$PATH
-    export PATH
-fi
-
-# Default tmp dir.
+# Temp path.
 if [[ -d $HOME/tmp ]]; then
     export TMPDIR=$HOME/tmp
 fi
@@ -22,6 +15,11 @@ if [[ -d $HOME/.pyenv ]]; then
     export PATH="$HOME/.pyenv/bin:$PATH"
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
+fi
+
+# Yarn path.
+if [[ -d $HOME/apps/server_node_js/node_modules/yarn/bin ]]; then
+    export PATH=$HOME/apps/server_node_js/node_modules/yarn/bin:$PATH
 fi
 
 # --------------------------------------------------------------------
@@ -58,24 +56,16 @@ if [[ -d $HOME/archives/esdoc-cdf2cim-archive/sh/activate ]]; then
     source $HOME/archives/esdoc-cdf2cim-archive/sh/activate
 fi
 
-# Application sub-shells
-if [[ -d $HOME/libs/pyessv-ws ]]; then
-    source $HOME/libs/pyessv-ws/sh/activate
-fi
-
-if [[ -d $HOME/apps/test_ws_documentation ]]; then
-    source $HOME/apps/test_ws_documentation/sh/activate
-fi
-
-if [[ -d $HOME/apps/test_ws_errata ]]; then
-    source $HOME/apps/test_ws_errata/sh/activate
-fi
-
-if [[ -d $HOME/apps/test_ws_pyessv ]]; then
-    source $HOME/apps/test_ws_pyessv/sh/activate
-fi
-
 # Library sub-shells
+if [[ -d $HOME/libs/esdoc-api ]]; then
+    source $HOME/libs/esdoc-api/sh/activate
+fi
+if [[ -d $HOME/libs/esdoc-cdf2cim-ws ]]; then
+    source $HOME/libs/esdoc-cdf2cim-ws/sh/activate
+fi
+if [[ -d $HOME/libs/esdoc-errata-ws ]]; then
+    source $HOME/libs/esdoc-errata-ws/sh/activate
+fi
 if [[ -d $HOME/libs/esdoc-py-client ]]; then
     source $HOME/libs/esdoc-py-client/sh/activate
 fi

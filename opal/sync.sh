@@ -18,7 +18,6 @@ declare -a _LIBS=(
     'esdoc-cdf2cim-ws'
     'esdoc-errata-ws'
 	'pyessv-ws'
-
     # Front-ends.
     'esdoc-web-compare'
     'esdoc-web-explorer'
@@ -26,7 +25,6 @@ declare -a _LIBS=(
     'esdoc-web-view'
     'esdoc-web-view-specialization'
     'esdoc-errata-fe'
-
     # Other.
 	'esdoc-py-client'
     'esdoc-web-static'
