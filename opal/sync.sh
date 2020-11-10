@@ -30,12 +30,13 @@ function sync_archive() {
     log "... "$1
 
     if [[ -d $HOME/archives/$1 ]]; then
-        cd $HOME/archives/$1
+        pushd $HOME/archives/$1
         git pull > /dev/null 2>&1
     else
-        cd $HOME/archives
+        pushd $HOME/archives
         git clone https://github.com/ES-DOC/$1.git
     fi
+    popd -1
 }
 
 #######################################
@@ -64,12 +65,13 @@ function sync_lib() {
     log "... "$1
 
     if [[ -d $HOME/libs/$1 ]]; then
-        cd $HOME/libs/$1
+        pushd $HOME/libs/$1
         git pull  > /dev/null 2>&1
     else
-        cd $HOME/libs
+        pushd $HOME/libs
         git clone https://github.com/ES-DOC/$1.git
     fi
+    popd -1
 }
 
 #######################################
