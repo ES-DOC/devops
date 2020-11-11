@@ -1,22 +1,22 @@
 source $OPAL_HOME/sync.sh
 
 function install_archive_cdf2cim() {
-    log "installing archive: cdf2cim ..."
+    log "installing archive: cdf2cim ... make take some time ... please wait"
 
     sync_archive "esdoc-cdf2cim-archive"
 }
 
 function install_archive_documentation() {
-    log "installing archive: documentation ..."
+    log "installing archive: documentation ... make take some time ... please wait"
 
     sync_archive "esdoc-archive"
 
     source $HOME/archives/esdoc-archive/sh/activate
-    esdoc-archive-uncompress
+    source $ESDOC_ARCHIVE_HOME/sh/uncompress.sh
 }
 
 function install_archive_pyessv() {
-    log "installing archive: pyessv ..."
+    log "installing archive: pyessv ... make take some time ... please wait"
 
     sync_archive "pyessv-archive"
 }
@@ -45,7 +45,7 @@ function install_ws_pyessv() {
     sync_lib "pyessv-ws"
 
     source $HOME/libs/pyessv-ws/sh/activate
-    pyessv-ws-install
+    source $PYESSV_WS_HOME/sh/install.sh
 }
 
 function install_fe_compare() {
