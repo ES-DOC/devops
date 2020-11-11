@@ -5,49 +5,40 @@
 #######################################
 
 # Array of managed archives.
-declare -a _ARCHIVES=(
+declare -a OPAL_ARCHIVES=(
 	'esdoc-archive'
 	'pyessv-archive'
 	'esdoc-cdf2cim-archive'
 )
 
 # Array of local libraries.
-declare -a _LIBS=(
-    # Web-services.
+declare -a OPAL_LIBS=(
+    # ... web-services
     'esdoc-api'
     'esdoc-cdf2cim-ws'
     'esdoc-errata-ws'
 	'pyessv-ws'
-    # Front-ends.
+
+    # ... front-ends
     'esdoc-web-compare'
     'esdoc-web-explorer'
     'esdoc-web-search'
     'esdoc-web-view'
     'esdoc-web-view-specialization'
     'esdoc-errata-fe'
-    # Other.
+
+    # ... other
 	'esdoc-py-client'
     'esdoc-web-static'
 )
 
 #######################################
 # Syncs an archive repo.
-# Globals:
-#   HOME - current user's home directory.
 # Arguments:
 #   Archive repo name.
 #######################################
 function sync_archive() {
-    log "... "$1
-
-    if [[ -d $HOME/archives/$1 ]]; then
-        pushd $HOME/archives/$1
-        git pull > /dev/null 2>&1
-    else
-        pushd $HOME/archives
-        git clone https://github.com/ES-DOC/$1.git > /dev/null 2>&1
-    fi
-    popd -1
+    sync_repo "archives" $1
 }
 
 #######################################
@@ -59,7 +50,7 @@ function sync_archives() {
     if [[ ! -d $HOME/archives ]]; then
         mkdir $HOME/archives
     fi    
-	for archive in "${_ARCHIVES[@]}"
+	for archive in "${OPAL_ARCHIVES[@]}"
 	do
         sync_archive $archive
 	done    
@@ -87,16 +78,7 @@ function sync_environment() {
 #   Library repo name.
 #######################################
 function sync_lib() {
-    log "... "$1
-
-    if [[ -d $HOME/libs/$1 ]]; then
-        pushd $HOME/libs/$1
-        git pull > /dev/null 2>&1
-    else
-        pushd $HOME/libs
-        git clone https://github.com/ES-DOC/$1.git > /dev/null 2>&1
-    fi
-    popd -1
+    sync_repo "libs" $1
 }
 
 #######################################
@@ -108,10 +90,29 @@ function sync_libs() {
     if [[ ! -d $HOME/libs ]]; then
         mkdir $HOME/libs
     fi    
-	for lib in "${_LIBS[@]}"
+	for lib in "${OPAL_LIBS[@]}"
 	do
         sync_lib $lib
 	done    
+}
+
+#######################################
+# Syncs a repo.
+# Globals:
+#   HOME - current user's home directory.
+# Arguments:
+#   Repo type.
+#   Repo name.
+#######################################
+function sync_repo() {
+    if [[ -d $HOME/$1/$2 ]]; then
+        pushd $HOME/$1/$2
+        git pull > /dev/null 2>&1
+    else
+        pushd $HOME/$1
+        git clone https://github.com/ES-DOC/$2.git > /dev/null 2>&1
+    fi
+    popd -1
 }
 
 #######################################

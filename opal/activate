@@ -20,5 +20,6 @@ source $OPAL_HOME/utils.sh
 # ALIASES
 # ###############################################################
 
-alias opal-init='source $OPAL_HOME/init.sh && source $OPAL_HOME/sync.sh'
+alias opal-init-stack='source $OPAL_HOME/init_stack.sh'
+alias opal-init-sys='source $OPAL_HOME/init_sys.sh'
 alias opal-sync='source $OPAL_HOME/sync.sh'
