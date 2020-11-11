@@ -118,6 +118,8 @@ function sync_repo() {
 #######################################
 # Entry point.
 #######################################
-sync_archives
-sync_environment
-sync_libs
+function sync_all() {
+    sync_archives
+    sync_environment
+    sync_libs
+}
