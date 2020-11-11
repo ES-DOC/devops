@@ -45,13 +45,14 @@ function sync_archive() {
 # Syncs set of archive repos.
 #######################################
 function sync_archives() {
-    log "syncing archives:"
+    opal_log "syncing archives ..."
 
     if [[ ! -d $HOME/archives ]]; then
         mkdir $HOME/archives
     fi    
 	for archive in "${OPAL_ARCHIVES[@]}"
 	do
+        opal_log "... ... "$archive
         sync_archive $archive
 	done    
 }
@@ -62,7 +63,7 @@ function sync_archives() {
 #   HOME - current user's home directory.
 #######################################
 function sync_environment() {
-    log "syncing environment"
+    opal_log "syncing environment"
 
     if [[ ! -d $HOME/.esdoc ]]; then
         mkdir $HOME/.esdoc
@@ -85,13 +86,14 @@ function sync_lib() {
 # Syncs set of local library repos.
 #######################################
 function sync_libs() {
-    log "syncing libs:"
+    opal_log "syncing libs ..."
 
     if [[ ! -d $HOME/libs ]]; then
         mkdir $HOME/libs
     fi    
 	for lib in "${OPAL_LIBS[@]}"
 	do
+        opal_log "... ... "$lib
         sync_lib $lib
 	done    
 }

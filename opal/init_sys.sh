@@ -6,7 +6,7 @@
 #   HOME - current user's home directory.
 #######################################
 function _init_sys_python() {
-    log "initialising python + pyenv"
+    opal_log "initialising python + pyenv"
 
     curl https://pyenv.run | bash
     export PATH="$HOME/.pyenv/bin:$PATH"
@@ -29,7 +29,7 @@ function _init_sys_python() {
 #   HOME - current user's home directory.
 #######################################
 function _init_sys_tmp() {
-    log "initialising temporary directory"
+    opal_log "initialising temporary directory"
 
     mkdir $HOME/tmp
     chmod a+x $HOME/tmp
@@ -43,7 +43,7 @@ function _init_sys_tmp() {
 #   OPAL_HOME - opal bash home directory.
 #######################################
 function _init_sys_esdoc_environment() {
-    log "initialising environment vars"
+    opal_log "initialising environment vars"
 
     mkdir $HOME/.esdoc
     cp $OPAL_HOME/template_credentials.txt $HOME/.esdoc/credentials
