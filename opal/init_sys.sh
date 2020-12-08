@@ -14,10 +14,10 @@ function _init_sys_python() {
     eval "$(pyenv virtualenv-init -)"
 
     pyenv update
-    pyenv install 3.9.0
-    pyenv install 2.7.18
+    pyenv install $OPAL_PYTHON_3
+    pyenv install $OPAL_PYTHON_2
 
-    pyenv global 3.9.0
+    pyenv global $OPAL_PYTHON_3
     pip3 install --upgrade pip
     pip3 install --upgrade pipenv
     pip3 install --upgrade supervisor
@@ -51,16 +51,21 @@ function _init_sys_esdoc_environment() {
 }
 
 #######################################
-# Entry point: initialises system.
+# Initialises system.
 # Globals:
 #   HOME - current user's home directory.
 #######################################
-if [[ ! -d $HOME/tmp ]]; then
-    _init_sys_tmp
-fi
-if [[ ! -d $HOME/.pyenv ]]; then    
-    _init_sys_python
-fi
-if [[ ! -d $HOME/.esdoc ]]; then
-    _init_sys_esdoc_environment
-fi
+function main () {
+    if [[ ! -d $HOME/tmp ]]; then
+        _init_sys_tmp
+    fi
+    if [[ ! -d $HOME/.pyenv ]]; then    
+        _init_sys_python
+    fi
+    if [[ ! -d $HOME/.esdoc ]]; then
+        _init_sys_esdoc_environment
+    fi
+}
+
+# Invoke entry point.
+main

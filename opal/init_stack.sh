@@ -1,12 +1,94 @@
 source $OPAL_HOME/sync.sh
 
-function install_archive_cdf2cim() {
-    opal_log "installing archive: cdf2cim ... make take some time ... please wait"
-
-    sync_archive "esdoc-cdf2cim-archive"
+#######################################
+# Initialises file sytstem.
+# Globals:
+#   HOME - current user's home directory.
+#   OPAL_ARCHIVES - array of managed archives.
+#   OPAL_LIBS - array of managed libraries.
+#######################################
+function init_fs() {
+    if [[ ! -d $HOME/archives ]]; then
+        mkdir $HOME/archives
+    fi    
+    if [[ ! -d $HOME/libs ]]; then
+        mkdir $HOME/libs
+    fi 
+    if [[ ! -d $HOME/.esdoc ]]; then
+        mkdir $HOME/.esdoc
+    fi
 }
 
-function install_archive_documentation() {
+#######################################
+# Initialises a repo.
+# Globals:
+#   HOME - current user's home directory.
+# Arguments:
+#   Repo type.
+#   Repo name.
+#######################################
+function init_repo() {
+    local REPO_TYPE=${1}
+    local REPO_NAME=${2}
+    local REPO_URL=https://github.com/ES-DOC/$REPO_NAME.git
+
+    pushd $HOME/$REPO_TYPE
+    git clone REPO_URL > /dev/null 2>&1
+    popd 1
+}
+
+#######################################
+# Initialises set of managed repo.
+# Globals:
+#   OPAL_ARCHIVES - array of managed archives.
+#   OPAL_LIBS - array of managed libraries.
+#######################################
+function init_repos() {
+    # Initialise archives.
+	for TARGET in "${OPAL_ARCHIVES[@]}"
+	do
+        opal_log "... ... "$TARGET
+        init_repo "archives" $TARGET
+	done     
+
+    # Initialise libraries.
+	for TARGET in "${OPAL_LIBS[@]}"
+	do
+        opal_log "... ... "$TARGET
+        init_repo "libs" $TARGET
+	done 
+}
+
+#######################################
+# Initialises virtual environments.
+# Globals:
+#   HOME - current user's home directory.
+#   OPAL_ARCHIVES - array of managed archives.
+#   OPAL_LIBS - array of managed libraries.
+#######################################
+function init_venvs() {
+    pushd $HOME/libs/esdoc-api
+    pyenv local $OPAL_PYTHON_2
+    popd -1
+
+    pushd $HOME/libs/esdoc-cdf2cim-ws
+    pyenv local $OPAL_PYTHON_3
+    popd -1
+
+    pushd $HOME/libs/esdoc-errata-ws
+    pyenv local $OPAL_PYTHON_2
+    popd -1
+
+    pushd $HOME/libs/pyessv-ws
+    pyenv local $OPAL_PYTHON_3
+    popd -1
+  
+    pushd $HOME/libs/esdoc-py-client
+    pyenv local $OPAL_PYTHON_2
+    popd -1
+}
+
+function init_archive_documentation() {
     opal_log "installing archive: documentation ... make take some time ... please wait"
 
     sync_archive "esdoc-archive"
@@ -15,95 +97,32 @@ function install_archive_documentation() {
     source $ESDOC_ARCHIVE_HOME/sh/uncompress.sh
 }
 
-function install_archive_pyessv() {
-    opal_log "installing archive: pyessv ... make take some time ... please wait"
-
-    sync_archive "pyessv-archive"
-}
-
-function install_ws_cdf2cim() {
-    opal_log "installing ws: cdf2cim ..."
-
-    sync_lib "esdoc-cdf2cim-ws"
-}
-
-function install_ws_documentation() {
-    opal_log "installing ws: documentation ..."
-
-    sync_lib "esdoc-api"    
-}
-
-function install_ws_errata() {
-    opal_log "installing ws: errata ..."
-
-    sync_lib "esdoc-errata-ws"
-}
-
-function install_ws_pyessv() {
+function init_ws_pyessv() {
     opal_log "installing ws: pyessv ..."
 
+    # Set source code. 
     sync_lib "pyessv-ws"
 
+    # Set python.
+    pushd $HOME/libs/pyessv-ws
+    pyenv local 3.9.0
+    popd -1
+
+    # Execute installer.
     source $HOME/libs/pyessv-ws/sh/activate
-    source $PYESSV_WS_HOME/sh/install.sh
-}
-
-function install_fe_compare() {
-    opal_log "installing fe: compare ..."
-
-    sync_lib "esdoc-web-compare"
-}
-
-function install_fe_errata() {
-    opal_log "installing fe: errata ..."
-
-    sync_lib "esdoc-errata-fe"
-}
-
-function install_fe_search() {
-    opal_log "installing fe: search ..."
-
-    sync_lib "esdoc-web-search"
-}
-
-function install_fe_view() {
-    opal_log "installing fe: view ..."
-
-    sync_lib "esdoc-web-view"
-}
-
-function install_fe_view_specialization() {
-    opal_log "installing fe: view specialization ..."
-
-    sync_lib "esdoc-web-view-specialization"
-}
-
-function install_other_pyesdoc() {
-    opal_log "installing other: pyesdoc ..."
-
-    sync_lib "esdoc-py-client"
-}
-
-function install_other_static() {
-    opal_log "installing other: static ..."
-
-    sync_lib "esdoc-web-static"
+    source $HOME/libs/pyessv-ws/sh/install.sh
 }
 
 #######################################
-# Entry point: installs apps/services upon.
+# Initialises stack.
+# Globals:
+#   HOME - current user's home directory.
 #######################################
-install_archive_cdf2cim
-install_archive_documentation
-install_archive_pyessv
-install_ws_cdf2cim
-install_ws_documentation
-install_ws_errata
-install_ws_pyessv
-install_fe_compare
-install_fe_errata
-install_fe_search
-install_fe_view
-install_fe_view_specialization
-install_other_pyesdoc
-install_other_static
+function main() {
+    init_fs
+    init_repos
+    init_venvs
+}
+
+# Invoke entry point.
+main

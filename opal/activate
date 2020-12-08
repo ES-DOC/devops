@@ -15,7 +15,8 @@ if [[ -f $HOME/.esdoc/environment ]]; then
     source $HOME/.esdoc/environment
 fi
 
-# Activate utils.
+# Activate utils / constants.
+source $OPAL_HOME/constants.sh
 source $OPAL_HOME/utils.sh
 
 # ###############################################################
