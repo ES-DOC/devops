@@ -31,7 +31,7 @@ function init_repo() {
 
     pushd $HOME/$REPO_TYPE
     git clone REPO_URL > /dev/null 2>&1
-    popd 1
+    popd
 }
 
 #######################################
@@ -66,23 +66,23 @@ function init_repos() {
 function init_venvs() {
     pushd $HOME/libs/esdoc-api
     pyenv local $OPAL_PYTHON_2
-    popd 1
+    popd
 
     pushd $HOME/libs/esdoc-cdf2cim-ws
     pyenv local $OPAL_PYTHON_3
-    popd 1
+    popd
 
     pushd $HOME/libs/esdoc-errata-ws
     pyenv local $OPAL_PYTHON_2
-    popd 1
+    popd
 
     pushd $HOME/libs/pyessv-ws
     pyenv local $OPAL_PYTHON_3
-    popd 1
+    popd
   
     pushd $HOME/libs/esdoc-py-client
     pyenv local $OPAL_PYTHON_2
-    popd 1
+    popd
 }
 
 #######################################

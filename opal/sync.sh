@@ -114,7 +114,7 @@ function sync_repo() {
         pushd $HOME/$1
         git clone https://github.com/ES-DOC/$2.git > /dev/null 2>&1
     fi
-    popd 1
+    popd
 }
 
 #######################################
