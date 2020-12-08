@@ -29,11 +29,9 @@ function init_repo() {
     local REPO_NAME=${2}
     local REPO_URL=https://github.com/ES-DOC/$REPO_NAME.git
 
-    echo $HOME/$REPO_TYPE
-
-    # pushd $HOME/$REPO_TYPE
-    # git clone REPO_URL > /dev/null 2>&1
-    # popd
+    pushd $HOME/$REPO_TYPE
+    git clone $REPO_URL > /dev/null 2>&1
+    popd
 }
 
 #######################################
@@ -95,7 +93,7 @@ function init_venvs() {
 function main() {
     init_fs
     init_repos
-    # init_venvs
+    init_venvs
 }
 
 # Invoke entry point.
