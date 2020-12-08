@@ -14,9 +14,6 @@ function init_fs() {
     if [[ ! -d $HOME/libs ]]; then
         mkdir $HOME/libs
     fi 
-    if [[ ! -d $HOME/.esdoc ]]; then
-        mkdir $HOME/.esdoc
-    fi
 }
 
 #######################################
@@ -86,31 +83,6 @@ function init_venvs() {
     pushd $HOME/libs/esdoc-py-client
     pyenv local $OPAL_PYTHON_2
     popd -1
-}
-
-function init_archive_documentation() {
-    opal_log "installing archive: documentation ... make take some time ... please wait"
-
-    sync_archive "esdoc-archive"
-
-    source $HOME/archives/esdoc-archive/sh/activate
-    source $ESDOC_ARCHIVE_HOME/sh/uncompress.sh
-}
-
-function init_ws_pyessv() {
-    opal_log "installing ws: pyessv ..."
-
-    # Set source code. 
-    sync_lib "pyessv-ws"
-
-    # Set python.
-    pushd $HOME/libs/pyessv-ws
-    pyenv local 3.9.0
-    popd -1
-
-    # Execute installer.
-    source $HOME/libs/pyessv-ws/sh/activate
-    source $HOME/libs/pyessv-ws/sh/install.sh
 }
 
 #######################################
