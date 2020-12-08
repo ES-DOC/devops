@@ -1,4 +1,4 @@
-source $OPAL_HOME/sync.sh
+#!/usr/bin/env bash
 
 #######################################
 # Initialises file sytstem.
