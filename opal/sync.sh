@@ -68,7 +68,7 @@ function sync_environment() {
     if [[ ! -d $HOME/.esdoc ]]; then
         mkdir $HOME/.esdoc
     fi
-    cp $OPAL_HOME/template_environment.txt $HOME/.esdoc/environment
+    cp $OPAL_HOME/templates/environment.txt $HOME/.esdoc/environment
 }
 
 #######################################
