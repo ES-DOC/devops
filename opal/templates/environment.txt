@@ -6,9 +6,9 @@
 PATH=$PATH:$HOME/bin
 
 # Temp path.
-if [[ -d $HOME/tmp ]]; then
-    export TMPDIR=$HOME/tmp
-fi
+# if [[ -d $HOME/tmp ]]; then
+#     export TMPDIR=$HOME/tmp
+# fi
 
 # Pyenv path.
 if [[ -d $HOME/.pyenv ]]; then

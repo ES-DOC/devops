@@ -27,11 +27,19 @@ function init_fs() {
 function init_repo() {
     local REPO_TYPE=${1}
     local REPO_NAME=${2}
+    local REPO_DIR=$HOME/$REPO_TYPE/$REPO_NAME
     local REPO_URL=https://github.com/ES-DOC/$REPO_NAME.git
 
-    pushd $HOME/$REPO_TYPE
-    git clone $REPO_URL > /dev/null 2>&1
-    popd
+    if [ ! -d $ REPO_DIR ]; then
+        echo "TODO: initialise repo: "$REPO_DIR
+        # pushd $HOME/$REPO_TYPE
+        # git clone $REPO_URL > /dev/null 2>&1
+        # popd
+    else
+        pushd $REPO_DIR
+        git pull
+        popd
+    fi
 }
 
 #######################################
