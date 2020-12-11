@@ -45,6 +45,7 @@ function _init_sys_tmp() {
 function _init_sys_esdoc_environment() {
     opal_log "initialising environment vars"
 
+    mkdir $HOME/.esdoc
     cp $OPAL_HOME/templates/credentials.txt $HOME/.esdoc/credentials
     cp $OPAL_HOME/templates/environment.txt $HOME/.esdoc/environment
 }
