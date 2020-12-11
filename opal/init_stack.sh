@@ -57,6 +57,27 @@ function init_repos() {
 }
 
 #######################################
+# Initialises a virtual environment.
+# Globals:
+#   HOME - current user's home directory.
+# Arguments:
+#   Version of python to apply.
+#   Name of library in which to create a venv.
+#######################################
+function init_venv() {
+    local PYTHON_VERSION=${1}
+    local LIB_NAME=${2}
+
+    if [ -d $HOME/libs/$LIB_NAME ]; then
+        echo "initialise "$LIB_NAME
+    fi
+
+    # pushd $HOME/libs/esdoc-api
+    # pyenv local $OPAL_PYTHON_2
+    # popd    
+}
+
+#######################################
 # Initialises virtual environments.
 # Globals:
 #   HOME - current user's home directory.
@@ -64,25 +85,11 @@ function init_repos() {
 #   OPAL_LIBS - array of managed libraries.
 #######################################
 function init_venvs() {
-    pushd $HOME/libs/esdoc-api
-    pyenv local $OPAL_PYTHON_2
-    popd
-
-    pushd $HOME/libs/esdoc-cdf2cim-ws
-    pyenv local $OPAL_PYTHON_3
-    popd
-
-    pushd $HOME/libs/esdoc-errata-ws
-    pyenv local $OPAL_PYTHON_2
-    popd
-
-    pushd $HOME/libs/pyessv-ws
-    pyenv local $OPAL_PYTHON_3
-    popd
-  
-    pushd $HOME/libs/esdoc-py-client
-    pyenv local $OPAL_PYTHON_2
-    popd
+    init_venv $OPAL_PYTHON_2 esdoc-api
+    init_venv $OPAL_PYTHON_3 esdoc-cdf2cim-ws
+    init_venv $OPAL_PYTHON_2 esdoc-errata-ws
+    init_venv $OPAL_PYTHON_3 pyessv-ws
+    init_venv $OPAL_PYTHON_2 esdoc-py-client
 }
 
 #######################################
