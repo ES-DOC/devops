@@ -30,7 +30,7 @@ function init_repo() {
     local REPO_DIR=$HOME/$REPO_TYPE/$REPO_NAME
     local REPO_URL=https://github.com/ES-DOC/$REPO_NAME.git
 
-    if [ ! -d $ REPO_DIR ]; then
+    if [[ ! -d $ REPO_DIR ]]; then
         echo "TODO: initialise repo: "$REPO_DIR
         # pushd $HOME/$REPO_TYPE
         # git clone $REPO_URL > /dev/null 2>&1
@@ -76,7 +76,7 @@ function init_venv() {
     local PYTHON_VERSION=${1}
     local LIB_NAME=${2}
 
-    if [ -d $HOME/libs/$LIB_NAME ]; then
+    if [[ -d $HOME/libs/$LIB_NAME ]]; then
         echo "initialise "$LIB_NAME
     fi
 
