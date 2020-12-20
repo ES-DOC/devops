@@ -31,10 +31,9 @@ function init_repo() {
     local REPO_URL=https://github.com/ES-DOC/$REPO_NAME.git
 
     if [[ ! -d $REPO_DIR ]]; then
-        echo "TODO: initialise repo: "$REPO_DIR
-        # pushd $HOME/$REPO_TYPE
-        # git clone $REPO_URL > /dev/null 2>&1
-        # popd
+        pushd $HOME/$REPO_TYPE
+        git clone $REPO_URL > /dev/null 2>&1
+        popd
     else
         pushd $REPO_DIR
         git pull
