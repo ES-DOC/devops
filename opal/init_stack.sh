@@ -76,12 +76,11 @@ function init_venv() {
     local LIB_NAME=${2}
 
     if [[ -d $HOME/libs/$LIB_NAME ]]; then
-        echo "initialise $LIB_NAME :: $PYTHON_VERSION"
+        pushd $HOME/libs/$LIB_NAME
+        pyenv local $PYTHON_VERSION
+        popd
+        opal_log "... initialised venv :: $LIB_NAME :: $PYTHON_VERSION"
     fi
-
-    # pushd $HOME/libs/esdoc-api
-    # pyenv local $OPAL_PYTHON_2
-    # popd    
 }
 
 #######################################
