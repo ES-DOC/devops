@@ -76,7 +76,7 @@ function init_venv() {
     local LIB_NAME=${2}
 
     if [[ -d $HOME/libs/$LIB_NAME ]]; then
-        echo "initialise "$LIB_NAME
+        echo "initialise $LIB_NAME :: $PYTHON_VERSION"
     fi
 
     # pushd $HOME/libs/esdoc-api
