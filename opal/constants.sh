@@ -23,6 +23,13 @@ declare -a OPAL_LIBS=(
     'esdoc-web-static'
 )
 
+# Array of managed URL rewriters.
+declare -a OPAL_REWRITERS=(
+	'further-info'
+	'documentation'
+	'specializations'
+)
+
 # Python versions.
 declare -r OPAL_PYTHON_2=2.7.18
 declare -r OPAL_PYTHON_3=3.9.0

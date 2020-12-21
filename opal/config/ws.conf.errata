@@ -1,0 +1,30 @@
+{
+    "cookie_secret": "p2FAdrUN3tac",
+    "db": "postgresql://prod_ws_errata_dbowner:eLMQawRjL3wT@localhost:5432/prod_ws_errata",
+    "host": "localhost",
+    "apply_security_policy": true,
+    "mode": "dev",
+    "port": 25685,
+    "allowed_description_similarity_ratio": 0.01,
+    "allowed_description_update_similarity_ratio": 0.8,
+    "pid": {
+        "url": "handle-esgf-trusted.dkrz.de",
+        "data_node1": "foo",
+        "is_test": false,
+        "prefix": "21.14100",
+        "rabbit_exchange": "esgffed-exchange",
+        "rabbit_password_trusted": "B8a*:!*6$7oW$G'`3!:G",
+        "rabbit_user_open": "esgf-publisher-open",
+        "rabbit_user_trusted": "esgf-publisher",
+        "rabbit_urls_open": [],
+        "rabbit_url_trusted": "handle-esgf-trusted.dkrz.de",
+        "sync_retry_interval_in_seconds": 9000,
+        "thredds_service_path1": "bar",
+        "ssl_enabled": true,
+        "vhost": "esgf-pid",
+        "port": "5671",
+        "is_synchronous": true
+    },
+    "staticFilePath": "/home/esdoc/webapps/prod_fe_errata",
+    "validate_issue_urls": true
+}

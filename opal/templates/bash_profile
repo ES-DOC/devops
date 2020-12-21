@@ -1,0 +1,51 @@
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+fi
+
+# User specific environment and startup programs
+PATH=$PATH:$HOME/bin
+PATH=~/webapps/prod_lib_node/bin:$PATH
+PATH=~/.yarn/bin:$PATH
+export PATH
+
+# ES-DOC: GitHub credentials
+export CDF2CIM_WS_GITHUB_ACCESS_TOKEN=e2351b671ebef2d2b23017a9b328a9843120f666
+export ESDOC_GITHUB_ACCESS_TOKEN=b2a0fcf02e16baa64a1e1663a9da64dff158fae7
+
+# ES-DOC: Errata WS: publication OAuth settings
+export ERRATA_OAUTH_CLIENT_ID=90bf49359d3b2d346dae
+export ERRATA_OAUTH_CLIENT_SECRET=b61ff1e824b0dc46a7f83eed3230b7b5fcb8a897
+
+# ES-DOC: Set pyessv archive path
+export PYESSV_ARCHIVE_HOME=~/weblibs/pyessv-archive
+
+# ES-DOC: activate sub-shells
+source ~/weblibs/esdoc-archive/sh/activate
+source ~/weblibs/esdoc-py-client/sh/activate
+source ~/weblibs/esdoc-cdf2cim-archive/sh/activate
+source ~/webapps/prod_ws_documentation/sh/activate
+source ~/webapps/prod_ws_errata/sh/activate
+source ~/webapps/prod_ws_cdf2cim/sh/activate
+source ~/webapps/prod_ws_pyessv/sh/activate
+
+# ES-DOC: misc commands
+alias esdoc-ws-documentation-switch-config-dbowner="cp ~/webapps/prod_ws_documentation/ops/config/ws.conf-1  ~/webapps/prod_ws_documentation/ops/config/ws.conf"
+alias esdoc-ws-documentation-switch-config-wsuser="cp ~/webapps/prod_ws_documentation/ops/config/ws.conf-2  ~/webapps/prod_ws_documentation/ops/config/ws.conf"
+alias esdoc-ws-documentation-upload-db='psql -U prod_ws_documentation_dbowner prod_ws_documentation < /home/esdoc/webapps/prod_ws_documentation/resources/db'
+alias esdoc-deploy="source /home/esdoc/weblibs/esdoc-shell/bash/deployment/to_webfaction.sh prod"
+
+# ES-DOC: Errata WS: env var overrides
+export ERRATA_DB_NAME=test_ws_errata
+export ERRATA_DB_USER=test_ws_errata_wsuser
+export ERRATA_DB_ADMIN=test_ws_errata_dbowner
+
+# Override default tmp dir.
+export TMPDIR=/home/esdoc/tmp
+
+# Pyenv support.
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

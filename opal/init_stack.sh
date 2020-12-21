@@ -14,6 +14,9 @@ function init_fs() {
     if [[ ! -d $HOME/libs ]]; then
         mkdir $HOME/libs
     fi 
+    if [[ ! -d $HOME/rewriters ]]; then
+        mkdir $HOME/rewriters
+    fi 
 }
 
 #######################################
@@ -64,6 +67,34 @@ function init_repos() {
 }
 
 #######################################
+# Initialises set of URL rewriters.
+# Globals:
+#   HOME - OS user home directory.
+#######################################
+function init_rewriters() {
+	for REWRITER in "${OPAL_REWRITERS[@]}"
+	do
+        local REWRITER_DIR=$HOME/rewriters/$REWRITER
+        if [[ ! -d $REWRITER_DIR ]]; then
+            pushd $HOME/rewriters
+            git clone https://github.com/ES-DOC/esdoc-ws-url-rewriter.git ./$REWRITER
+        else
+            pushd $REWRITER_DIR
+            git pull
+        fi        
+        popd
+	done
+
+	for REWRITER in "${OPAL_REWRITERS[@]}"
+	do
+        local REWRITER_DIR=$HOME/rewriters/$REWRITER
+        pushd $REWRITER_DIR
+        pyenv local $OPAL_PYTHON_2
+        popd
+	done
+}
+
+#######################################
 # Initialises a virtual environment.
 # Globals:
 #   HOME - current user's home directory.
@@ -106,6 +137,7 @@ function init_venvs() {
 function main() {
     init_fs
     init_repos
+    init_rewriters
     init_venvs
 }
 
