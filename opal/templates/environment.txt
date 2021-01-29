@@ -37,6 +37,9 @@ fi
 # Vocab archive path.
 export PYESSV_ARCHIVE_HOME=$HOME/archives/pyessv-archive
 
+# CDF2CIM archive path.
+export CDF2CIM_ARCHIVE_HOME=$HOME/archives/esdoc-cdf2cim-archive
+
 # Errata env vars.
 if [[ -d $HOME/libs/esdoc-errata-ws ]]; then
     export ERRATA_DB_NAME=test_ws_errata

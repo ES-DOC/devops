@@ -45,20 +45,24 @@ function init_repo() {
 }
 
 #######################################
-# Initialises set of managed repo.
+# Initialises set of managed archives.
 # Globals:
 #   OPAL_ARCHIVES - array of managed archives.
-#   OPAL_LIBS - array of managed libraries.
 #######################################
-function init_repos() {
-    # Initialise archives.
+function init_archives() {
 	for TARGET in "${OPAL_ARCHIVES[@]}"
 	do
         opal_log "... ... "$TARGET
         init_repo "archives" $TARGET
 	done     
+}
 
-    # Initialise libraries.
+#######################################
+# Initialises set of managed libraries.
+# Globals:
+#   OPAL_LIBS - array of managed libraries.
+#######################################
+function init_libs() {
 	for TARGET in "${OPAL_LIBS[@]}"
 	do
         opal_log "... ... "$TARGET
@@ -109,6 +113,12 @@ function init_venv() {
     if [[ -d $HOME/libs/$LIB_NAME ]]; then
         pushd $HOME/libs/$LIB_NAME
         pyenv local $PYTHON_VERSION
+        pip install --upgrade pip
+        pip install --upgrade pipenv
+        pipenv --rm        
+        pipenv --python $PYTHON_VERSION
+        rm ./Pipfile.lock
+        pipenv install
         popd
         opal_log "... initialised venv :: $LIB_NAME :: $PYTHON_VERSION"
     fi
@@ -136,7 +146,8 @@ function init_venvs() {
 #######################################
 function main() {
     init_fs
-    init_repos
+    init_archives
+    init_libs
     init_rewriters
     init_venvs
 }
