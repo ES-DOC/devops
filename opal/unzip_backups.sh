@@ -1,5 +1,5 @@
 #######################################
-# Initialises system.
+# Decompresses backed up files.
 # Globals:
 #   HOME - current user's home directory.
 #######################################

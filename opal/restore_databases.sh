@@ -9,6 +9,8 @@ function main () {
     psql -U test_db_documentation_1 test_db_documentation_1 -f ./db-documentation.sql -q
     # psql -U test_db_errata_1 test_db_errata_1 -f ./db-errata.sql -q
 
+    psql -U prod_db_documentation_1 prod_db_documentation_1 -f ./db-documentation.sql -q
+
     popd
 }
 
