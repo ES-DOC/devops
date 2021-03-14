@@ -16,15 +16,21 @@ if [[ -f $HOME/.esdoc/environment ]]; then
 fi
 
 # Activate utils / constants.
-source $OPAL_HOME/constants.sh
-source $OPAL_HOME/utils.sh
+source $OPAL_HOME/sh/constants.sh
+source $OPAL_HOME/sh/utils.sh
 
 # ###############################################################
 # ALIASES
 # ###############################################################
 
-alias opal-init-stack='source $OPAL_HOME/init_stack.sh'
-alias opal-init-sys='source $OPAL_HOME/init_sys.sh'
-alias opal-sync='source $OPAL_HOME/sync.sh && sync_all'
-alias opal-restore-databases='source $OPAL_HOME/restore_databases.sh'
-alias opal-unzip-backups='source $OPAL_HOME/unzip_backups.sh'
+alias opal-init-stack='source $OPAL_HOME/sh/init_stack.sh'
+alias opal-init-sys='source $OPAL_HOME/sh/init_sys.sh'
+alias opal-sync='source $OPAL_HOME/sh/sync.sh && sync_all'
+alias opal-restore-databases='source $OPAL_HOME/sh/restore_databases.sh'
+alias opal-unzip-backups='source $OPAL_HOME/sh/unzip_backups.sh'
+alias opal-zip-backup='source $OPAL_HOME/sh/zip_backup.sh'
+
+alias opal-db-backup='source $OPAL_HOME/sh/db_backup.sh'
+alias opal-db-restore='source $OPAL_HOME/sh/db_restore.sh'
+alias opal-db-unzip='source $OPAL_HOME/sh/db_unzip.sh'
+alias opal-db-zip='source $OPAL_HOME/sh/db_zip.sh'

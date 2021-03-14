@@ -1,0 +1,13 @@
+{
+    "cookie_secret": "rN3JRVzuMuKY",
+    "db": "postgresql://prod_ws_documentation_wsuser:gYesW92Ferqu@localhost:5432/prod_ws_documentation",
+    "host": "localhost",
+    "network_state": "up",
+    "mode": "prod",
+    "port": 16814,
+    "ingestion": {
+        "parallelize": false,
+        "projects": "cmip6",
+        "throttle": 0
+    }
+}

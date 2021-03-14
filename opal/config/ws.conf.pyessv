@@ -1,7 +1,0 @@
-{
-    "cookie_secret": "p2FAdrUN3tbc",
-    "host": "localhost",
-    "apply_security_policy": true,
-    "mode": "prod",
-    "port": 30137
-}
