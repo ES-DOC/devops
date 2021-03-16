@@ -35,10 +35,10 @@ do
     KEY=$(echo "$ARGUMENT" | cut -f1 -d=)
     VALUE=$(echo "$ARGUMENT" | cut -f2 -d=)
     case "$KEY" in
-        env) ENV=${VALUE} ;;
+        env) OPAL_ENV=${VALUE} ;;
         type) DB_TYPE=${VALUE} ;;
         *)
     esac
 done
 
-main "${ENV:-"test"}" "${DB_TYPE:-"documentation"}"
+main "${OPAL_ENV:-"test"}" "${DB_TYPE:-"documentation"}"
