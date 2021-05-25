@@ -40,13 +40,13 @@ DROP TABLE docs.tbl_document;
 DROP EXTENSION plpgsql;
 DROP SCHEMA docs;
 --
--- Name: docs; Type: SCHEMA; Schema: -; Owner: prod_db_documentation_2
+-- Name: docs; Type: SCHEMA; Schema: -; Owner: prod_db_documentation_3
 --
 
 CREATE SCHEMA docs;
 
 
-ALTER SCHEMA docs OWNER TO prod_db_documentation_2;
+ALTER SCHEMA docs OWNER TO prod_db_documentation_3;
 
 --
 -- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: -
@@ -65,7 +65,7 @@ COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
 SET default_tablespace = '';
 
 --
--- Name: tbl_document; Type: TABLE; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document; Type: TABLE; Schema: docs; Owner: prod_db_documentation_3
 --
 
 CREATE TABLE docs.tbl_document (
@@ -88,10 +88,10 @@ CREATE TABLE docs.tbl_document (
 );
 
 
-ALTER TABLE docs.tbl_document OWNER TO prod_db_documentation_2;
+ALTER TABLE docs.tbl_document OWNER TO prod_db_documentation_3;
 
 --
--- Name: tbl_document_drs; Type: TABLE; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_drs; Type: TABLE; Schema: docs; Owner: prod_db_documentation_3
 --
 
 CREATE TABLE docs.tbl_document_drs (
@@ -110,10 +110,10 @@ CREATE TABLE docs.tbl_document_drs (
 );
 
 
-ALTER TABLE docs.tbl_document_drs OWNER TO prod_db_documentation_2;
+ALTER TABLE docs.tbl_document_drs OWNER TO prod_db_documentation_3;
 
 --
--- Name: tbl_document_drs_id_seq; Type: SEQUENCE; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_drs_id_seq; Type: SEQUENCE; Schema: docs; Owner: prod_db_documentation_3
 --
 
 CREATE SEQUENCE docs.tbl_document_drs_id_seq
@@ -125,17 +125,17 @@ CREATE SEQUENCE docs.tbl_document_drs_id_seq
     CACHE 1;
 
 
-ALTER TABLE docs.tbl_document_drs_id_seq OWNER TO prod_db_documentation_2;
+ALTER TABLE docs.tbl_document_drs_id_seq OWNER TO prod_db_documentation_3;
 
 --
--- Name: tbl_document_drs_id_seq; Type: SEQUENCE OWNED BY; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_drs_id_seq; Type: SEQUENCE OWNED BY; Schema: docs; Owner: prod_db_documentation_3
 --
 
 ALTER SEQUENCE docs.tbl_document_drs_id_seq OWNED BY docs.tbl_document_drs.id;
 
 
 --
--- Name: tbl_document_external_id; Type: TABLE; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_external_id; Type: TABLE; Schema: docs; Owner: prod_db_documentation_3
 --
 
 CREATE TABLE docs.tbl_document_external_id (
@@ -146,10 +146,10 @@ CREATE TABLE docs.tbl_document_external_id (
 );
 
 
-ALTER TABLE docs.tbl_document_external_id OWNER TO prod_db_documentation_2;
+ALTER TABLE docs.tbl_document_external_id OWNER TO prod_db_documentation_3;
 
 --
--- Name: tbl_document_external_id_id_seq; Type: SEQUENCE; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_external_id_id_seq; Type: SEQUENCE; Schema: docs; Owner: prod_db_documentation_3
 --
 
 CREATE SEQUENCE docs.tbl_document_external_id_id_seq
@@ -161,17 +161,17 @@ CREATE SEQUENCE docs.tbl_document_external_id_id_seq
     CACHE 1;
 
 
-ALTER TABLE docs.tbl_document_external_id_id_seq OWNER TO prod_db_documentation_2;
+ALTER TABLE docs.tbl_document_external_id_id_seq OWNER TO prod_db_documentation_3;
 
 --
--- Name: tbl_document_external_id_id_seq; Type: SEQUENCE OWNED BY; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_external_id_id_seq; Type: SEQUENCE OWNED BY; Schema: docs; Owner: prod_db_documentation_3
 --
 
 ALTER SEQUENCE docs.tbl_document_external_id_id_seq OWNED BY docs.tbl_document_external_id.id;
 
 
 --
--- Name: tbl_document_id_seq; Type: SEQUENCE; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_id_seq; Type: SEQUENCE; Schema: docs; Owner: prod_db_documentation_3
 --
 
 CREATE SEQUENCE docs.tbl_document_id_seq
@@ -183,17 +183,17 @@ CREATE SEQUENCE docs.tbl_document_id_seq
     CACHE 1;
 
 
-ALTER TABLE docs.tbl_document_id_seq OWNER TO prod_db_documentation_2;
+ALTER TABLE docs.tbl_document_id_seq OWNER TO prod_db_documentation_3;
 
 --
--- Name: tbl_document_id_seq; Type: SEQUENCE OWNED BY; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_id_seq; Type: SEQUENCE OWNED BY; Schema: docs; Owner: prod_db_documentation_3
 --
 
 ALTER SEQUENCE docs.tbl_document_id_seq OWNED BY docs.tbl_document.id;
 
 
 --
--- Name: tbl_document_sub_project; Type: TABLE; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_sub_project; Type: TABLE; Schema: docs; Owner: prod_db_documentation_3
 --
 
 CREATE TABLE docs.tbl_document_sub_project (
@@ -204,10 +204,10 @@ CREATE TABLE docs.tbl_document_sub_project (
 );
 
 
-ALTER TABLE docs.tbl_document_sub_project OWNER TO prod_db_documentation_2;
+ALTER TABLE docs.tbl_document_sub_project OWNER TO prod_db_documentation_3;
 
 --
--- Name: tbl_document_sub_project_id_seq; Type: SEQUENCE; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_sub_project_id_seq; Type: SEQUENCE; Schema: docs; Owner: prod_db_documentation_3
 --
 
 CREATE SEQUENCE docs.tbl_document_sub_project_id_seq
@@ -219,45 +219,45 @@ CREATE SEQUENCE docs.tbl_document_sub_project_id_seq
     CACHE 1;
 
 
-ALTER TABLE docs.tbl_document_sub_project_id_seq OWNER TO prod_db_documentation_2;
+ALTER TABLE docs.tbl_document_sub_project_id_seq OWNER TO prod_db_documentation_3;
 
 --
--- Name: tbl_document_sub_project_id_seq; Type: SEQUENCE OWNED BY; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_sub_project_id_seq; Type: SEQUENCE OWNED BY; Schema: docs; Owner: prod_db_documentation_3
 --
 
 ALTER SEQUENCE docs.tbl_document_sub_project_id_seq OWNED BY docs.tbl_document_sub_project.id;
 
 
 --
--- Name: tbl_document id; Type: DEFAULT; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document id; Type: DEFAULT; Schema: docs; Owner: prod_db_documentation_3
 --
 
 ALTER TABLE ONLY docs.tbl_document ALTER COLUMN id SET DEFAULT nextval('docs.tbl_document_id_seq'::regclass);
 
 
 --
--- Name: tbl_document_drs id; Type: DEFAULT; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_drs id; Type: DEFAULT; Schema: docs; Owner: prod_db_documentation_3
 --
 
 ALTER TABLE ONLY docs.tbl_document_drs ALTER COLUMN id SET DEFAULT nextval('docs.tbl_document_drs_id_seq'::regclass);
 
 
 --
--- Name: tbl_document_external_id id; Type: DEFAULT; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_external_id id; Type: DEFAULT; Schema: docs; Owner: prod_db_documentation_3
 --
 
 ALTER TABLE ONLY docs.tbl_document_external_id ALTER COLUMN id SET DEFAULT nextval('docs.tbl_document_external_id_id_seq'::regclass);
 
 
 --
--- Name: tbl_document_sub_project id; Type: DEFAULT; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_sub_project id; Type: DEFAULT; Schema: docs; Owner: prod_db_documentation_3
 --
 
 ALTER TABLE ONLY docs.tbl_document_sub_project ALTER COLUMN id SET DEFAULT nextval('docs.tbl_document_sub_project_id_seq'::regclass);
 
 
 --
--- Data for Name: tbl_document; Type: TABLE DATA; Schema: docs; Owner: prod_db_documentation_2
+-- Data for Name: tbl_document; Type: TABLE DATA; Schema: docs; Owner: prod_db_documentation_3
 --
 
 COPY docs.tbl_document (id, project, sub_projects, institute, typeof, uid, version, ingest_date, is_latest, name, canonical_name, alternative_name, long_name, description, model, experiment) FROM stdin;
@@ -669,7 +669,6 @@ COPY docs.tbl_document (id, project, sub_projects, institute, typeof, uid, versi
 2015	cmip5	\N	ncep	cim.1.misc.DocumentSet	191e134a-e192-11e1-8a39-00163e9152a5	1	2015-07-26 01:51:53.609378	t	dec1993110100	dec1993110100	\N	Decadal 1993110100	Decadal 1993110100	CFSV2-2011	decadal1993
 1795	cmip5	\N	ncep	cim.1.misc.DocumentSet	2fb18616-e195-11e1-9731-00163e9152a5	1	2015-07-26 01:51:53.609378	t	dec1996110118	dec1996110118	\N	Decadal 1996110118	Decadal 1996110118	CFSV2-2011	decadal1996
 1974	cmip5	\N	ncep	cim.1.misc.DocumentSet	646163ea-e195-11e1-bf1d-00163e9152a5	1	2015-07-26 01:51:53.609378	t	dec1998110106	dec1998110106	\N	Decadal 1998110106	Decadal 1998110106	CFSV2-2011	decadal1998
-401603	cordexp	\N	ICTP	cim.2.science.Model	7fe3a632-cda9-49e0-84a3-1dd5b84d8818	1	2021-05-16 23:50:14.135755	t	ICTP-REGCM4-6	ICTP-REGCM4-6	\N	\N		\N	\N
 1277	cmip5	\N	ncep	cim.1.misc.DocumentSet	acd1f392-e19a-11e1-8a39-00163e9152a5	1	2015-07-26 01:51:53.609378	t	dec2010110112	dec2010110112	\N	Decadal 2010110112	Decadal 2010110112	CFSV2-2011	decadal2010
 1450	cmip5	\N	ncep	cim.1.misc.DocumentSet	c0fa7894-e19a-11e1-8a39-00163e9152a5	1	2015-07-26 01:51:53.609378	t	dec2010110118	dec2010110118	\N	Decadal 2010110118	Decadal 2010110118	CFSV2-2011	decadal2010
 1832	cmip5	\N	bcc	cim.1.misc.DocumentSet	d8bd33c0-778f-11e0-a05d-00163e9152a5	1	2015-07-26 01:51:53.609378	f	decadal-I 2001	decadal-I 2001	\N	\N	With ocean initial conditions  representative of the observed full fields for the start date, simulations are initialized towards the end of 2001.	BCC-CSM1.1	decadal
@@ -775,7 +774,6 @@ COPY docs.tbl_document (id, project, sub_projects, institute, typeof, uid, versi
 2604	cmip5	\N	cnrm-cerfacs	cim.1.misc.DocumentSet	ea315c8a-ccfc-11e1-9e19-00163e9152a5	1	2015-07-26 01:51:53.609378	t	decadal1984	decadal1984	\N	Ensemble decadal forecasts initialized at the end of 1984 (10 members)	Ensemble decadal forecasts initialized at the end of 1984 (10 members).\r\nStarts from 30-year spin-up: 3 years with nudging toward perpetual 1958 NEMOVAR ocean reanalyses followed by 27 years with nudging in T and S towards 1958-1984 interannually varying NEMOVAR ocean reanalyses; 3D nudging is applied below mixed layer outside tropics (15degS-15degN); at the surface, a flux restoring formulation for T and S is used as well.	CNRM-CM5	decadal1984
 2026	cmip5	\N	noaa-gfdl	cim.1.misc.DocumentSet	d15abe6a-5d5b-11e1-b6c7-00163e9152a5	1	2015-07-26 01:51:53.609378	t	decadal1984 CM2.1	decadal1984 CM2.1	\N	CM2.1R_ECDA_v3.1_01JAN84	CM2.1R_ECDA_v3.1_01JAN84 PCMDI experiment name = CM2.1R_ECDA_v3.1_01JAN84. Initial conditions for this experiment were obtained from a fully coupled ensemble filter full-field data assimilation initialized from 1960 and run to the present (http://www.gfdl.noaa.gov/ocean-data-assimilation).	GFDL-CM2P1	decadal
 1709	cmip5	\N	mpi-m	cim.1.misc.DocumentSet	b7c2306c-015a-11e1-83f8-00163e9152a5	3	2015-07-26 01:51:53.609378	t	decadal1984-LR	decadal1984-LR	\N	decadal1984-LR	decadal hindcast experiment.	MPI-ESM-LR	decadal1984
-401604	cordexp	\N	ETH	cim.2.science.Model	0f3f1ff4-dcab-4611-b8f3-47fbb44a59a1	1	2021-05-16 23:50:14.135755	t	ETH-COSMO-CRCLIM	ETH-COSMO-CRCLIM	\N	\N		\N	\N
 1137	cmip5	\N	\N	cim.1.activity.NumericalExperiment	ae7b1bc4-d3a5-11df-837f-00163e9152a5	3	2015-07-26 01:51:53.609378	t	decadal1985	decadal1985	\N	10-year hindcast/prediction initialized in year 1985	The atmospheric composition (and other conditions) should \n\t\tbe prescribed as in the historical run (expt. 3.2) and the RCP4.5 scenario (expt. 4.1) of the long-term suite of experiments.\n\t\tOcean initial conditions should be in some way representative of the observed anomalies or full fields for the start date. \n\t\tLand, sea-ice and atmosphere initial conditions are left to the discretion of each group.	\N	\N
 1827	cmip5	\N	cnrm-cerfacs	cim.1.misc.DocumentSet	3e8775b2-ccfd-11e1-9e19-00163e9152a5	1	2015-07-26 01:51:53.609378	t	decadal1985	decadal1985	\N	Ensemble decadal forecasts initialized at the end of 1985 (10 members)	Ensemble decadal forecasts initialized at the end of 1985 (10 members).\r\nStarts from 31-year spin-up: 3 years with nudging toward perpetual 1958 NEMOVAR ocean reanalyses followed by 28 years with nudging in T and S towards 1958-1985 interannually varying NEMOVAR ocean reanalyses; 3D nudging is applied below mixed layer outside tropics (15degS-15degN); at the surface, a flux restoring formulation for T and S is used as well.	CNRM-CM5	decadal1985
 2143	cmip5	\N	\N	cim.1.activity.NumericalExperiment	ae7b1bc4-d3a5-11df-837f-00163e9152a5	2	2015-07-26 01:51:53.609378	f	decadal1985	decadal1985	\N	10-year hindcast/prediction initialized in year 1985	The atmospheric composition (and other conditions) should \n\t\tbe prescribed as in the historical run (expt. 3.2) and the RCP4.5 scenario (expt. 4.1) of the long-term suite of experiments.\n\t\tOcean initial conditions should be in some way representative of the observed anomalies or full fields for the start date. \n\t\tLand, sea-ice and atmosphere initial conditions are left to the discretion of each group.	\N	\N
@@ -930,7 +928,6 @@ COPY docs.tbl_document (id, project, sub_projects, institute, typeof, uid, versi
 1309	cmip5	\N	noaa-gfdl	cim.1.misc.DocumentSet	a90c3f70-5eea-11e1-bfb5-00163e9152a5	1	2015-07-26 01:51:53.609378	t	esmHistorical esm2g	esmHistorical esm2g	\N	ESM2G-E2_all_historical_HE2	GFDL experiment name = ESM2G-E2_all_historical_HE2. PCMDI experiment name = ESM historical (run1). Initial conditions for this experiment were taken from 1 January of year 1861 of the parent experiment, ESM2G-C2_1700-1860_historical_HC2, which is an unpublished experiment branched from 1 January of year 1 of 1860 control model experiment, ESM2G_pi-control_C2 (piControl). This parent experiment is an extension of piControl except historical transitions of land use are applied from 1700-1860 in order to allow the terrestrial carbon stores to respond to the imposition of land use and produce realistic fluxes by the start of the historical run in 1861. Several forcing agents varied during the 145 year duration of the ESM2G-E2_all_historical_HE2 experiment in a manner based upon observations and reconstructions for the late 19th and 20th centuries. The aerosol concentrations were computed by an off-line model. The time varying forcing agents were anthropogenic CO2 emissions (fossil fuels including cement and gas	GFDL-ESM2G	esmHistorical
 1563	cmip5	\N	noaa-gfdl	cim.1.misc.DocumentSet	b668d748-c424-11e0-987c-00163e9152a5	2	2015-07-26 01:51:53.609378	t	esmHistorical esm2m	esmHistorical esm2m	\N	ESM2M-E1_all_historical_HE1	GFDL experiment name = ESM2M-E1_all_historical_HE1. PCMDI experiment name = ESM historical (run1). Initial conditions for this experiment were taken from 1 January of year 1861 of the parent experiment, ESM2M-C1_1700-1860_historical_HC1, which is an unpublished experiment branched from 1 January of year 1 of 1860 control model experiment, ESM2M_pi-control_C1 (piControl). This parent experiment is an extension of piControl except historical transitions of land use are applied from 1700-1860 in order to allow the terrestrial carbon stores to respond to the imposition of land use and produce realistic fluxes by the start of the historical run in 1861. Several forcing agents varied during the 145 year duration of the ESM2M-E1_all_historical_HE1 experiment in a manner based upon observations and reconstructions for the late 19th and 20th centuries. The aerosol concentrations were computed by an off-line model. The time varying forcing agents were anthropogenic CO2 emissions (fossil fuels including cement and gas	GFDL-ESM2M	esmHistorical
 325777	cmip5	\N	--	cim.1.activity.NumericalExperiment	2960be30-8876-11e1-b0c4-0800200c9a66	1	2017-09-15 14:40:30.11863	f	decadal2004	decadal2004	\N	10-year hindcast/prediction initialized in year 2004	The atmospheric composition (and other conditions) should be prescribed as in the\n\t\thistorical run (expt. 3.2) and the RCP4.5 scenario (expt. 4.1) of the long-term suite of\n\t\texperiments. Ocean initial conditions should be in some way representative of the observed\n\t\tanomalies or full fields for the start date. Land, sea-ice and atmosphere initial conditions\n\t\tare left to the discretion of each group.	\N	\N
-401605	cordexp	\N	GERICS	cim.2.science.Model	135c335f-8c5a-4280-8d5f-9712f6c576db	1	2021-05-16 23:50:14.135755	t	GERICS-REMO2015	GERICS-REMO2015	\N	\N		\N	\N
 1531	cmip5	\N	noaa-gfdl	cim.1.misc.DocumentSet	80110cd2-dfaf-11e0-af43-00163e9152a5	1	2015-07-26 01:51:53.609378	f	esmrcp85	esmrcp85	\N	ESM2M-HE1_2006-2100_all_rcp85_ZE1	GFDL experiment name = ESM2M-HE1_2006-2100_all_rcp85_ZE1. PCMDI experiment name = ESM RCP8.5 (run1). Initial conditions for this experiment were taken from 1 January 2006 of the parent experiment, ESM2M-E1_all_historical_HE1 (ESM historical). Several forcing agents varied during the 95 year duration of the ESM RCP8.5 experiment based upon the MESSAGE integrated assessment model for the 21st century. The time-varying forcing agents include well-mixed greenhouse gases (CH4, N2O, halons), tropospheric and stratospheric O3, model-derived aerosol concentrations (sulfate, black and organic carbon, sea salt, and dust), and land use transitions. The time-varying CO2 forcing includes anthropogenic emissions from fossil fuels and international ships. CO2 was determined by the model (i.e., "emission-driven). Volcanic aerosols were zero and solar irradiance varied seasonally based upon late 20th century averages but with no interannual variation. The direct effect of tropospheric aerosols is calculated by the model, but	GFDL-ESM2M	esmrcp85
 1629	cmip5	\N	mohc	cim.1.misc.DocumentSet	48342000-2691-11e1-a443-00163e9152a5	1	2015-07-26 01:51:53.609378	f	esmrcp85	esmrcp85	\N	5.3 ESM rcp85 simulation (2006 - 2100)	Continuation of ESM historical simulation using rcp85 forcings but with anthropogenic CO2 forcing input as prescribed emissions (rather than concentrations).	HADGEM2-ES	esmrcp85
 1982	cmip5	\N	mohc	cim.1.misc.DocumentSet	48342000-2691-11e1-a443-00163e9152a5	2	2015-07-26 01:51:53.609378	t	esmrcp85	esmrcp85	\N	5.3 ESM rcp85 simulation (2006 - 2100)	Continuation of ESM historical simulation using rcp85 forcings but with anthropogenic CO2 forcing input as prescribed emissions (rather than concentrations).	HADGEM2-ES	esmrcp85
@@ -1143,7 +1140,6 @@ COPY docs.tbl_document (id, project, sub_projects, institute, typeof, uid, versi
 1952	cmip5	\N	mohc	cim.1.misc.DocumentSet	df2edece-4823-11e1-8243-00163e9152a5	3	2015-07-26 01:51:53.609378	f	sstClimAerosol	sstClimAerosol	\N	6.4a Fast climate response to anthropogenic aerosols	Simulation consistent with the sstClim boundary conditions, with the exception that anthropogenic aerosol conditions are fixed at the conditions in year 2000 of the HadGEM2-ES historical run.	HADGEM2-A	sstClimAerosol
 1806	cmip5	\N	cmcc	cim.1.misc.DocumentSet	e85f3454-6dc0-11e1-9bbb-00163e9152a5	1	2015-07-26 01:51:53.609378	t	CMCC-CM_decadal2005	CMCC-CM_decadal2005	\N	\N	30-year run initialized in year 2005	CMCC-CM	decadal
 2060	cmip5	\N	mohc	cim.1.misc.DocumentSet	df2edece-4823-11e1-8243-00163e9152a5	2	2015-07-26 01:51:53.609378	f	sstClimAerosol	sstClimAerosol	\N	6.4a Fast climate response to anthropogenic aerosols	Simulation consistent with the sstClim boundary conditions, with the exception that anthropogenic aerosol conditions are fixed at the conditions in year 2000 of the HadGEM2-ES historical run.	HADGEM2-A	sstClimAerosol
-401606	cordexp	\N	SMHI	cim.2.science.Model	dccc43ca-25d1-4443-bd16-187491249f2a	1	2021-05-16 23:50:14.135755	t	SMHI-RCA4	SMHI-RCA4	\N	\N		\N	\N
 1155	cmip5	\N	noaa-gfdl	cim.1.misc.DocumentSet	a0df18fa-df96-11e0-807e-00163e9152a5	2	2015-07-26 01:51:53.609378	t	rcp45 esm2m	rcp45 esm2m	\N	ESM2M-HC1_2006-2100_all_rcp45_XC1	GFDL experiment name = ESM2M-HC1_2006-2100_all_rcp45_XC1. PCMDI experiment name = RCP4.5 (run1). Initial conditions for this experiment were taken from 1 January 2006 of the parent experiment, ESM2M-C1_all_historical_HC1 (historical). Several forcing agents varied during the 95 year duration of the RCP4.5 experiment based upon the MINICAM integrated assessment model for the 21st century. The time-varying forcing agents include the well-mixed greenhouse gases (CO2, CH4, N2O, halons), tropospheric and stratospheric O3, model-derived aerosol concentrations (sulfate, black and organic carbon, sea salt and dust), and land use transitions. Volcanic aerosols were zero and solar irradiance varied seasonally based upon late 20th century averages but with no interannual variation. The direct effect of tropospheric aerosols is calculated by the model, but not the indirect effects.	GFDL-ESM2M	rcp45
 2482	cmip5	\N	mpi-m	cim.1.misc.DocumentSet	3490fcc4-7aea-11e0-8434-00163e9152a5	3	2015-07-26 01:51:53.609378	f	rcp45-LR	rcp45-LR	\N	\N	future projection (2006 - 2300) forced by RCP4.5, restart from historical run, 31.12.2005. Low resolution T63L47 / GR15L40. Reference year for JSBACH=1850.\r\nr1i1p1= 300 years, r[2,3],i1p1=100 years	MPI-ESM-LR	rcp45
 1872	cmip5	\N	mpi-m	cim.1.misc.DocumentSet	3490fcc4-7aea-11e0-8434-00163e9152a5	2	2015-07-26 01:51:53.609378	f	rcp45-LRBaseSimulation	rcp45-LRBaseSimulation	\N	Base Simulation of Ensemble	future projection (2006 - 2300) forced by RCP4.5, restart from historical run, 31.12.2005. Low resolution T63L47 / GR15L40. Reference year for JSBACH=1850.\r\nr1i1p1= 300 years, r[2,3],i1p1=100 years	MPI-ESM-LR	rcp45
@@ -1553,7 +1549,6 @@ COPY docs.tbl_document (id, project, sub_projects, institute, typeof, uid, versi
 1338	cmip5	\N	mpi-m	cim.1.misc.DocumentSet	9a142460-dfa6-11e0-b0c2-00163e9152a5	4	2015-07-26 01:51:53.609378	f	decadal1970-LRBaseSimulation	decadal1970-LRBaseSimulation	\N	Base Simulation of Ensembledecadal1970-LR	decadal hindcast experiment	MPI-ESM-LR	decadal
 1372	cmip5	\N	mpi-m	cim.1.misc.DocumentSet	de1efb60-3c69-11e1-a1f2-00163e9152a5	1	2015-07-26 01:51:53.609378	f	decadal1975-MR	decadal1975-MR	\N	decadal1975-MR	decadal hindcast experiment	MPI-ESM-MR	decadal1975
 1486	cmip5	\N	mpi-m	cim.1.misc.DocumentSet	7963e336-00a3-11e1-a223-00163e9152a5	3	2015-07-26 01:51:53.609378	t	decadal1978-LR	decadal1978-LR	\N	decadal1978-LR	decadal hindcast experiment.	MPI-ESM-LR	decadal1978
-401607	cordexp	\N	KNMI	cim.2.science.Model	027391ed-f8ad-49ff-919b-6f0cee894473	1	2021-05-16 23:50:14.135755	t	KNMI-RACMO22E	KNMI-RACMO22E	\N	\N		\N	\N
 1405	cmip5	\N	mpi-m	cim.1.misc.DocumentSet	377a9a02-015a-11e1-a7d5-00163e9152a5	1	2015-07-26 01:51:53.609378	f	decadal1983-LRBaseSimulation	decadal1983-LRBaseSimulation	\N	Base Simulation of Ensembledecadal1983-LR	decadal hindcast experiment.	MPI-ESM-LR	decadal
 1421	cmip5	\N	mpi-m	cim.1.misc.DocumentSet	f205496a-0396-11e1-b6bd-00163e9152a5	4	2015-07-26 01:51:53.609378	t	decadal1988-LR	decadal1988-LR	\N	decadal1988-LR	decadal hindcast experiment.	MPI-ESM-LR	decadal1988
 1561	cmip5	\N	cnrm-cerfacs	cim.1.misc.DocumentSet	aa049044-1ea7-11e2-a513-00163e9152a5	1	2015-07-26 01:51:53.609378	t	AQUA4xCO2	AQUA4xCO2	\N	Aqua-planet : cloud response to an imposed 4xCO2 (Hansen-style diagnosis	Aqua-planet : cloud response to an imposed 4xCO2 (Hansen-style diagnosis	CNRM-CM5	aqua4xCO2
@@ -1937,8 +1932,6 @@ COPY docs.tbl_document (id, project, sub_projects, institute, typeof, uid, versi
 325776	cmip5	\N	--	cim.1.activity.NumericalExperiment	1af2b390-8875-11e1-b0c4-0800200c9a66	2	2017-09-15 14:40:30.11863	f	decadal2003	decadal2003	\N	10-year hindcast/prediction initialized in year 2003	The atmospheric composition (and other conditions) should be prescribed as in the\n\t\thistorical run (expt. 3.2) and the RCP4.5 scenario (expt. 4.1) of the long-term suite of\n\t\texperiments. Ocean initial conditions should be in some way representative of the observed\n\t\tanomalies or full fields for the start date. Land, sea-ice and atmosphere initial conditions\n\t\tare left to the discretion of each group.	\N	\N
 325781	cmip5	\N	--	cim.1.activity.NumericalExperiment	2960be30-8876-11e1-b0c4-0800200c9a66	1	2017-09-15 14:40:43.175688	f	decadal2004	decadal2004	\N	10-year hindcast/prediction initialized in year 2004	The atmospheric composition (and other conditions) should be prescribed as in the\n\t\thistorical run (expt. 3.2) and the RCP4.5 scenario (expt. 4.1) of the long-term suite of\n\t\texperiments. Ocean initial conditions should be in some way representative of the observed\n\t\tanomalies or full fields for the start date. Land, sea-ice and atmosphere initial conditions\n\t\tare left to the discretion of each group.	\N	\N
 325782	cmip5	\N	--	cim.1.activity.NumericalExperiment	2960be30-8876-11e1-b0c4-0800200c9a66	2	2017-09-15 14:40:43.175688	f	decadal2004	decadal2004	\N	10-year hindcast/prediction initialized in year 2004	The atmospheric composition (and other conditions) should be prescribed as in the\n\t\thistorical run (expt. 3.2) and the RCP4.5 scenario (expt. 4.1) of the long-term suite of\n\t\texperiments. Ocean initial conditions should be in some way representative of the observed\n\t\tanomalies or full fields for the start date. Land, sea-ice and atmosphere initial conditions\n\t\tare left to the discretion of each group.	\N	\N
-401608	cordexp	\N	DMI	cim.2.science.Model	2217d3ba-7035-4839-9e42-451b07c1cddd	1	2021-05-16 23:50:14.135755	t	DMI-HIRHAM5	DMI-HIRHAM5	\N	\N		\N	\N
-401609	cordexp	\N	MOHC	cim.2.science.Model	e5ea6b38-b456-4981-9e7f-b5c28a905336	1	2021-05-16 23:50:14.135755	t	MOHC-HADREM3-GA7-05	MOHC-HADREM3-GA7-05	\N	\N		\N	\N
 401610	cmip6	\N	--	cim.2.shared.Party	e9b41253-26f9-4ba1-a973-d604fb9cbe4e	1	2021-05-16 23:51:13.709119	t	Mark Webb	\N	\N	\N		\N	\N
 401611	cmip6	\N	--	cim.2.designing.ForcingConstraint	9ca0f650-7b1f-47cf-8a2d-f5ab4cd0f0b0	1	2021-05-16 23:51:13.709119	t	LGM Land-Sea Mask	LGMlandSeaMask	\N	Land sea mask for the Last Glacial Maximum	Impose Last Glacial Maximum (21 kyr ago) land-sea mask.	\N	\N
 401612	cmip6	\N	--	cim.2.designing.ForcingConstraint	5dc530b5-a38b-4772-81e1-cd5b20ac4df0	1	2021-05-16 23:51:13.709119	t	abrupt-4xCO2 SIC	abrupt4xCO2SIC	\N	Monthly-varying sea ice concentrations from the abrupt4xCO2 simulation	Monthly-varying sea ice concentrations from years 111 to 140 of the abrupt4xCO2 simulation.	\N	\N
@@ -2070,8 +2063,6 @@ COPY docs.tbl_document (id, project, sub_projects, institute, typeof, uid, versi
 403092	cmip6	\N	--	cim.2.designing.NumericalRequirement	7c382c54-b13b-4a19-9dbc-9ef4dc3f75f4	1	2021-05-16 23:51:13.709119	t	RCP85 Forcing Excluding Land Use	rcp85ForcingExcludingLandUse	\N	Representative Concentration Pathway 8.5 W/m2 Forcing excluding land use	Impose RCP8.5 forcing excluding land use.\nEmissions driven.	\N	\N
 403093	cmip6	\N	--	cim.2.shared.Citation	ab7ed4bd-b97f-43be-8a9e-4e053d33e050	1	2021-05-16 23:51:13.709119	t	The Model Intercomparison Project on the climatic response to Volcanic forcing (VolMIP): Experimental design and forcing input data	\N	\N	\N		\N	\N
 403094	cmip6	<rfmip>	--	cim.2.designing.NumericalExperiment	ffd4c3e7-472b-4a71-9b67-b9a4bc1ff6e8	1	2021-05-16 23:51:13.709119	t	piClim-spAer-anthro	piClim-spAer-anthro	RFMIP-SpAerO3-anthro	effective radiative forcing at present day with specified anthropogenic aerosol optical properties, anthropogenic forcings	An uncoupled (atmosphere and land) experiment with interactive vegetation in which sea surface temperatures (SST) and sea ice concentrations (SIC) are fixed at model-specific pre-industrial control climatology. Anthropogenic forcing agents are specified at present day 2014 values. Aerosols are specified by RFMIP. Run for 30 years.	\N	\N
-401596	cordexp	\N	ICTP	cim.2.science.Model	7fe3a632-cda9-49e0-84a3-1dd5b84d8818	1	2021-05-06 12:43:54.978416	f	ICTP-REGCM4-6	ICTP-REGCM4-6	\N	\N		\N	\N
-401597	cordexp	\N	ETH	cim.2.science.Model	0f3f1ff4-dcab-4611-b8f3-47fbb44a59a1	1	2021-05-06 12:43:54.978416	f	ETH-COSMO-CRCLIM	ETH-COSMO-CRCLIM	\N	\N		\N	\N
 401728	cmip6	<pamip>	--	cim.2.designing.NumericalExperiment	b8ca64fa-10b0-4661-b7da-ed08c4a4c167	1	2021-05-16 23:51:13.709119	t	pdSST-pdSICSIT	pdSST-pdSICSIT	1.9	Atmosphere time slice constrained by present day conditions including sea ice thickness	Atmosphere-only time slice present day control experiment with sea ice thickness.  Time slice forced by climatological monthly mean sea surface temperature (SST), sea ice concentration (SIC) and sea ice thickness (SIT) for the present day.  Radiative forcing to be set to present day (year 2000) levels. Time slice simulations to begin on 1st April and run for 14 months, the first two months are ignored to allow for an initial model spin up. Minimum ensemble size is 100 simulations.	\N	\N
 401729	cmip6	<aerchemmip>,<scenariomip>	--	cim.2.designing.NumericalExperiment	afd07a0e-b759-4ee8-abbd-f0bfd6ddd3dd	1	2021-05-16 23:51:13.709119	t	ssp370	ssp370	\N	gap-filling scenario reaching 7.0 based on SSP3	Gap-filling baseline scenario with a medium to high radiative forcing by the end of century. Following approximately RCP7.0 global forcing pathway with SSP3 socioeconomic conditions. Radiative forcing reaches a level of 7.0 W/m2 in 2100.  Concentration-driven.	\N	\N
 401730	cmip6	<damip>	--	cim.2.designing.NumericalExperiment	20809424-e030-400b-9570-07a4d57e48f1	1	2021-05-16 23:51:13.709119	t	hist-volc	hist-volc	\N	historical volcanic-only runs	This experiment resembles hist-nat (histNat) except that simulations are driven by volcanic forcing only.	\N	\N
@@ -2126,8 +2117,6 @@ COPY docs.tbl_document (id, project, sub_projects, institute, typeof, uid, versi
 401779	cmip6	\N	--	cim.2.designing.TemporalConstraint	792bd995-edac-4d0f-81fc-32f07ef124a2	1	2021-05-16 23:51:13.709119	t	1850-2029 180yrs	180yrs1840-2029	\N	1850/01/01-2030/01/01	Historical scenario, from pre-industrial to near future	\N	\N
 401780	cmip6	\N	--	cim.2.shared.Party	e58e8134-fa02-4b8c-ae91-b0651c609fce	1	2021-05-16 23:51:13.709119	t	Piers Forster	\N	\N	\N		\N	\N
 401781	cmip6	\N	--	cim.2.designing.ForcingConstraint	bb9dea67-115f-4528-bda3-e6835ec19a65	1	2021-05-16 23:51:13.709119	t	ssp2-45 stratospheric Ozone	ssp2-45StratosphereO3	\N	DAMIP ssp2-45 ensemble mean monthly mean stratospheric ozone concentrations	Impose ensemble mean monthly mean of 3D stratospheric ozone from coupled-chemistry simulations of Scenario-MIP SSP2-4.5 simulations.	\N	\N
-401599	cordexp	\N	SMHI	cim.2.science.Model	dccc43ca-25d1-4443-bd16-187491249f2a	1	2021-05-06 12:43:54.978416	f	SMHI-RCA4	SMHI-RCA4	\N	\N		\N	\N
-401600	cordexp	\N	KNMI	cim.2.science.Model	027391ed-f8ad-49ff-919b-6f0cee894473	1	2021-05-06 12:43:54.978416	f	KNMI-RACMO22E	KNMI-RACMO22E	\N	\N		\N	\N
 401782	cmip6	\N	--	cim.2.designing.ForcingConstraint	cd9436b4-fca7-43f3-9111-5c7263fdb530	1	2021-05-16 23:51:13.709119	t	SSP5 RCP85-extension Land Use	RCP85extland	\N	Representative Concentration Pathway 8.5 Extension Land Use for Shared Socioeconomic Pathway 5	Impose changing  RCP8.5 extension land use including crops, pasture, urban area, vegetation and forest for SSP5.	\N	\N
 401783	cmip6	\N	--	cim.2.shared.Citation	3ebca31d-6b12-4241-b64c-70d0f36bb961	1	2021-05-16 23:51:13.709119	t	The PMIP4 contribution to CMIP6 – Part 1: Overview and over-arching analysis plan	\N	\N	\N		\N	\N
 401784	cmip6	\N	--	cim.2.designing.EnsembleRequirement	e2505c01-b4a7-4f97-a2f0-f53edb682ac6	1	2021-05-16 23:51:13.709119	t	BGCIronInitialisation	BGCIronInitialisation	\N	Biogeochemical Iron Initialisation	Iron initialisation based on the GEOTRACES database with data provided by OMIP.	\N	\N
@@ -2147,7 +2136,6 @@ COPY docs.tbl_document (id, project, sub_projects, institute, typeof, uid, versi
 401798	cmip6	\N	--	cim.2.designing.NumericalRequirement	c4693967-ee23-463e-9ad9-b140bd26831d	1	2021-05-16 23:51:13.709119	t	AOGCM-StratChem Configuration	AOGCM-StratChemConfiguration	\N	Atmosphere-Ocean General Circulation Model with Stratospheric Chemistry	Use a coupled Atmosphere-Ocean general circulation model with a chemistry component that includes stratospheric chemistry.	\N	\N
 401799	cmip6	\N	--	cim.2.designing.NumericalRequirement	be900316-b675-46cc-bb19-d356ef3a996b	1	2021-05-16 23:51:13.709119	t	Pasture	pasture	\N	Grazing on Pasture	Grazing on pasture.	\N	\N
 401800	cmip6	\N	--	cim.2.designing.ForcingConstraint	0e4be57f-d023-4b3c-b11c-f3efe68ea3d1	1	2021-05-16 23:51:13.709119	t	SSP3-70 SST	SSP3-70SST	\N	SSP3 RCP7.0 Sea Surface Temperature	Sea surface temperature from experiment SSP3-7.	\N	\N
-401601	cordexp	\N	DMI	cim.2.science.Model	2217d3ba-7035-4839-9e42-451b07c1cddd	1	2021-05-06 12:43:54.978416	f	DMI-HIRHAM5	DMI-HIRHAM5	\N	\N		\N	\N
 401801	cmip6	<damip>	--	cim.2.designing.NumericalExperiment	1a49af3c-b478-4d52-8019-10d189068902	1	2021-05-16 23:51:13.709119	t	ssp245-cov-GHG	ssp245-cov-GHG	\N	2-year Covid-19 emissions blip including well mixed GHG only, based upon ssp245	Detection and attribution experiment: well-mixed GHG-only run based on ssp245-covid, with 2-year perturbation to emissions for 2020 and 2021 due to Covid-19 pandemic restrictions. Concentration-driven. Branch from ssp245 at 1 Jan 2020.  Near-term impact simulations run for 5 years with a minimum of 10 ensemble members. Longer-term impact of recovery scenarios to be run for 30 years with 10 ensemble members if possible.	\N	\N
 401802	cmip6	\N	--	cim.2.designing.ForcingConstraint	d4b13574-1f1f-4c3b-b504-0e79e4a0dfa6	1	2021-05-16 23:51:13.709119	t	2010 Land Use	2010LandUse	\N	2010 Land Use	Apply the global gridded land-use forcing datasets for 2010.  This new generation of “land use harmonization” (LUH2) builds upon past work from CMIP5, and includes updated inputs, higher spatial resolution, more detailed land-use transitions, and the addition of important agricultural management layers.	\N	\N
 401803	cmip6	\N	--	cim.2.designing.ForcingConstraint	4697c9bf-4053-484b-ae34-886260cb8dc5	1	2021-05-16 23:51:13.709119	t	SSP5-85 SIC 2100	SSP5-85SIC2100	\N	SSP5-8.5 Sea Ice for the year 2100	Sea ice concentration climatology calculated from the ScenarioMIP SSP5-85 experiment for the year 2100.	\N	\N
@@ -2166,7 +2154,6 @@ COPY docs.tbl_document (id, project, sub_projects, institute, typeof, uid, versi
 401816	cmip6	\N	--	cim.2.shared.Citation	375ff439-dbe4-4621-a046-5458471cfaed	1	2021-05-16 23:51:13.709119	t	CORE-II	\N	\N	\N		\N	\N
 401817	cmip6	\N	--	cim.2.designing.ForcingConstraint	68e17410-eb2a-48ad-b25d-7a4fd5a0d5fc	1	2021-05-16 23:51:13.709119	t	ISMIP6-specified lig127k input	ISMIP6lig127kInput	\N	ISMIP-specified input from an AOGCM PMIP4 last interglacial  experiment	ISMIP6-specified input from the output of a PMIP4 Last Interglacial experiment, lig127k.	\N	\N
 401818	cmip6	<pamip>	--	cim.2.designing.NumericalExperiment	d4219a8e-4d64-40f4-886f-aa05f0972316	1	2021-05-16 23:51:13.709119	t	pa-piArcSIC	pa-piArcSIC	2.2	Partially-coupled time slice constrained by pre-industrial Arctic SIC	Coupled ocean-atmosphere time slice experiment forced by climatological monthly mean sea surface temperature (SST) for the present day and pre-industrial Actic sea ice concentration (SIC). Sea ice concentration to be nudged into coupled model with a relaxation time-scale of 1 day. Radiative forcing to be set to present day (year 2000) levels.  Initial conditions for coupled model experiments to be taken from year 2000 of coupled model CMIP6 historical simulations. Time slice simulations to begin on 1st April and run for 14 months, the first two months are ignored to allow for an initial model spin up. Minimum ensemble size is 100 simulations.	\N	\N
-401602	cordexp	\N	MOHC	cim.2.science.Model	e5ea6b38-b456-4981-9e7f-b5c28a905336	1	2021-05-06 12:43:54.978416	f	MOHC-HADREM3-GA7-05	MOHC-HADREM3-GA7-05	\N	\N		\N	\N
 401819	cmip6	<c4mip>	--	cim.2.designing.NumericalExperiment	8cf588f6-7988-4ede-bed1-d41c2a7a7fa5	1	2021-05-16 23:51:13.709119	t	1pctCO2Ndep-bgc	1pctCO2Ndep-bgc	\N	biogeochemically-coupled version of 1 percent per year increasing CO2 experiment with increasing N-deposition	Biogeochemically-coupled concentration driven 1% per year increasing CO2 up to 4XCO2 simulation. CO2 increase only affects carbon cycle models, radiative code sees pre-industrial CO2.  With time varying anthropogenic nitrogen deposition.  Only applicable to models whose simulation will be affected by the deposition of reactive nitrogen either due to terrestrial or marine nitrogen cycle effects on carbon fluxes and store.	\N	\N
 401820	cmip6	\N	--	cim.2.designing.ForcingConstraint	ada68b33-1057-41fa-945f-5cc19f8775ef	1	2021-05-16 23:51:13.709119	t	Pre-industrial Atronomical Parameters	piAstroParams	\N	Astronomical parameters for the year 1850	Pre-industrial astronomical parameters for the year 1850	\N	\N
 401821	cmip6	<ismip6>	--	cim.2.designing.NumericalExperiment	9923f905-c1c8-4279-85cf-db41a3fe4734	1	2021-05-16 23:51:13.709119	t	ism-1pctCO2to4x-std	ism-1pctCO2to4x-std	\N	offline ice sheet model forced by ISMIP6-specified AOGCM 1pctCO2to4x output	Stand alone ice sheet model driven offline by ISMIP6 CMIP6 standard input for the idealised 1% per year atmospheric carbon dioxide increase to quadrupling and held fixed climate change experiment.	\N	\N
@@ -2202,7 +2189,6 @@ COPY docs.tbl_document (id, project, sub_projects, institute, typeof, uid, versi
 401851	cmip6	\N	--	cim.2.designing.NumericalRequirement	fa28791e-cc4d-4a09-bf6c-cabda3f29555	1	2021-05-16 23:51:13.709119	t	RCP45 Forcing	rcp45Forcing	\N	Representative Concentration Pathway 4.5 W/m2 Forcing	Impose RCP4.5 forcing.	\N	\N
 403095	cmip6	<cfmip>	--	cim.2.designing.NumericalExperiment	5cdb3e57-431b-45e7-8f83-f05149473e1f	1	2021-05-16 23:51:13.709119	t	amip-p4k-lwoff	amip-p4k-lwoff	\N	AMIP plus 4K SSTs with longwave cloud radiative effects off	Continuation of CFMIP-2 amip4K experiment and CMIP5 experiment 6.8.  Add a uniform +4 K to the sea surface temperatures (SSTs) of the AMIP experiment but with cloud-radiative effects switched off in the LW radiation code. The SST warming should be applied to the ice free ocean surface only.  Sea ice and SSTs under sea ice remain the same as in the amip DECK experiment.	\N	\N
 403096	cmip6	<aerchemmip>	--	cim.2.designing.NumericalExperiment	9cd7da69-a65d-4c90-953e-02d38a04eef2	1	2021-05-16 23:51:13.709119	t	piClim-CH4	piClim-CH4	\N	pre-industrial climatolgical SSTs and forcing, but with 2014 methane concentrations (including chemistry)	Fixed SST ERF simulation. Use pre-industrial climatological average SST and sea-ice distributions. Apply present day (2014) concentrations of methane (CH4) all other WMGHG (well mixed greenhouse gas) concentrations set to pre-industrial levels.  Apply pre-industrial emissions of NTCF (near term climate forcers). This is a timeslice experiment of 30 years total. The model should have the capacity for interactive tropospheric and stratospheric chemistry.	\N	\N
-401598	cordexp	\N	GERICS	cim.2.science.Model	135c335f-8c5a-4280-8d5f-9712f6c576db	1	2021-05-06 12:43:54.978416	f	GERICS-REMO2015	GERICS-REMO2015	\N	\N	REMO2015 is the 2015 release of the regional climate model REMO.	\N	\N
 401852	cmip6	\N	--	cim.2.designing.ForcingConstraint	07a78047-0712-42ac-aa5f-b9dde67ecae9	1	2021-05-16 23:51:13.709119	t	Restore SST running Mean Sub Tropical N Atlantic	RestoreSSTrunningMeanSubTropNAtlantic	\N	Restore to 12-month running mean of SST in the sub tropical north Atlantic	Sea Surface Temperatures (SSTs) are restored to model climatology plus a 12-month running mean of SST anomalies by a Newtonian cooling over the sub tropical North Atlantic (10N-35N).  The restoring timescale is 10 days for a 50m deep mixed layer (or equivalent). The restoring coefficient of 40 W/m2/K should decrease to zero over an 8 degree buffer zone bounding the restored region.   SST  anomalies (1950-2014) will be provided by DCPP.	\N	\N
 401853	cmip6	\N	--	cim.2.designing.ForcingConstraint	1badc583-eb57-4b4a-87d2-fc58de273e75	1	2021-05-16 23:51:13.709119	t	2014 Methane Concentration	2014CH4	\N	2014 Methane Concentration	Impose 2014 concentration of Methane (CH4).	\N	\N
 401854	cmip6	<ismip6>	--	cim.2.designing.NumericalExperiment	9699b7b3-b320-40fc-936d-61d32ffcf7ab	1	2021-05-16 23:51:13.709119	t	ism-ctrl-std	ism-ctrl-std	\N	offline ice sheet model initMIP control	Offline ice sheet control run for the ISMIP6 InitMIP experiments. A stand-alone ice sheet model is initialized using a modelling groups' own initialisation technique.  ism-ctrl-std is an unforced forward experiment where the surface mass balance remains identical to the one used during the initialization procedure. The choice of model input data is unconstrained to allow participants the use of their preferred model setup without modification.	\N	\N
@@ -2692,6 +2678,9 @@ COPY docs.tbl_document (id, project, sub_projects, institute, typeof, uid, versi
 402288	cmip6	<volmip>	--	cim.2.designing.NumericalExperiment	2255dbef-2ec5-4238-8bbf-7aa31b815ad8	1	2021-05-16 23:51:13.709119	t	volc-long-hlS	volc-long-hlS	\N	Idealized Southern Hemisphere high-latitude eruption emitting 28.1 Tg of SO2	Idealised high-latitude (60S) southern hemisphere eruption corresponding to an initial emission of 28.1 Tg of SO2 (equal to half the total amount injected for volc-long-eq).  The experiment is designed to span very different initial climate states to systematically assess uncertainties in post-eruption behaviour that are related to background climate conditions.   If, for instance, year Y of the control integration matches the desired conditions for the initial condition sampling, then the corresponding VolMIP simulation should start with restart data from year Y-1 of the control.  Run nine ensemble members for at least 20 years, but preferably longer (50 years) to cover the multi-decadal oceanic response. Initialisation date from the piControl start year is 1st April.	\N	\N
 402289	cmip6	<pmip>	--	cim.2.designing.NumericalExperiment	40aca620-92d2-4db7-a74c-dc00904ad9c2	1	2021-05-16 23:51:13.709119	t	past1000-solaronly	past1000-solaronly	\N	last millennium experiment using only solar forcing	The past1000-solaronly experiment is a parallel experiment to the past1000 experiment. Instead of the complete forcing set, only solar TSI (Total Solar Irradiance) and solar SSI (Solar Spectral Irradiane) forcing is considered.	\N	\N
 402290	cmip6	<aerchemmip>	--	cim.2.designing.NumericalExperiment	3f706ecc-e039-48c9-ae1b-63c6e529757b	1	2021-05-16 23:51:13.709119	t	histSST-1950HC	histSST-1950HC	\N	historical SSTs and historical forcing, but with1950 halocarbon concentrations	Historical atmosphere only simulation with historical WMGHG, transient historical SSTs. Ozone depleting substances fixed at 1950 emission levels. The model should have the capacity to simulate stratospheric chemsitry.	\N	\N
+403169	cordexp	\N	GERICS	cim.2.science.Model	da0722cf-9d7f-4f3a-9434-4c32d38d225b	1	2021-05-25 10:54:10.032457	t	GERICS-REMO2015	GERICS-REMO2015	\N	\N		\N	\N
+403170	cordexp	\N	ICTP	cim.2.science.Model	60708a0d-68b4-421b-875f-437e601526a2	1	2021-05-25 10:54:10.032457	t	ICTP-REGCM4-6	ICTP-REGCM4-6	\N	\N		\N	\N
+403171	cordexp	\N	DMI	cim.2.science.Model	9b402d70-9d62-41d7-82d8-75ff3a74d5b2	1	2021-05-25 10:54:10.032457	t	DMI-HIRHAM5	DMI-HIRHAM5	\N	\N		\N	\N
 402291	cmip6	\N	--	cim.2.designing.TemporalConstraint	a96dc720-d5bf-42ea-a1f9-20378590fda9	1	2021-05-16 23:51:13.709119	t	1991-2000 10yrs	10yrs1991-2000	\N	1990/12/31-2000/12/31	Pinatubo historical.  Start date on or before 31st December 1990.  Start dates on or before 15th November recommended to allow for DJF seasonal forecast results. Run for 10 years	\N	\N
 402292	cmip6	<cdrmip>	--	cim.2.designing.NumericalExperiment	a068d9b8-dac0-4f21-8611-9f8fff450b40	1	2021-05-16 23:51:13.709119	t	esm-ssp585-ocn-alk-stop	esm-ssp585-ocn-alk-stop	CDR-ocean-alk	emission-driven SSP5-8.5 scenario with alkalinization terminated in year 2070	Simulation of abrupt termination of ocean alkalinisation. Branch from esm-ssp585-ocn-alk on 1 January 2070 and stop adding additional alkalinity to the ocean. Continue until 2100 or beyond. All other forcing is as in the esm-ssp585 experiment. Include all anthropogenic, solar, and volcanic forcing. Anthropogenic forcing includes aerosol emissions, non-CO2 greenhouse gas emissions, and land use changes.  CO2 concentration calculated (i.e. emission driven).	\N	\N
 402293	cmip6	\N	--	cim.2.designing.ForcingConstraint	1322bd7c-af86-47e9-ae41-fc20a99e3b73	1	2021-05-16 23:51:13.709119	t	JRA55-do Freshwater Flux	jra55-doFreshwaterFlux	\N	JRA55-do air-sea freshwater flux	JRA55-do air–sea freshwater flux, covers the 61-year period from 1958-2018.	\N	\N
@@ -2713,6 +2702,8 @@ COPY docs.tbl_document (id, project, sub_projects, institute, typeof, uid, versi
 402309	cmip6	\N	--	cim.2.designing.EnsembleRequirement	5e7e8e09-222a-456f-bc05-38580b1effea	1	2021-05-16 23:51:13.709119	t	MinimumThree	MinimumThreeMemberEnsemble	\N	At least three member Ensemble	An ensemble of at least three simulations	\N	\N
 402310	cmip6	\N	--	cim.2.designing.ForcingConstraint	3a65cb54-3ced-4b3a-9546-64a44214345e	1	2021-05-16 23:51:13.709119	t	Mid-Pliocene Topography	midPlioTopog	\N	Topography for the Mid-Pliocene	Impose Mid-Pliocene Warm Period (3.2 Ma ago) topography (smaller ice sheets).	\N	\N
 402311	cmip6	<cdrmip>,<lumip>	--	cim.2.designing.NumericalExperiment	2c8c71b3-f914-4f6c-b8e1-7fb5fc8b5ff7	1	2021-05-16 23:51:13.709119	t	esm-ssp585-ssp126Lu	esm-ssp585-ssp126Lu	\N	emissions-driven SSP5-8.5 with SSP1-2.6 land use	Keep all forcings the same as C4MIP esm-ssp585 scenario, but replace land use with ScenarioMIP SSP1-2.6  (aforestation) scenario. Emission driven.	\N	\N
+403172	cordexp	\N	CNRM	cim.2.science.Model	aa14b0fb-1050-4a8a-83cd-0cf148715d24	1	2021-05-25 10:54:10.032457	t	CNRM-ALADIN63	CNRM-ALADIN63	\N	\N		\N	\N
+403173	cordexp	\N	MOHC	cim.2.science.Model	52f4957d-edd2-4ce9-aeb2-55cc0bb8c942	1	2021-05-25 10:54:10.032457	t	MOHC-HADREM3-GA7-05	MOHC-HADREM3-GA7-05	\N	\N		\N	\N
 402312	cmip6	\N	--	cim.2.designing.ForcingConstraint	2bc23d48-3268-4a1b-84f1-d3dccede2cad	1	2021-05-16 23:51:13.709119	t	2014 GHG Concentrations excluding O3	2014GHGExclO3	\N	Present Day Greenhouse Gas concentrations excluding Ozone	Impose Present day (2014) concentrations of greenhouse gases  (CO2, CH4, N2O, CFCs, HFCs, …) excluding ozone (O3).	\N	\N
 402313	cmip6	\N	--	cim.2.designing.ForcingConstraint	be51da59-b05c-47ce-b2c3-8712a870c500	1	2021-05-16 23:51:13.709119	t	PAMIP present day SST climatology	PAMIP-pd-SST-clim	\N	PAMIP monthly mean climatology of sea surface temperature for the present day	Present day monthly mean cimatology of sea surface temperatue, data provided by PAMIP.	\N	\N
 402314	cmip6	\N	--	cim.2.shared.Citation	055c1db2-a7f2-4b10-814b-0cd9c07b4573	1	2021-05-16 23:51:13.709119	t	More hurricanes to hit Western Europe due to global warming	\N	\N	\N		\N	\N
@@ -2727,6 +2718,9 @@ COPY docs.tbl_document (id, project, sub_projects, institute, typeof, uid, versi
 402323	cmip6	\N	--	cim.2.shared.Party	9840a500-9446-42d6-8f5c-fe3ef5134729	1	2021-05-16 23:51:13.709119	t	Bernd Funke	\N	\N	\N		\N	\N
 402324	cmip6	\N	--	cim.2.designing.ForcingConstraint	ead2b18f-5121-464c-974e-012c72184235	1	2021-05-16 23:51:13.709119	t	Restore SST clim N Atlantic	RestoreSSTclimNAtlantic	\N	Restore north Atlantic sea surface temperature to model climatology	Sea Surface Temperatures (SSTs) are restored to model control run climatology by Newtonian cooling over the North Atlantic (10N-65N). The restoring timescale is 10 days for a 50m deep mixed layer (or equivalent). The restoring coefficient of 40 W/m2/K should decrease to zero over an 8 degree buffer zone bounding the restored region.  No restoring if sea ice is present.	\N	\N
 402325	cmip6	\N	--	cim.2.designing.NumericalRequirement	35f111b2-8348-492e-b73a-d154354296ef	1	2021-05-16 23:51:13.709119	t	ALK Tracer	ALKTracer	\N	Total alkalinity (ALK) tracer	Total alkalinity (ALK) tracer for a parallel preindustrial world where atmospheric CO2 is fixed at 278 ppm.	\N	\N
+403174	cordexp	\N	ETH	cim.2.science.Model	cd4fe8a5-2b79-43a4-a096-b6271b5b9fc3	1	2021-05-25 10:54:10.032457	t	ETH-COSMO-CRCLIM-V1-1	ETH-COSMO-CRCLIM-V1-1	\N	\N		\N	\N
+403175	cordexp	\N	KNMI	cim.2.science.Model	07187c36-e78b-4fdd-ab41-94f354c661f9	1	2021-05-25 10:54:10.032457	t	KNMI-RACMO22E	KNMI-RACMO22E	\N	\N		\N	\N
+403176	cordexp	\N	SMHI	cim.2.science.Model	bcce71e2-ab29-4523-8ee2-3b8d23371baf	1	2021-05-25 10:54:10.032457	t	SMHI-RCA4	SMHI-RCA4	\N	\N		\N	\N
 402326	cmip6	<cmip>,<deck>	--	cim.2.designing.NumericalExperiment	41696dc8-96d3-4912-bd53-09f59e32e991	1	2021-05-16 23:51:13.709119	t	esm-piControl-spinup	esm-piControl-spinup	\N	pre-industrial control simulation with CO2 concentration calculated (spin-up)	A pre-industrial control spin-up simulation with non-evolving pre-industrial forcing and atmospheric CO2 calculated. Conditions chosen to be representative of the period prior to the onset of large-scale industrialization, with 1850 being the reference year.  This experiment describes an initial climate spin-up, during which the climate begins to come into balance with the forcing.  To be performed with an Earth System Model (ESM) that can calculate atmospheric CO2 concentration and account for the fluxes of CO2 between the atmosphere, the ocean, and biosphere.  Run until Earth System reaches equilibrium.	\N	\N
 402327	cmip6	\N	--	cim.2.shared.Citation	c0055fa7-5816-4aad-8e83-5da868157f0d	1	2021-05-16 23:51:13.709119	t	The PMIP4 contribution to CMIP6 - Part 2: Two Interglacials, Scientific Objective and Experimental Design for Holocene and Last Interglacial Simulations	\N	\N	\N		\N	\N
 402328	cmip6	\N	--	cim.2.designing.ForcingConstraint	5b7d1f4c-869b-40cc-9fd2-bacab2464e30	1	2021-05-16 23:51:13.709119	t	Historical WMGHG Concentrations	HistoricalWMGHGConcentrations	\N	Historical Well Mixed Greenhouse Gas (WMGHG) Concentrations	Forcing data for concentration-driven historical CMIP6 runs. Time varying global annual mean concentrations for CO2 and other long-lived greenhouse-gases, including CO2, CH4, N2O, HFCs, PFCs, SF6, several ODS, and NF3 to serve as input for the CMIP6 Historical simulations.	\N	\N
@@ -3487,7 +3481,7 @@ COPY docs.tbl_document (id, project, sub_projects, institute, typeof, uid, versi
 
 
 --
--- Data for Name: tbl_document_drs; Type: TABLE DATA; Schema: docs; Owner: prod_db_documentation_2
+-- Data for Name: tbl_document_drs; Type: TABLE DATA; Schema: docs; Owner: prod_db_documentation_3
 --
 
 COPY docs.tbl_document_drs (id, document_id, project, path, key_01, key_02, key_03, key_04, key_05, key_06, key_07, key_08) FROM stdin;
@@ -4760,7 +4754,7 @@ COPY docs.tbl_document_drs (id, document_id, project, path, key_01, key_02, key_
 
 
 --
--- Data for Name: tbl_document_external_id; Type: TABLE DATA; Schema: docs; Owner: prod_db_documentation_2
+-- Data for Name: tbl_document_external_id; Type: TABLE DATA; Schema: docs; Owner: prod_db_documentation_3
 --
 
 COPY docs.tbl_document_external_id (id, document_id, project, external_id) FROM stdin;
@@ -6033,7 +6027,7 @@ COPY docs.tbl_document_external_id (id, document_id, project, external_id) FROM 
 
 
 --
--- Data for Name: tbl_document_sub_project; Type: TABLE DATA; Schema: docs; Owner: prod_db_documentation_2
+-- Data for Name: tbl_document_sub_project; Type: TABLE DATA; Schema: docs; Owner: prod_db_documentation_3
 --
 
 COPY docs.tbl_document_sub_project (id, document_id, project, sub_project) FROM stdin;
@@ -6444,35 +6438,35 @@ COPY docs.tbl_document_sub_project (id, document_id, project, sub_project) FROM 
 
 
 --
--- Name: tbl_document_drs_id_seq; Type: SEQUENCE SET; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_drs_id_seq; Type: SEQUENCE SET; Schema: docs; Owner: prod_db_documentation_3
 --
 
 SELECT pg_catalog.setval('docs.tbl_document_drs_id_seq', 1324, true);
 
 
 --
--- Name: tbl_document_external_id_id_seq; Type: SEQUENCE SET; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_external_id_id_seq; Type: SEQUENCE SET; Schema: docs; Owner: prod_db_documentation_3
 --
 
 SELECT pg_catalog.setval('docs.tbl_document_external_id_id_seq', 36705, true);
 
 
 --
--- Name: tbl_document_id_seq; Type: SEQUENCE SET; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_id_seq; Type: SEQUENCE SET; Schema: docs; Owner: prod_db_documentation_3
 --
 
-SELECT pg_catalog.setval('docs.tbl_document_id_seq', 403139, true);
+SELECT pg_catalog.setval('docs.tbl_document_id_seq', 403176, true);
 
 
 --
--- Name: tbl_document_sub_project_id_seq; Type: SEQUENCE SET; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_sub_project_id_seq; Type: SEQUENCE SET; Schema: docs; Owner: prod_db_documentation_3
 --
 
 SELECT pg_catalog.setval('docs.tbl_document_sub_project_id_seq', 101770, true);
 
 
 --
--- Name: tbl_document_drs tbl_document_drs_pkey; Type: CONSTRAINT; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_drs tbl_document_drs_pkey; Type: CONSTRAINT; Schema: docs; Owner: prod_db_documentation_3
 --
 
 ALTER TABLE ONLY docs.tbl_document_drs
@@ -6480,7 +6474,7 @@ ALTER TABLE ONLY docs.tbl_document_drs
 
 
 --
--- Name: tbl_document_external_id tbl_document_external_id_pkey; Type: CONSTRAINT; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_external_id tbl_document_external_id_pkey; Type: CONSTRAINT; Schema: docs; Owner: prod_db_documentation_3
 --
 
 ALTER TABLE ONLY docs.tbl_document_external_id
@@ -6488,7 +6482,7 @@ ALTER TABLE ONLY docs.tbl_document_external_id
 
 
 --
--- Name: tbl_document tbl_document_pkey; Type: CONSTRAINT; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document tbl_document_pkey; Type: CONSTRAINT; Schema: docs; Owner: prod_db_documentation_3
 --
 
 ALTER TABLE ONLY docs.tbl_document
@@ -6496,7 +6490,7 @@ ALTER TABLE ONLY docs.tbl_document
 
 
 --
--- Name: tbl_document_sub_project tbl_document_sub_project_pkey; Type: CONSTRAINT; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_sub_project tbl_document_sub_project_pkey; Type: CONSTRAINT; Schema: docs; Owner: prod_db_documentation_3
 --
 
 ALTER TABLE ONLY docs.tbl_document_sub_project
@@ -6504,7 +6498,7 @@ ALTER TABLE ONLY docs.tbl_document_sub_project
 
 
 --
--- Name: tbl_document_drs tbl_document_drs_Document_ID_fkey; Type: FK CONSTRAINT; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_drs tbl_document_drs_Document_ID_fkey; Type: FK CONSTRAINT; Schema: docs; Owner: prod_db_documentation_3
 --
 
 ALTER TABLE ONLY docs.tbl_document_drs
@@ -6512,7 +6506,7 @@ ALTER TABLE ONLY docs.tbl_document_drs
 
 
 --
--- Name: tbl_document_drs tbl_document_drs_document_id_fkey; Type: FK CONSTRAINT; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_drs tbl_document_drs_document_id_fkey; Type: FK CONSTRAINT; Schema: docs; Owner: prod_db_documentation_3
 --
 
 ALTER TABLE ONLY docs.tbl_document_drs
@@ -6520,7 +6514,7 @@ ALTER TABLE ONLY docs.tbl_document_drs
 
 
 --
--- Name: tbl_document_external_id tbl_document_external_id_Document_ID_fkey; Type: FK CONSTRAINT; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_external_id tbl_document_external_id_Document_ID_fkey; Type: FK CONSTRAINT; Schema: docs; Owner: prod_db_documentation_3
 --
 
 ALTER TABLE ONLY docs.tbl_document_external_id
@@ -6528,7 +6522,7 @@ ALTER TABLE ONLY docs.tbl_document_external_id
 
 
 --
--- Name: tbl_document_external_id tbl_document_external_id_document_id_fkey; Type: FK CONSTRAINT; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_external_id tbl_document_external_id_document_id_fkey; Type: FK CONSTRAINT; Schema: docs; Owner: prod_db_documentation_3
 --
 
 ALTER TABLE ONLY docs.tbl_document_external_id
@@ -6536,7 +6530,7 @@ ALTER TABLE ONLY docs.tbl_document_external_id
 
 
 --
--- Name: tbl_document_sub_project tbl_document_sub_project_document_id_fkey; Type: FK CONSTRAINT; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_sub_project tbl_document_sub_project_document_id_fkey; Type: FK CONSTRAINT; Schema: docs; Owner: prod_db_documentation_3
 --
 
 ALTER TABLE ONLY docs.tbl_document_sub_project
@@ -6544,66 +6538,66 @@ ALTER TABLE ONLY docs.tbl_document_sub_project
 
 
 --
--- Name: SCHEMA docs; Type: ACL; Schema: -; Owner: prod_db_documentation_2
+-- Name: SCHEMA docs; Type: ACL; Schema: -; Owner: prod_db_documentation_3
 --
 
-GRANT USAGE ON SCHEMA docs TO prod_db_documentation_2;
-
-
---
--- Name: TABLE tbl_document; Type: ACL; Schema: docs; Owner: prod_db_documentation_2
---
-
-GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE docs.tbl_document TO prod_db_documentation_2;
+GRANT USAGE ON SCHEMA docs TO prod_db_documentation_3;
 
 
 --
--- Name: TABLE tbl_document_drs; Type: ACL; Schema: docs; Owner: prod_db_documentation_2
+-- Name: TABLE tbl_document; Type: ACL; Schema: docs; Owner: prod_db_documentation_3
 --
 
-GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE docs.tbl_document_drs TO prod_db_documentation_2;
-
-
---
--- Name: SEQUENCE tbl_document_drs_id_seq; Type: ACL; Schema: docs; Owner: prod_db_documentation_2
---
-
-GRANT SELECT,USAGE ON SEQUENCE docs.tbl_document_drs_id_seq TO prod_db_documentation_2;
+GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE docs.tbl_document TO prod_db_documentation_3;
 
 
 --
--- Name: TABLE tbl_document_external_id; Type: ACL; Schema: docs; Owner: prod_db_documentation_2
+-- Name: TABLE tbl_document_drs; Type: ACL; Schema: docs; Owner: prod_db_documentation_3
 --
 
-GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE docs.tbl_document_external_id TO prod_db_documentation_2;
-
-
---
--- Name: SEQUENCE tbl_document_external_id_id_seq; Type: ACL; Schema: docs; Owner: prod_db_documentation_2
---
-
-GRANT SELECT,USAGE ON SEQUENCE docs.tbl_document_external_id_id_seq TO prod_db_documentation_2;
+GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE docs.tbl_document_drs TO prod_db_documentation_3;
 
 
 --
--- Name: SEQUENCE tbl_document_id_seq; Type: ACL; Schema: docs; Owner: prod_db_documentation_2
+-- Name: SEQUENCE tbl_document_drs_id_seq; Type: ACL; Schema: docs; Owner: prod_db_documentation_3
 --
 
-GRANT SELECT,USAGE ON SEQUENCE docs.tbl_document_id_seq TO prod_db_documentation_2;
-
-
---
--- Name: TABLE tbl_document_sub_project; Type: ACL; Schema: docs; Owner: prod_db_documentation_2
---
-
-GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE docs.tbl_document_sub_project TO prod_db_documentation_2;
+GRANT SELECT,USAGE ON SEQUENCE docs.tbl_document_drs_id_seq TO prod_db_documentation_3;
 
 
 --
--- Name: SEQUENCE tbl_document_sub_project_id_seq; Type: ACL; Schema: docs; Owner: prod_db_documentation_2
+-- Name: TABLE tbl_document_external_id; Type: ACL; Schema: docs; Owner: prod_db_documentation_3
 --
 
-GRANT SELECT,USAGE ON SEQUENCE docs.tbl_document_sub_project_id_seq TO prod_db_documentation_2;
+GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE docs.tbl_document_external_id TO prod_db_documentation_3;
+
+
+--
+-- Name: SEQUENCE tbl_document_external_id_id_seq; Type: ACL; Schema: docs; Owner: prod_db_documentation_3
+--
+
+GRANT SELECT,USAGE ON SEQUENCE docs.tbl_document_external_id_id_seq TO prod_db_documentation_3;
+
+
+--
+-- Name: SEQUENCE tbl_document_id_seq; Type: ACL; Schema: docs; Owner: prod_db_documentation_3
+--
+
+GRANT SELECT,USAGE ON SEQUENCE docs.tbl_document_id_seq TO prod_db_documentation_3;
+
+
+--
+-- Name: TABLE tbl_document_sub_project; Type: ACL; Schema: docs; Owner: prod_db_documentation_3
+--
+
+GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE docs.tbl_document_sub_project TO prod_db_documentation_3;
+
+
+--
+-- Name: SEQUENCE tbl_document_sub_project_id_seq; Type: ACL; Schema: docs; Owner: prod_db_documentation_3
+--
+
+GRANT SELECT,USAGE ON SEQUENCE docs.tbl_document_sub_project_id_seq TO prod_db_documentation_3;
 
 
 --
