@@ -40,13 +40,13 @@ DROP TABLE docs.tbl_document;
 DROP EXTENSION plpgsql;
 DROP SCHEMA docs;
 --
--- Name: docs; Type: SCHEMA; Schema: -; Owner: prod_db_documentation_2
+-- Name: docs; Type: SCHEMA; Schema: -; Owner: prod_db_documentation_1
 --
 
 CREATE SCHEMA docs;
 
 
-ALTER SCHEMA docs OWNER TO prod_db_documentation_2;
+ALTER SCHEMA docs OWNER TO prod_db_documentation_1;
 
 --
 -- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: -
@@ -65,7 +65,7 @@ COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
 SET default_tablespace = '';
 
 --
--- Name: tbl_document; Type: TABLE; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document; Type: TABLE; Schema: docs; Owner: prod_db_documentation_1
 --
 
 CREATE TABLE docs.tbl_document (
@@ -88,10 +88,10 @@ CREATE TABLE docs.tbl_document (
 );
 
 
-ALTER TABLE docs.tbl_document OWNER TO prod_db_documentation_2;
+ALTER TABLE docs.tbl_document OWNER TO prod_db_documentation_1;
 
 --
--- Name: tbl_document_drs; Type: TABLE; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_drs; Type: TABLE; Schema: docs; Owner: prod_db_documentation_1
 --
 
 CREATE TABLE docs.tbl_document_drs (
@@ -110,10 +110,10 @@ CREATE TABLE docs.tbl_document_drs (
 );
 
 
-ALTER TABLE docs.tbl_document_drs OWNER TO prod_db_documentation_2;
+ALTER TABLE docs.tbl_document_drs OWNER TO prod_db_documentation_1;
 
 --
--- Name: tbl_document_drs_id_seq; Type: SEQUENCE; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_drs_id_seq; Type: SEQUENCE; Schema: docs; Owner: prod_db_documentation_1
 --
 
 CREATE SEQUENCE docs.tbl_document_drs_id_seq
@@ -125,17 +125,17 @@ CREATE SEQUENCE docs.tbl_document_drs_id_seq
     CACHE 1;
 
 
-ALTER TABLE docs.tbl_document_drs_id_seq OWNER TO prod_db_documentation_2;
+ALTER TABLE docs.tbl_document_drs_id_seq OWNER TO prod_db_documentation_1;
 
 --
--- Name: tbl_document_drs_id_seq; Type: SEQUENCE OWNED BY; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_drs_id_seq; Type: SEQUENCE OWNED BY; Schema: docs; Owner: prod_db_documentation_1
 --
 
 ALTER SEQUENCE docs.tbl_document_drs_id_seq OWNED BY docs.tbl_document_drs.id;
 
 
 --
--- Name: tbl_document_external_id; Type: TABLE; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_external_id; Type: TABLE; Schema: docs; Owner: prod_db_documentation_1
 --
 
 CREATE TABLE docs.tbl_document_external_id (
@@ -146,10 +146,10 @@ CREATE TABLE docs.tbl_document_external_id (
 );
 
 
-ALTER TABLE docs.tbl_document_external_id OWNER TO prod_db_documentation_2;
+ALTER TABLE docs.tbl_document_external_id OWNER TO prod_db_documentation_1;
 
 --
--- Name: tbl_document_external_id_id_seq; Type: SEQUENCE; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_external_id_id_seq; Type: SEQUENCE; Schema: docs; Owner: prod_db_documentation_1
 --
 
 CREATE SEQUENCE docs.tbl_document_external_id_id_seq
@@ -161,17 +161,17 @@ CREATE SEQUENCE docs.tbl_document_external_id_id_seq
     CACHE 1;
 
 
-ALTER TABLE docs.tbl_document_external_id_id_seq OWNER TO prod_db_documentation_2;
+ALTER TABLE docs.tbl_document_external_id_id_seq OWNER TO prod_db_documentation_1;
 
 --
--- Name: tbl_document_external_id_id_seq; Type: SEQUENCE OWNED BY; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_external_id_id_seq; Type: SEQUENCE OWNED BY; Schema: docs; Owner: prod_db_documentation_1
 --
 
 ALTER SEQUENCE docs.tbl_document_external_id_id_seq OWNED BY docs.tbl_document_external_id.id;
 
 
 --
--- Name: tbl_document_id_seq; Type: SEQUENCE; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_id_seq; Type: SEQUENCE; Schema: docs; Owner: prod_db_documentation_1
 --
 
 CREATE SEQUENCE docs.tbl_document_id_seq
@@ -183,17 +183,17 @@ CREATE SEQUENCE docs.tbl_document_id_seq
     CACHE 1;
 
 
-ALTER TABLE docs.tbl_document_id_seq OWNER TO prod_db_documentation_2;
+ALTER TABLE docs.tbl_document_id_seq OWNER TO prod_db_documentation_1;
 
 --
--- Name: tbl_document_id_seq; Type: SEQUENCE OWNED BY; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_id_seq; Type: SEQUENCE OWNED BY; Schema: docs; Owner: prod_db_documentation_1
 --
 
 ALTER SEQUENCE docs.tbl_document_id_seq OWNED BY docs.tbl_document.id;
 
 
 --
--- Name: tbl_document_sub_project; Type: TABLE; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_sub_project; Type: TABLE; Schema: docs; Owner: prod_db_documentation_1
 --
 
 CREATE TABLE docs.tbl_document_sub_project (
@@ -204,10 +204,10 @@ CREATE TABLE docs.tbl_document_sub_project (
 );
 
 
-ALTER TABLE docs.tbl_document_sub_project OWNER TO prod_db_documentation_2;
+ALTER TABLE docs.tbl_document_sub_project OWNER TO prod_db_documentation_1;
 
 --
--- Name: tbl_document_sub_project_id_seq; Type: SEQUENCE; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_sub_project_id_seq; Type: SEQUENCE; Schema: docs; Owner: prod_db_documentation_1
 --
 
 CREATE SEQUENCE docs.tbl_document_sub_project_id_seq
@@ -219,45 +219,45 @@ CREATE SEQUENCE docs.tbl_document_sub_project_id_seq
     CACHE 1;
 
 
-ALTER TABLE docs.tbl_document_sub_project_id_seq OWNER TO prod_db_documentation_2;
+ALTER TABLE docs.tbl_document_sub_project_id_seq OWNER TO prod_db_documentation_1;
 
 --
--- Name: tbl_document_sub_project_id_seq; Type: SEQUENCE OWNED BY; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_sub_project_id_seq; Type: SEQUENCE OWNED BY; Schema: docs; Owner: prod_db_documentation_1
 --
 
 ALTER SEQUENCE docs.tbl_document_sub_project_id_seq OWNED BY docs.tbl_document_sub_project.id;
 
 
 --
--- Name: tbl_document id; Type: DEFAULT; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document id; Type: DEFAULT; Schema: docs; Owner: prod_db_documentation_1
 --
 
 ALTER TABLE ONLY docs.tbl_document ALTER COLUMN id SET DEFAULT nextval('docs.tbl_document_id_seq'::regclass);
 
 
 --
--- Name: tbl_document_drs id; Type: DEFAULT; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_drs id; Type: DEFAULT; Schema: docs; Owner: prod_db_documentation_1
 --
 
 ALTER TABLE ONLY docs.tbl_document_drs ALTER COLUMN id SET DEFAULT nextval('docs.tbl_document_drs_id_seq'::regclass);
 
 
 --
--- Name: tbl_document_external_id id; Type: DEFAULT; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_external_id id; Type: DEFAULT; Schema: docs; Owner: prod_db_documentation_1
 --
 
 ALTER TABLE ONLY docs.tbl_document_external_id ALTER COLUMN id SET DEFAULT nextval('docs.tbl_document_external_id_id_seq'::regclass);
 
 
 --
--- Name: tbl_document_sub_project id; Type: DEFAULT; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_sub_project id; Type: DEFAULT; Schema: docs; Owner: prod_db_documentation_1
 --
 
 ALTER TABLE ONLY docs.tbl_document_sub_project ALTER COLUMN id SET DEFAULT nextval('docs.tbl_document_sub_project_id_seq'::regclass);
 
 
 --
--- Data for Name: tbl_document; Type: TABLE DATA; Schema: docs; Owner: prod_db_documentation_2
+-- Data for Name: tbl_document; Type: TABLE DATA; Schema: docs; Owner: prod_db_documentation_1
 --
 
 COPY docs.tbl_document (id, project, sub_projects, institute, typeof, uid, version, ingest_date, is_latest, name, canonical_name, alternative_name, long_name, description, model, experiment) FROM stdin;
@@ -3507,7 +3507,7 @@ COPY docs.tbl_document (id, project, sub_projects, institute, typeof, uid, versi
 
 
 --
--- Data for Name: tbl_document_drs; Type: TABLE DATA; Schema: docs; Owner: prod_db_documentation_2
+-- Data for Name: tbl_document_drs; Type: TABLE DATA; Schema: docs; Owner: prod_db_documentation_1
 --
 
 COPY docs.tbl_document_drs (id, document_id, project, path, key_01, key_02, key_03, key_04, key_05, key_06, key_07, key_08) FROM stdin;
@@ -4780,7 +4780,7 @@ COPY docs.tbl_document_drs (id, document_id, project, path, key_01, key_02, key_
 
 
 --
--- Data for Name: tbl_document_external_id; Type: TABLE DATA; Schema: docs; Owner: prod_db_documentation_2
+-- Data for Name: tbl_document_external_id; Type: TABLE DATA; Schema: docs; Owner: prod_db_documentation_1
 --
 
 COPY docs.tbl_document_external_id (id, document_id, project, external_id) FROM stdin;
@@ -6053,7 +6053,7 @@ COPY docs.tbl_document_external_id (id, document_id, project, external_id) FROM 
 
 
 --
--- Data for Name: tbl_document_sub_project; Type: TABLE DATA; Schema: docs; Owner: prod_db_documentation_2
+-- Data for Name: tbl_document_sub_project; Type: TABLE DATA; Schema: docs; Owner: prod_db_documentation_1
 --
 
 COPY docs.tbl_document_sub_project (id, document_id, project, sub_project) FROM stdin;
@@ -6464,35 +6464,35 @@ COPY docs.tbl_document_sub_project (id, document_id, project, sub_project) FROM 
 
 
 --
--- Name: tbl_document_drs_id_seq; Type: SEQUENCE SET; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_drs_id_seq; Type: SEQUENCE SET; Schema: docs; Owner: prod_db_documentation_1
 --
 
 SELECT pg_catalog.setval('docs.tbl_document_drs_id_seq', 1324, true);
 
 
 --
--- Name: tbl_document_external_id_id_seq; Type: SEQUENCE SET; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_external_id_id_seq; Type: SEQUENCE SET; Schema: docs; Owner: prod_db_documentation_1
 --
 
 SELECT pg_catalog.setval('docs.tbl_document_external_id_id_seq', 36705, true);
 
 
 --
--- Name: tbl_document_id_seq; Type: SEQUENCE SET; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_id_seq; Type: SEQUENCE SET; Schema: docs; Owner: prod_db_documentation_1
 --
 
 SELECT pg_catalog.setval('docs.tbl_document_id_seq', 404732, true);
 
 
 --
--- Name: tbl_document_sub_project_id_seq; Type: SEQUENCE SET; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_sub_project_id_seq; Type: SEQUENCE SET; Schema: docs; Owner: prod_db_documentation_1
 --
 
 SELECT pg_catalog.setval('docs.tbl_document_sub_project_id_seq', 102173, true);
 
 
 --
--- Name: tbl_document_drs tbl_document_drs_pkey; Type: CONSTRAINT; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_drs tbl_document_drs_pkey; Type: CONSTRAINT; Schema: docs; Owner: prod_db_documentation_1
 --
 
 ALTER TABLE ONLY docs.tbl_document_drs
@@ -6500,7 +6500,7 @@ ALTER TABLE ONLY docs.tbl_document_drs
 
 
 --
--- Name: tbl_document_external_id tbl_document_external_id_pkey; Type: CONSTRAINT; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_external_id tbl_document_external_id_pkey; Type: CONSTRAINT; Schema: docs; Owner: prod_db_documentation_1
 --
 
 ALTER TABLE ONLY docs.tbl_document_external_id
@@ -6508,7 +6508,7 @@ ALTER TABLE ONLY docs.tbl_document_external_id
 
 
 --
--- Name: tbl_document tbl_document_pkey; Type: CONSTRAINT; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document tbl_document_pkey; Type: CONSTRAINT; Schema: docs; Owner: prod_db_documentation_1
 --
 
 ALTER TABLE ONLY docs.tbl_document
@@ -6516,7 +6516,7 @@ ALTER TABLE ONLY docs.tbl_document
 
 
 --
--- Name: tbl_document_sub_project tbl_document_sub_project_pkey; Type: CONSTRAINT; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_sub_project tbl_document_sub_project_pkey; Type: CONSTRAINT; Schema: docs; Owner: prod_db_documentation_1
 --
 
 ALTER TABLE ONLY docs.tbl_document_sub_project
@@ -6524,7 +6524,7 @@ ALTER TABLE ONLY docs.tbl_document_sub_project
 
 
 --
--- Name: tbl_document_drs tbl_document_drs_Document_ID_fkey; Type: FK CONSTRAINT; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_drs tbl_document_drs_Document_ID_fkey; Type: FK CONSTRAINT; Schema: docs; Owner: prod_db_documentation_1
 --
 
 ALTER TABLE ONLY docs.tbl_document_drs
@@ -6532,7 +6532,7 @@ ALTER TABLE ONLY docs.tbl_document_drs
 
 
 --
--- Name: tbl_document_drs tbl_document_drs_document_id_fkey; Type: FK CONSTRAINT; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_drs tbl_document_drs_document_id_fkey; Type: FK CONSTRAINT; Schema: docs; Owner: prod_db_documentation_1
 --
 
 ALTER TABLE ONLY docs.tbl_document_drs
@@ -6540,7 +6540,7 @@ ALTER TABLE ONLY docs.tbl_document_drs
 
 
 --
--- Name: tbl_document_external_id tbl_document_external_id_Document_ID_fkey; Type: FK CONSTRAINT; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_external_id tbl_document_external_id_Document_ID_fkey; Type: FK CONSTRAINT; Schema: docs; Owner: prod_db_documentation_1
 --
 
 ALTER TABLE ONLY docs.tbl_document_external_id
@@ -6548,7 +6548,7 @@ ALTER TABLE ONLY docs.tbl_document_external_id
 
 
 --
--- Name: tbl_document_external_id tbl_document_external_id_document_id_fkey; Type: FK CONSTRAINT; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_external_id tbl_document_external_id_document_id_fkey; Type: FK CONSTRAINT; Schema: docs; Owner: prod_db_documentation_1
 --
 
 ALTER TABLE ONLY docs.tbl_document_external_id
@@ -6556,7 +6556,7 @@ ALTER TABLE ONLY docs.tbl_document_external_id
 
 
 --
--- Name: tbl_document_sub_project tbl_document_sub_project_document_id_fkey; Type: FK CONSTRAINT; Schema: docs; Owner: prod_db_documentation_2
+-- Name: tbl_document_sub_project tbl_document_sub_project_document_id_fkey; Type: FK CONSTRAINT; Schema: docs; Owner: prod_db_documentation_1
 --
 
 ALTER TABLE ONLY docs.tbl_document_sub_project
@@ -6564,66 +6564,66 @@ ALTER TABLE ONLY docs.tbl_document_sub_project
 
 
 --
--- Name: SCHEMA docs; Type: ACL; Schema: -; Owner: prod_db_documentation_2
+-- Name: SCHEMA docs; Type: ACL; Schema: -; Owner: prod_db_documentation_1
 --
 
-GRANT USAGE ON SCHEMA docs TO prod_db_documentation_2;
-
-
---
--- Name: TABLE tbl_document; Type: ACL; Schema: docs; Owner: prod_db_documentation_2
---
-
-GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE docs.tbl_document TO prod_db_documentation_2;
+GRANT USAGE ON SCHEMA docs TO prod_db_documentation_1;
 
 
 --
--- Name: TABLE tbl_document_drs; Type: ACL; Schema: docs; Owner: prod_db_documentation_2
+-- Name: TABLE tbl_document; Type: ACL; Schema: docs; Owner: prod_db_documentation_1
 --
 
-GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE docs.tbl_document_drs TO prod_db_documentation_2;
-
-
---
--- Name: SEQUENCE tbl_document_drs_id_seq; Type: ACL; Schema: docs; Owner: prod_db_documentation_2
---
-
-GRANT SELECT,USAGE ON SEQUENCE docs.tbl_document_drs_id_seq TO prod_db_documentation_2;
+GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE docs.tbl_document TO prod_db_documentation_1;
 
 
 --
--- Name: TABLE tbl_document_external_id; Type: ACL; Schema: docs; Owner: prod_db_documentation_2
+-- Name: TABLE tbl_document_drs; Type: ACL; Schema: docs; Owner: prod_db_documentation_1
 --
 
-GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE docs.tbl_document_external_id TO prod_db_documentation_2;
-
-
---
--- Name: SEQUENCE tbl_document_external_id_id_seq; Type: ACL; Schema: docs; Owner: prod_db_documentation_2
---
-
-GRANT SELECT,USAGE ON SEQUENCE docs.tbl_document_external_id_id_seq TO prod_db_documentation_2;
+GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE docs.tbl_document_drs TO prod_db_documentation_1;
 
 
 --
--- Name: SEQUENCE tbl_document_id_seq; Type: ACL; Schema: docs; Owner: prod_db_documentation_2
+-- Name: SEQUENCE tbl_document_drs_id_seq; Type: ACL; Schema: docs; Owner: prod_db_documentation_1
 --
 
-GRANT SELECT,USAGE ON SEQUENCE docs.tbl_document_id_seq TO prod_db_documentation_2;
-
-
---
--- Name: TABLE tbl_document_sub_project; Type: ACL; Schema: docs; Owner: prod_db_documentation_2
---
-
-GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE docs.tbl_document_sub_project TO prod_db_documentation_2;
+GRANT SELECT,USAGE ON SEQUENCE docs.tbl_document_drs_id_seq TO prod_db_documentation_1;
 
 
 --
--- Name: SEQUENCE tbl_document_sub_project_id_seq; Type: ACL; Schema: docs; Owner: prod_db_documentation_2
+-- Name: TABLE tbl_document_external_id; Type: ACL; Schema: docs; Owner: prod_db_documentation_1
 --
 
-GRANT SELECT,USAGE ON SEQUENCE docs.tbl_document_sub_project_id_seq TO prod_db_documentation_2;
+GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE docs.tbl_document_external_id TO prod_db_documentation_1;
+
+
+--
+-- Name: SEQUENCE tbl_document_external_id_id_seq; Type: ACL; Schema: docs; Owner: prod_db_documentation_1
+--
+
+GRANT SELECT,USAGE ON SEQUENCE docs.tbl_document_external_id_id_seq TO prod_db_documentation_1;
+
+
+--
+-- Name: SEQUENCE tbl_document_id_seq; Type: ACL; Schema: docs; Owner: prod_db_documentation_1
+--
+
+GRANT SELECT,USAGE ON SEQUENCE docs.tbl_document_id_seq TO prod_db_documentation_1;
+
+
+--
+-- Name: TABLE tbl_document_sub_project; Type: ACL; Schema: docs; Owner: prod_db_documentation_1
+--
+
+GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE docs.tbl_document_sub_project TO prod_db_documentation_1;
+
+
+--
+-- Name: SEQUENCE tbl_document_sub_project_id_seq; Type: ACL; Schema: docs; Owner: prod_db_documentation_1
+--
+
+GRANT SELECT,USAGE ON SEQUENCE docs.tbl_document_sub_project_id_seq TO prod_db_documentation_1;
 
 
 --
