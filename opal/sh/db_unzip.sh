@@ -4,7 +4,7 @@
 source $OPAL_HOME/sh/utils.sh
 
 #######################################
-# Zips a database backup.
+# Unzips a database backup.
 # Arguments:
 #   Deployment environment.
 #   Database type.

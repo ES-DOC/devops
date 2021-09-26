@@ -12,10 +12,11 @@ source $OPAL_HOME/sh/utils.sh
 main()
 {
     local ENV=${1}
-    local DB_TYPE=${2}
+    local DB_IDX=${2}
+    local DB_TYPE=${3}
     local DB_BACKUP_NAME=db-"$DB_TYPE".sql
-    local DB_NAME="$ENV"_db_"$DB_TYPE"_1
-    local DB_USER="$ENV"_db_"$DB_TYPE"_1
+    local DB_NAME="$ENV_db_$DB_TYPE_$DB_IDX"
+    local DB_USER="$ENV_db_$DB_TYPE_$DB_IDX"
     local DIR_DB="$OPAL_HOME"/assets/"$ENV"/db
     
     pushd "$DIR_DB"
@@ -28,6 +29,7 @@ main()
 # ----------------------------------------------------------------
 
 unset OPAL_ENV
+unset DB_IDX
 unset DB_TYPE
 
 for ARGUMENT in "$@"
@@ -36,9 +38,10 @@ do
     VALUE=$(echo "$ARGUMENT" | cut -f2 -d=)
     case "$KEY" in
         env) OPAL_ENV=${VALUE} ;;
+        idx) DB_IDX=${VALUE} ;;
         type) DB_TYPE=${VALUE} ;;
         *)
     esac
 done
 
-main "${OPAL_ENV:-"test"}" "${DB_TYPE:-"documentation"}"
+main "${OPAL_ENV:-"test"}" "${DB_IDX:-"1"}" "${DB_TYPE:-"documentation"}"
