@@ -23,6 +23,14 @@ if [[ -d $HOME/apps/server_node_js/node_modules/yarn/bin ]]; then
 fi
 
 # --------------------------------------------------------------------
+# ENV VARS
+# --------------------------------------------------------------------
+
+if [[ -f $HOME/.esdoc/vars ]]; then
+    source $HOME/.esdoc/vars
+fi
+
+# --------------------------------------------------------------------
 # CREDENTIALS
 # --------------------------------------------------------------------
 
@@ -52,26 +60,29 @@ fi
 # --------------------------------------------------------------------
 
 # Archive sub-shells.
-if [[ -d $HOME/archives/esdoc-archive/sh/activate ]]; then
+if [[ -f $HOME/archives/esdoc-archive/sh/activate ]]; then
     source $HOME/archives/esdoc-archive/sh/activate
 fi
-if [[ -d $HOME/archives/esdoc-cdf2cim-archive/sh/activate ]]; then
+if [[ -f $HOME/archives/esdoc-cdf2cim-archive/sh/activate ]]; then
     source $HOME/archives/esdoc-cdf2cim-archive/sh/activate
 fi
 
 # Library sub-shells
-if [[ -d $HOME/libs/esdoc-api ]]; then
+if [[ -f $HOME/libs/esdoc-api/sh/activate ]]; then
     source $HOME/libs/esdoc-api/sh/activate
 fi
-if [[ -d $HOME/libs/esdoc-cdf2cim-ws ]]; then
+if [[ -f $HOME/libs/esdoc-cdf2cim-ws/sh/activate ]]; then
     source $HOME/libs/esdoc-cdf2cim-ws/sh/activate
 fi
-if [[ -d $HOME/libs/esdoc-errata-ws ]]; then
+if [[ -f $HOME/libs/esdoc-errata-ws/sh/activate ]]; then
     source $HOME/libs/esdoc-errata-ws/sh/activate
 fi
-if [[ -d $HOME/libs/esdoc-py-client ]]; then
+if [[ -f $HOME/libs/esdoc-py-client/sh/activate ]]; then
     source $HOME/libs/esdoc-py-client/sh/activate
 fi
-if [[ -d $HOME/libs/pyessv-ws ]]; then
+if [[ -f $HOME/libs/esdoc-technical/sh/activate ]]; then
+    source $HOME/libs/esdoc-technical/sh/activate
+fi
+if [[ -f $HOME/libs/pyessv-ws/sh/activate ]]; then
     source $HOME/libs/pyessv-ws/sh/activate
 fi

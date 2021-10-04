@@ -7,7 +7,10 @@ shopt -s expand_aliases
 # Set home.
 export OPAL_HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# Activate environment + credentials.
+# Activate env-vars, credentials + environment.
+if [[ -f $HOME/.esdoc/vars ]]; then
+    source $HOME/.esdoc/vars
+fi
 if [[ -f $HOME/.esdoc/credentials ]]; then
     source $HOME/.esdoc/credentials
 fi 
