@@ -1,6 +1,6 @@
 {
     "cookie_secret": "p2FAdrUN3tac",
-    "db": "postgresql://prod_ws_errata_dbowner:eLMQawRjL3wT@localhost:5432/prod_ws_errata",
+    "db": "postgresql://prod_ws_errata_dbowner:_HgZ3LLWJdtJJ6-0@localhost:5432/prod_ws_errata",
     "host": "localhost",
     "apply_security_policy": true,
     "mode": "dev",
