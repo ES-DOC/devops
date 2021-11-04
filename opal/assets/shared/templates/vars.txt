@@ -1,0 +1,2 @@
+# ES-DOC: Technical :: IP Address & Port.
+export ESDOC_TECH_DEV_ADDR=127.0.0.1:8000
