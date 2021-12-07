@@ -1,2 +1,3 @@
 /tmp
-/opal/backups/*.sql
+/opal/assets/shared/historical/configs
+/opal/assets/shared/historical/stats
