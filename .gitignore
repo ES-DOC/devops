@@ -1,3 +1,4 @@
 /tmp
 /opal/assets/shared/historical/configs
 /opal/assets/shared/historical/stats
+/opal/assets/prod/db/db_restore.sh
