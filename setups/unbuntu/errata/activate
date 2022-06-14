@@ -1,0 +1,32 @@
+# ###############################################################
+# PROLOGUE
+# ###############################################################
+
+shopt -s expand_aliases
+
+# Set home.
+export INSTALLER_HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Ensure shell scripts are executable.
+chmod a+x $INSTALLER_HOME/sh/*.sh
+
+# Activate env-vars, credentials + environment.
+if [[ -f $HOME/.esdoc/vars ]]; then
+    source $HOME/.esdoc/vars
+fi
+if [[ -f $HOME/.esdoc/credentials ]]; then
+    source $HOME/.esdoc/credentials
+fi 
+if [[ -f $HOME/.esdoc/environment ]]; then
+    source $HOME/.esdoc/environment
+fi
+
+# Activate utils / constants.
+source $INSTALLER_HOME/sh/constants.sh
+source $INSTALLER_HOME/sh/utils.sh
+
+# ###############################################################
+# ALIASES
+# ###############################################################
+
+alias errata-installer-exec=$INSTALLER_HOME/sh/init.sh
