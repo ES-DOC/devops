@@ -2,6 +2,7 @@
 # PROLOGUE
 # ###############################################################
 
+# Ensure that environment supports alias expansion.
 shopt -s expand_aliases
 
 # Set home.
