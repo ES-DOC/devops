@@ -29,4 +29,4 @@ source $INSTALLER_HOME/sh/utils.sh
 # ALIASES
 # ###############################################################
 
-alias errata-installer-exec=$INSTALLER_HOME/sh/init.sh
+alias errata-installer-exec=$INSTALLER_HOME/sh/exec.sh
