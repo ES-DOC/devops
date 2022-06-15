@@ -1,10 +1,9 @@
 # Main entry point.
 main()
 {
-    installer_log "... setting up postgres"
+    installer_log "... setting up nginx"
 
-    source /opt/esdoc/esdoc-errata-ws/db_install.sh
-    source /opt/esdoc/esdoc-errata-ws/db_setup.sh
+    # TODO: copy template nginx config into location
 }
 
 # Invoke entry point.

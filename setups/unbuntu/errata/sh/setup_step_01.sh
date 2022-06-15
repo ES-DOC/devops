@@ -1,10 +1,14 @@
 # Main entry point.
 main()
 {
-    installer_log "... setting up postgres"
+    installer_log "... setting up application stack"
 
-    source /opt/esdoc/esdoc-errata-ws/db_install.sh
-    source /opt/esdoc/esdoc-errata-ws/db_setup.sh
+    # Copy credentials & environment files.
+    mkdir $HOME/.esdoc
+    cp $INSTALLER_HOME/templates/credentials.txt $HOME/.esdoc/credentials.sh
+    cp $INSTALLER_HOME/templates/environment.txt $HOME/.esdoc/environment.sh
+
+    # TODO: update & activate bashrc.sh
 }
 
 # Invoke entry point.
