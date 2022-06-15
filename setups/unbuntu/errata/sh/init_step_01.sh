@@ -21,7 +21,7 @@ _install_dependencies()
     apt install libffi-dev libssl-dev
 
     # Install basic utils.
-    apt install wget curl git
+    apt install wget curl git gh
 
     # Installs the headers and static libraries of python 3 that are used to compile and mount the language extensions.
     apt install python3-dev python3-venv
