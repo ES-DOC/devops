@@ -6,7 +6,7 @@ main()
 {
     installer_log "BEGIN step 1:"
 
-    installer_log "...step step 1.1: initialising system"
+    installer_log "... step 1.1: initialising system"
     source $INSTALLER_HOME/sh/step_01_01.sh
 
     installer_log "... step 1.2: initialising services"

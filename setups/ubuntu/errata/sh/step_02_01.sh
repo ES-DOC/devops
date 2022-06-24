@@ -15,7 +15,7 @@ main()
         eval "$(pyenv virtualenv-init -)"
 
 EOM
-        exec $SHELL
+        source $HOME/.bashrc
     fi
 
     # JIT install python 2.
