@@ -4,7 +4,6 @@ main()
     # JIT install pyenv.
     if [[ ! -f $HOME/.pyenv/bin/pyenv ]]; then
         curl https://pyenv.run | bash
-
         cat >> "$HOME/.bashrc" <<- EOM
 
         # ----------------------------------------------------------------------
@@ -16,11 +15,10 @@ main()
         eval "$(pyenv virtualenv-init -)"
 
 EOM
-
         exec $SHELL
     fi
 
-    # JIT install python 2.7.18.
+    # JIT install python 2.
     if [[ ! -d $HOME/.pyenv/versions/$INSTALLER_PYTHON_2 ]]; then
         pyenv install $INSTALLER_PYTHON_2
     fi

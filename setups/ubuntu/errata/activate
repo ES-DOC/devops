@@ -30,5 +30,5 @@ source $INSTALLER_HOME/sh/utils.sh
 # ALIASES
 # ###############################################################
 
-alias errata-installer-step-01=$INSTALLER_HOME/sh/init.sh
-alias errata-installer-step-02=$INSTALLER_HOME/sh/setup.sh
+alias errata-installer-step-01=$INSTALLER_HOME/sh/step_01.sh
+alias errata-installer-step-02=$INSTALLER_HOME/sh/step_02.sh
