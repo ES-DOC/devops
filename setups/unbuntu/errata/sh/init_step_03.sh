@@ -6,7 +6,9 @@ main()
     fi
 
     if [[ ! -d /opt/esdoc/esdoc-errata-fe ]]; then
-        git clone https://github.com/ES-DOC/esdoc-errata-fe.git /opt/esdoc/
+        pushd /opt/esdoc
+        git clone https://github.com/ES-DOC/esdoc-errata-fe.git
+        popd
     else
         pushd /opt/esdoc/esdoc-errata-fe
         git pull
@@ -14,7 +16,9 @@ main()
     fi
 
     if [[ ! -d /opt/esdoc/esdoc-errata-ws ]]; then
-        git clone https://github.com/ES-DOC/esdoc-errata-ws.git /opt/esdoc/
+        pushd /opt/esdoc    
+        git clone https://github.com/ES-DOC/esdoc-errata-ws.git
+        popd
     else
         pushd /opt/esdoc/esdoc-errata-ws
         git pull
