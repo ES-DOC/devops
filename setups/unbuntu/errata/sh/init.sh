@@ -12,7 +12,7 @@ main()
     installer_log "... step 02: initialising services"
     source $INSTALLER_HOME/sh/init_step_02.sh
 
-    installer_log "... step 03: initialising application stack"
+    installer_log "... step 03: initialising stack"
     source $INSTALLER_HOME/sh/init_step_03.sh
 
     installer_log "END initialisation" 

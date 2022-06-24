@@ -4,8 +4,6 @@ source $INSTALLER_HOME/sh/utils.sh
 # Main entry point.
 main()
 {
-    installer_log "... initialising system"
-
     # Update OS.
     apt update
     apt upgrade
