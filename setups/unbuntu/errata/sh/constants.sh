@@ -7,4 +7,4 @@ declare -a INSTALLER_LIBS=(
 )
 
 # Python versions.
-declare -r INSTALLER_PYTHON_3=3.9.0
+declare INSTALLER_PYTHON_3=3.9.0
