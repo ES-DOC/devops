@@ -5,16 +5,9 @@ source $INSTALLER_HOME/sh/utils.sh
 main()
 {
     # Update OS.
-    apt -qq update
-    apt -qq upgrade
+    apt update -qq
+    apt upgrade -qq
 
-    # Install base dependencies.
-    _install_dependencies
-}
-
-# Installs base level dependencies.
-_install_dependencies()
-{
     # Installs the C and C++ compilers, also the make command used to compile the CPython dependencies.
     apt install -qq dpkg-dev build-essential
 

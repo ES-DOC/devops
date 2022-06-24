@@ -1,11 +1,11 @@
 # Main entry point.
 main()
 {
-    # Postgres
-    apt install -qq postgresql postgresql-contrib
+    apt install -qq \
+        nginx \
+        postgresql \
+        postgresql-contrib
 
-    # Nginx
-    apt install -qq nginx
     ufw allow 'Nginx Full'
 }
 
