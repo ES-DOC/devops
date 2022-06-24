@@ -4,17 +4,19 @@ main()
     # JIT install pyenv.
     if [[ ! -f $HOME/.pyenv/bin/pyenv ]]; then
         curl https://pyenv.run | bash
+
         cat >> "$HOME/.bashrc" <<- EOM
 
         # ----------------------------------------------------------------------
         # PYENV
         # ----------------------------------------------------------------------
 
-        export PATH="$HOME/.pyenv/bin:$PATH"
+        export PATH=$HOME/.pyenv/bin:$PATH
         eval "$(pyenv init --path)"
         eval "$(pyenv virtualenv-init -)"
 
 EOM
+
         source $HOME/.bashrc
     fi
 
