@@ -1,3 +1,6 @@
+# Imports.
+source $INSTALLER_HOME/sh/utils.sh
+
 # Main entry point.
 main()
 {
