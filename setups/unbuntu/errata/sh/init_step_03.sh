@@ -7,21 +7,21 @@ main()
 
     if [[ ! -d /opt/esdoc/esdoc-errata-fe ]]; then
         pushd /opt/esdoc
-        git clone https://github.com/ES-DOC/esdoc-errata-fe.git
+        git clone -q https://github.com/ES-DOC/esdoc-errata-fe.git
         popd
     else
         pushd /opt/esdoc/esdoc-errata-fe
-        git pull
+        git pull -q
         popd
     fi
 
     if [[ ! -d /opt/esdoc/esdoc-errata-ws ]]; then
         pushd /opt/esdoc    
-        git clone https://github.com/ES-DOC/esdoc-errata-ws.git
+        git clone -q https://github.com/ES-DOC/esdoc-errata-ws.git
         popd
     else
         pushd /opt/esdoc/esdoc-errata-ws
-        git pull
+        git pull -q
         popd
     fi
 }
