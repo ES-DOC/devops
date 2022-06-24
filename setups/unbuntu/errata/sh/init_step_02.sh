@@ -1,7 +1,7 @@
 # Main entry point.
 main()
 {
-    apt install -qq \
+    apt install -q \
         nginx \
         postgresql \
         postgresql-contrib
