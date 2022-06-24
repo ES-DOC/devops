@@ -5,7 +5,7 @@ main()
     if [[ ! -f $HOME/.pyenv/bin/pyenv ]]; then
         curl https://pyenv.run | bash
 
-        cat >> $HOME/.bashrc <<- EOM
+        cat >> "$HOME/.bashrc" <<- EOM
 
         # ----------------------------------------------------------------------
         # PYENV
@@ -15,7 +15,7 @@ main()
         eval "$(pyenv init --path)"
         eval "$(pyenv virtualenv-init -)"
 
-        EOM
+EOM
 
         exec $SHELL
     fi
