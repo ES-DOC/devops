@@ -9,20 +9,6 @@ main()
         eval "$(pyenv init -)"
         eval "$(pyenv virtualenv-init -)"
         eval "$(pyenv init --path)"
-
-        cat >> "$HOME/.bashrc" <<- EOM
-
-# ----------------------------------------------------------------------
-# PYENV
-# ----------------------------------------------------------------------
-
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-eval "$(pyenv init --path)"
-
-EOM
     fi
 
     # JIT install python 2.
