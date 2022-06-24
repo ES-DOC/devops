@@ -2,10 +2,10 @@
 main()
 {
     # Postgres
-    apt install postgresql postgresql-contrib
+    apt install -qq postgresql postgresql-contrib
 
     # Nginx
-    apt install nginx
+    apt install -qq nginx
     ufw allow 'Nginx Full'
 }
 
