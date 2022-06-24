@@ -2,12 +2,26 @@
 main()
 {
     # JIT install pyenv.
-    if [[ ! -f /home/sphere0/.pyenv/bin/pyenv ]]; then
+    if [[ ! -f $HOME/.pyenv/bin/pyenv ]]; then
         curl https://pyenv.run | bash
+
+        cat >> $HOME/.bashrc <<- EOM
+
+        # ----------------------------------------------------------------------
+        # PYENV
+        # ----------------------------------------------------------------------
+
+        export PATH="$HOME/.pyenv/bin:$PATH"
+        eval "$(pyenv init --path)"
+        eval "$(pyenv virtualenv-init -)"
+
+        EOM
+
+        exec $SHELL
     fi
 
     # JIT install python 2.7.18.
-    if [[ ! -d /home/sphere0/.pyenv/versions/$INSTALLER_PYTHON_2 ]]; then
+    if [[ ! -d $HOME/.pyenv/versions/$INSTALLER_PYTHON_2 ]]; then
         pyenv install $INSTALLER_PYTHON_2
     fi
 }
