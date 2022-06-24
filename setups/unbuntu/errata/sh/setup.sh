@@ -12,7 +12,7 @@ main()
     installer_log "... step 02: setting up nginx"
     source $INSTALLER_HOME/sh/setup_step_02.sh
 
-    installer_log "... step 03: setting up application stack"
+    installer_log "... step 03: setting up stack"
     source $INSTALLER_HOME/sh/setup_step_03.sh
 
     installer_log "END setup" 
