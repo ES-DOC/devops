@@ -15,7 +15,7 @@ main()
     installer_log "... step 03: initialising stack"
     source $INSTALLER_HOME/sh/init_step_03.sh
 
-    installer_log "... step 04: initialising environment"
+    installer_log "... step 04: initialising python"
     source $INSTALLER_HOME/sh/init_step_04.sh
 
     installer_log "END initialisation"

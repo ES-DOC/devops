@@ -1,6 +1,12 @@
 # Main entry point.
-main()
+function main()
 {
+    _init_repos
+    _init_env
+}
+
+# Initialises source code repos.
+function _init_repos() {
     if [[ ! -d /opt/esdoc ]]; then
         mkdir /opt/esdoc
     fi
@@ -23,6 +29,21 @@ main()
         pushd /opt/esdoc/esdoc-errata-ws
         git pull -q
         popd
+    fi
+}
+
+# Initialises application environment files.
+function _init_env() {
+    if [[ ! -d $HOME/.esdoc ]]; then
+        mkdir $HOME/.esdoc
+    fi
+
+    if [[ ! -f $HOME/.esdoc/credentials.sh ]]; then
+        cp $INSTALLER_HOME/templates/credentials.txt $HOME/.esdoc/credentials.sh
+    fi
+
+    if [[ ! -f $HOME/.esdoc/environment.sh ]]; then
+        cp $INSTALLER_HOME/templates/environment.txt $HOME/.esdoc/environment.sh
     fi
 }
 
