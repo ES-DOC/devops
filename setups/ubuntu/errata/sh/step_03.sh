@@ -65,7 +65,7 @@ _init_python_env()
     if [[ ! $(pyenv local) ]]; then
         pyenv local $INSTALLER_PYTHON_2
         pip install pipenv
-        pipenv install
+        pipenv run pipenv install
     fi
     popd
 }
