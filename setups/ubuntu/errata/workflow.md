@@ -34,4 +34,13 @@ sudo -s
 source /opt/devops/setups/ubuntu/errata/activate
 errata-installer-step-03
 exit
+
+# ---------------------------------------------------------------------------
+# Step 04: Setup database.
+# ---------------------------------------------------------------------------
+
+sudo -s
+source /opt/devops/setups/ubuntu/errata/activate
+errata-installer-step-04
+exit
 ```

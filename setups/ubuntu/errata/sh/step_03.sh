@@ -49,8 +49,8 @@ function _init_repos() {
         pushd /opt    
         git clone -q https://github.com/ES-DOC/esdoc-errata-ws.git
         popd
-        cat $INSTALLER_HOME/templates/pythonpath.txt >> $HOME/.bashrc
-        cat $INSTALLER_HOME/templates/shell-errata.txt >> $HOME/.bashrc
+        cat $INSTALLER_HOME/templates/shell-pythonpath.txt >> $HOME/.bashrc
+        cat $INSTALLER_HOME/templates/shell-app.txt >> $HOME/.bashrc
     else
         pushd /opt/esdoc-errata-ws
         git pull -q
@@ -92,7 +92,13 @@ _install_ops_dirs()
         mkdir -p /opt/esdoc-errata-ws/ops/config
         mkdir -p /opt/esdoc-errata-ws/ops/daemon
         mkdir -p /opt/esdoc-errata-ws/ops/logs
+    fi
+
+    if [[ ! -f /opt/esdoc-errata-ws/ops/config/ws.conf ]]; then
         cp $INSTALLER_HOME/templates/ws-app.conf /opt/esdoc-errata-ws/ops/config/ws.conf
+    fi
+
+    if [[ ! -f /opt/esdoc-errata-ws/ops/config/supervisord.conf ]]; then
         cp $INSTALLER_HOME/templates/ws-supervisord.conf /opt/esdoc-errata-ws/ops/config/supervisord.conf
     fi
 }

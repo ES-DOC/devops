@@ -3,6 +3,13 @@
 # ERRATA SUB-SHELL
 # ----------------------------------------------------------------------
 
+if [[ -d /opt/esdoc-errata-ws ]]; then
+    export ERRATA_DB_SYSTEM_USER=root
+    export ERRATA_DB_NAME=ws_errata
+    export ERRATA_DB_USER=ws_errata_wsuser
+    export ERRATA_DB_ADMIN=ws_errata_dbowner
+fi
+
 if [[ -f /opt/esdoc-errata-ws/sh/activate ]]; then
     source /opt/esdoc-errata-ws/sh/activate
 fi
