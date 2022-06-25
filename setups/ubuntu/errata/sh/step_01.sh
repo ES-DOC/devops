@@ -10,11 +10,10 @@ main()
     _init_sys
 
     installer_log "... step 1.2: initialising services"
-    _ini
+    _init_services
 
-    installer_log "... step 1.3: initialising stack"
-    _init_stack_repos
-    _init_stack_env
+    installer_log "... step 1.3: initialising pyenv"
+    _init_pyenv
 
     installer_log "END step 1"
 }
@@ -73,45 +72,12 @@ function _init_services()
     ufw allow 'Nginx Full'
 }
 
-# Initialises source code repos.
-function _init_stack_repos() {
-    if [[ ! -d /opt/esdoc ]]; then
-        mkdir /opt/esdoc
-    fi
-
-    if [[ ! -d /opt/esdoc/esdoc-errata-fe ]]; then
-        pushd /opt/esdoc
-        git clone -q https://github.com/ES-DOC/esdoc-errata-fe.git
-        popd
-    else
-        pushd /opt/esdoc/esdoc-errata-fe
-        git pull -q
-        popd
-    fi
-
-    if [[ ! -d /opt/esdoc/esdoc-errata-ws ]]; then
-        pushd /opt/esdoc    
-        git clone -q https://github.com/ES-DOC/esdoc-errata-ws.git
-        popd
-    else
-        pushd /opt/esdoc/esdoc-errata-ws
-        git pull -q
-        popd
-    fi
-}
-
-# Initialises application environment files.
-function _init_stack_env() {
-    if [[ ! -d $HOME/.esdoc ]]; then
-        mkdir $HOME/.esdoc
-    fi
-
-    if [[ ! -f $HOME/.esdoc/credentials.sh ]]; then
-        cp $INSTALLER_HOME/templates/credentials.txt $HOME/.esdoc/credentials.sh
-    fi
-
-    if [[ ! -f $HOME/.esdoc/environment.sh ]]; then
-        cp $INSTALLER_HOME/templates/environment.txt $HOME/.esdoc/environment.sh
+# Initialise pyenv.
+_init_pyenv()
+{
+    if [[ ! -f $HOME/.pyenv/bin/pyenv ]]; then
+        curl https://pyenv.run | bash
+        cat $INSTALLER_HOME/templates/pyenv.txt >> $HOME/.bashrc
     fi
 }
 
