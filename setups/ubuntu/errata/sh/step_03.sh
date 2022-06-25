@@ -16,6 +16,9 @@ main()
     log "... step 3.3: initialising python venv"
     _init_python_env
 
+    log "... step 3.4: initialising ops directories"
+    _install_ops_dirs
+
     log "END step 2"
 }
 
@@ -68,6 +71,18 @@ _init_python_env()
     pip install pipenv
     pipenv run pipenv install
     popd
+}
+
+# Initialise ops directories.
+_install_ops_dirs()
+{
+    if [[ ! -d /opt/esdoc-errata-ws/ops ]]; then
+        mkdir -p /opt/esdoc-errata-ws/ops
+        mkdir -p /opt/esdoc-errata-ws/ops/config
+        mkdir -p /opt/esdoc-errata-ws/ops/daemon
+        mkdir -p /opt/esdoc-errata-ws/ops/logs
+        cp /opt/esdoc-errata-ws/resources/*.conf /opt/esdoc-errata-ws/ops/config
+    fi
 }
 
 # Invoke entry point.
