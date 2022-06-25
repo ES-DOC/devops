@@ -45,6 +45,16 @@ function _init_repos() {
         git pull -q
         popd
     fi
+
+    if [[ ! -d /opt/pyessv-archive ]]; then
+        pushd /opt    
+        git clone -q https://github.com/ES-DOC/pyessv-archive.git
+        popd
+    else
+        pushd /opt/pyessv-archive
+        git pull -q
+        popd
+    fi
 }
 
 # Initialises application environment files.
