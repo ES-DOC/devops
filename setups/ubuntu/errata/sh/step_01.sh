@@ -64,11 +64,10 @@ function _init_sys()
 # Initialise services.
 function _init_services()
 {
-    apt install -qq \
-        nginx \
-        postgresql \
-        postgresql-contrib
+    apt install -qq postgresql postgresql-contrib
+    cat $INSTALLER_HOME/templates/shell-postgresql.txt >> $HOME/.bashrc
 
+    apt install -qq nginx
     ufw allow 'Nginx Full'
 }
 
