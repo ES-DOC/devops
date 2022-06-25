@@ -6,7 +6,7 @@ main()
         curl https://pyenv.run | bash
         export PYENV_ROOT="$HOME/.pyenv"
         export PATH="$HOME/.pyenv/bin:$PATH"        
-        eval "$(pyenv init -)"
+        eval "$(pyenv init --path)"
         eval "$(pyenv virtualenv-init -)"
         cat $INSTALLER_HOME/templates/pyenv.txt >> $HOME/.bashrc
     fi
