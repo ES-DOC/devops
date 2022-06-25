@@ -4,8 +4,11 @@ main()
     # JIT install pyenv.
     if [[ ! -f $HOME/.pyenv/bin/pyenv ]]; then
         curl https://pyenv.run | bash
+        export PYENV_ROOT="$HOME/.pyenv"
+        export PATH="$HOME/.pyenv/bin:$PATH"        
+        eval "$(pyenv init -)"
+        eval "$(pyenv virtualenv-init -)"
         cat $INSTALLER_HOME/templates/pyenv.txt >> $HOME/.bashrc
-        exec $SHELL
     fi
 
     # JIT install python 2.
