@@ -36,6 +36,7 @@ function _init_repos() {
         git clone -q https://github.com/ES-DOC/esdoc-errata-ws.git
         popd
         cat $INSTALLER_HOME/templates/pythonpath.txt >> $HOME/.bashrc
+        cat $INSTALLER_HOME/templates/shell-errata.txt >> $HOME/.bashrc
     else
         pushd /opt/esdoc-errata-ws
         git pull -q

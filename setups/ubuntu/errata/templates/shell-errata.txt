@@ -1,0 +1,8 @@
+
+# ----------------------------------------------------------------------
+# ERRATA SUB-SHELL
+# ----------------------------------------------------------------------
+
+if [[ -f /opt/esdoc-errata-ws/sh/active ]]; then
+    source /opt/esdoc-errata-ws/sh/activate
+fi
