@@ -92,7 +92,8 @@ _install_ops_dirs()
         mkdir -p /opt/esdoc-errata-ws/ops/config
         mkdir -p /opt/esdoc-errata-ws/ops/daemon
         mkdir -p /opt/esdoc-errata-ws/ops/logs
-        cp $INSTALLER_HOME/templates/ws-*.conf /opt/esdoc-errata-ws/ops/config
+        cp $INSTALLER_HOME/templates/ws-app.conf /opt/esdoc-errata-ws/ops/config/ws.conf
+        cp $INSTALLER_HOME/templates/ws-supervisord.conf /opt/esdoc-errata-ws/ops/config/supervisord.conf
     fi
 }
 
