@@ -63,11 +63,10 @@ function _init_env() {
 _init_python_env()
 {
     pushd /opt/esdoc-errata-ws
-    if [[ ! $(pyenv local) ]]; then
-        pyenv local $INSTALLER_PYTHON_2
-        pip install pipenv
-        pipenv run pipenv install
-    fi
+    pyenv local --unset
+    pyenv local $INSTALLER_PYTHON_2
+    pip install pipenv
+    pipenv run pipenv install
     popd
 }
 
