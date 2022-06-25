@@ -19,22 +19,22 @@ main()
 _db_create_users()
 {
 	log "Creating DB users"
-	createuser -U $ -d -s $ERRATA_DB_ADMIN
-	createuser -U $ERRATA_DB_ADMIN -D -S -R $ERRATA_DB_USER
+	createuser -U $ERRATA_DB_USER_SUPER -d -s $ERRATA_DB_USER_ADMIN
+	createuser -U $ERRATA_DB_USER_ADMIN -D -S -R $ERRATA_DB_USER_APP
 }
 
 # Create db.
 _db_create()
 {
 	log "Creating DB"
-	createdb -U $ERRATA_DB_ADMIN -e -O $ERRATA_DB_ADMIN -T template0 $ERRATA_DB_NAME
+	createdb -U $ERRATA_DB_USER_ADMIN -e -O $ERRATA_DB_USER_ADMIN -T template0 $ERRATA_DB_NAME
 }
 
 # Grant db permissions.
 _db_grant_permissions()
 {
 	log "Granting DB permissions"
-	psql -U $ERRATA_DB_ADMIN -d $ERRATA_DB_NAME -q -f $INSTALLER_HOME/templates/db_permissions.sql
+	psql -U $ERRATA_DB_USER_ADMIN -d $ERRATA_DB_NAME -q -f $INSTALLER_HOME/templates/db_permissions.sql
 }
 
 # Seed db.
