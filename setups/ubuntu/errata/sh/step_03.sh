@@ -1,4 +1,5 @@
 # Imports.
+source $INSTALLER_HOME/sh/constants.sh
 source $INSTALLER_HOME/sh/utils.sh
 
 # Main entry point.
