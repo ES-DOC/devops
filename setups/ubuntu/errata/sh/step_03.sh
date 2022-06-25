@@ -22,7 +22,7 @@ main()
 # Initialises source code repos.
 function _init_repos() {
     if [[ ! -d /opt/esdoc-errata-fe ]]; then
-        pushd /opt/esdoc
+        pushd /opt
         git clone -q https://github.com/ES-DOC/esdoc-errata-fe.git
         popd
     else
@@ -32,7 +32,7 @@ function _init_repos() {
     fi
 
     if [[ ! -d /opt/esdoc-errata-ws ]]; then
-        pushd /opt/esdoc    
+        pushd /opt    
         git clone -q https://github.com/ES-DOC/esdoc-errata-ws.git
         popd
         cat $INSTALLER_HOME/templates/pythonpath.txt >> $HOME/.bashrc
