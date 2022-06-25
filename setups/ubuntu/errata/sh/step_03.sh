@@ -24,6 +24,17 @@ main()
 
 # Initialises source code repos.
 function _init_repos() {
+    if [[ ! -d /opt/pyessv-archive ]]; then
+        pushd /opt    
+        git clone -q https://github.com/ES-DOC/pyessv-archive.git
+        cat $INSTALLER_HOME/templates/shell-pyessv.txt >> $HOME/.bashrc
+        popd
+    else
+        pushd /opt/pyessv-archive
+        git pull -q
+        popd
+    fi
+
     if [[ ! -d /opt/esdoc-errata-fe ]]; then
         pushd /opt
         git clone -q https://github.com/ES-DOC/esdoc-errata-fe.git
@@ -42,16 +53,6 @@ function _init_repos() {
         cat $INSTALLER_HOME/templates/shell-errata.txt >> $HOME/.bashrc
     else
         pushd /opt/esdoc-errata-ws
-        git pull -q
-        popd
-    fi
-
-    if [[ ! -d /opt/pyessv-archive ]]; then
-        pushd /opt    
-        git clone -q https://github.com/ES-DOC/pyessv-archive.git
-        popd
-    else
-        pushd /opt/pyessv-archive
         git pull -q
         popd
     fi
@@ -91,7 +92,7 @@ _install_ops_dirs()
         mkdir -p /opt/esdoc-errata-ws/ops/config
         mkdir -p /opt/esdoc-errata-ws/ops/daemon
         mkdir -p /opt/esdoc-errata-ws/ops/logs
-        cp /opt/esdoc-errata-ws/resources/*.conf /opt/esdoc-errata-ws/ops/config
+        cp $INSTALLER_HOME/templates/ws-*.conf /opt/esdoc-errata-ws/ops/config
     fi
 }
 
