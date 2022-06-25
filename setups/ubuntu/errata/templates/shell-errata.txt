@@ -3,6 +3,6 @@
 # ERRATA SUB-SHELL
 # ----------------------------------------------------------------------
 
-if [[ -f /opt/esdoc-errata-ws/sh/active ]]; then
+if [[ -f /opt/esdoc-errata-ws/sh/activate ]]; then
     source /opt/esdoc-errata-ws/sh/activate
 fi
