@@ -21,7 +21,6 @@ exit
 # Step 02: Setup python.
 # ---------------------------------------------------------------------------
 
-sudo -s
 source /opt/devops/setups/ubuntu/errata/activate
 errata-installer-step-02
 exit
@@ -30,7 +29,6 @@ exit
 # Step 03: Setup stack.
 # ---------------------------------------------------------------------------
 
-sudo -s
 source /opt/devops/setups/ubuntu/errata/activate
 errata-installer-step-03
 exit
@@ -39,7 +37,6 @@ exit
 # Step 04: Setup database.
 # ---------------------------------------------------------------------------
 
-sudo -s
 source /opt/devops/setups/ubuntu/errata/activate
 errata-installer-step-04
 exit

@@ -1,5 +1,4 @@
 # Imports.
-source $INSTALLER_HOME/sh/constants.sh
 source $INSTALLER_HOME/sh/utils.sh
 
 # Main entry point.
@@ -7,17 +6,19 @@ main()
 {
     log "BEGIN step 2:"
 
-    log "... step 2.1: initialising python"
-    _init_python
+    log "... step 2.1: initialising pyenv"
+    _init_pyenv
 
     log "END step 2"
 }
 
-# JIT install python 2.
-_init_python()
+
+# Initialise pyenv.
+_init_pyenv()
 {
-    if [[ ! -d $HOME/.pyenv/versions/$INSTALLER_PYTHON_2 ]]; then
-        pyenv install $INSTALLER_PYTHON_2
+    if [[ ! -f $HOME/.pyenv/bin/pyenv ]]; then
+        curl https://pyenv.run | bash
+        cat $INSTALLER_HOME/templates/shell-pyenv.txt >> $HOME/.bashrc
     fi
 }
 

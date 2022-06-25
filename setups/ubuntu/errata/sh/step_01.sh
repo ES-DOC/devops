@@ -12,9 +12,6 @@ main()
     log "... step 1.2: initialising services"
     _init_services
 
-    log "... step 1.3: initialising pyenv"
-    _init_pyenv
-
     log "END step 1"
 }
 
@@ -69,15 +66,6 @@ function _init_services()
 
     apt install -qq nginx
     ufw allow 'Nginx Full'
-}
-
-# Initialise pyenv.
-_init_pyenv()
-{
-    if [[ ! -f $HOME/.pyenv/bin/pyenv ]]; then
-        curl https://pyenv.run | bash
-        cat $INSTALLER_HOME/templates/shell-pyenv.txt >> $HOME/.bashrc
-    fi
 }
 
 # Invoke entry point.

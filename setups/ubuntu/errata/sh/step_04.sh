@@ -5,44 +5,88 @@ source $INSTALLER_HOME/sh/utils.sh
 # Main entry point.
 main()
 {
-	log "API-DB : installing ..."
+    log "BEGIN step 4:"
 
-	_db_create_users
-	_db_create
-	_db_setup
-	_db_grant_permissions
+    log "... step 4.1: initialising repos"
+    _init_repos
 
-	log "API-DB : installed"
+    log "... step 4.2: initialising environment"
+    _init_env
+
+    log "... step 4.3: initialising ops directories"
+    _install_ops_dirs
+
+    log "END step 4"
 }
 
-# Create db users.
-_db_create_users()
-{
-	log "Creating DB users"
-	createuser -U $ERRATA_DB_USER_SUPER -d -s $ERRATA_DB_USER_ADMIN
-	createuser -U $ERRATA_DB_USER_ADMIN -D -S -R $ERRATA_DB_USER_APP
+# Initialises source code repos.
+function _init_repos() {
+    if [[ ! -d /opt/pyessv-archive ]]; then
+        pushd /opt    
+        git clone -q https://github.com/ES-DOC/pyessv-archive.git
+        cat $INSTALLER_HOME/templates/shell-pyessv.txt >> $HOME/.bashrc
+        popd
+    else
+        pushd /opt/pyessv-archive
+        git pull -q
+        popd
+    fi
+
+    if [[ ! -d /opt/esdoc-errata-fe ]]; then
+        pushd /opt
+        git clone -q https://github.com/ES-DOC/esdoc-errata-fe.git
+        popd
+    else
+        pushd /opt/esdoc-errata-fe
+        git pull -q
+        popd
+    fi
+
+    if [[ ! -d /opt/esdoc-errata-ws ]]; then
+        pushd /opt    
+        git clone -q https://github.com/ES-DOC/esdoc-errata-ws.git
+        popd
+        cat $INSTALLER_HOME/templates/shell-pythonpath.txt >> $HOME/.bashrc
+        cat $INSTALLER_HOME/templates/shell-app.txt >> $HOME/.bashrc
+    else
+        pushd /opt/esdoc-errata-ws
+        git pull -q
+        popd
+    fi
 }
 
-# Create db.
-_db_create()
-{
-	log "Creating DB"
-	createdb -U $ERRATA_DB_USER_ADMIN -e -O $ERRATA_DB_USER_ADMIN -T template0 $ERRATA_DB_NAME
+# Initialises application environment files.
+function _init_env() {
+    if [[ ! -d $HOME/.esdoc ]]; then
+        mkdir $HOME/.esdoc
+    fi
+
+    if [[ ! -f $HOME/.esdoc/credentials.sh ]]; then
+        cp $INSTALLER_HOME/templates/credentials.txt $HOME/.esdoc/credentials.sh
+    fi
+
+    if [[ ! -f $HOME/.esdoc/environment.sh ]]; then
+        cp $INSTALLER_HOME/templates/environment.txt $HOME/.esdoc/environment.sh
+    fi
 }
 
-# Grant db permissions.
-_db_grant_permissions()
+# Initialise ops directories.
+_install_ops_dirs()
 {
-	log "Granting DB permissions"
-	psql -U $ERRATA_DB_USER_ADMIN -d $ERRATA_DB_NAME -q -f $INSTALLER_HOME/templates/db_permissions.sql
-}
+    if [[ ! -d /opt/esdoc-errata-ws/ops ]]; then
+        mkdir -p /opt/esdoc-errata-ws/ops
+        mkdir -p /opt/esdoc-errata-ws/ops/config
+        mkdir -p /opt/esdoc-errata-ws/ops/daemon
+        mkdir -p /opt/esdoc-errata-ws/ops/logs
+    fi
 
-# Seed db.
-_db_setup()
-{
-	pushd /opt/esdoc-errata-ws
-	pipenv run python $INSTALLER_HOME/sh/step_04.py
-	popd
+    if [[ ! -f /opt/esdoc-errata-ws/ops/config/ws.conf ]]; then
+        cp $INSTALLER_HOME/templates/ws-app.conf /opt/esdoc-errata-ws/ops/config/ws.conf
+    fi
+
+    if [[ ! -f /opt/esdoc-errata-ws/ops/config/supervisord.conf ]]; then
+        cp $INSTALLER_HOME/templates/ws-supervisord.conf /opt/esdoc-errata-ws/ops/config/supervisord.conf
+    fi
 }
 
 # Invoke entry point.
