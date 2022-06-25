@@ -4,7 +4,7 @@ source $INSTALLER_HOME/sh/utils.sh
 # Main entry point.
 main()
 {
-    installer_log "... setting up postgres"
+    log "... setting up postgres"
     
     # TODO: invoke these scripts with correct environment variables.
     source /opt/esdoc-errata-ws/db_install.sh

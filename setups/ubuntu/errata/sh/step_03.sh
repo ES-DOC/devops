@@ -5,18 +5,18 @@ source $INSTALLER_HOME/sh/utils.sh
 # Main entry point.
 main()
 {
-    installer_log "BEGIN step 3:"
+    log "BEGIN step 3:"
 
-    installer_log "... step 3.1: initialising repos"
+    log "... step 3.1: initialising repos"
     _init_repos
 
-    installer_log "... step 3.2: initialising environment"
+    log "... step 3.2: initialising environment"
     _init_env
 
-    installer_log "... step 3.3: initialising python venv"
+    log "... step 3.3: initialising python venv"
     _init_python_env
 
-    installer_log "END step 2"
+    log "END step 2"
 }
 
 # Initialises source code repos.

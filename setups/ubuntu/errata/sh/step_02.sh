@@ -5,12 +5,12 @@ source $INSTALLER_HOME/sh/utils.sh
 # Main entry point.
 main()
 {
-    installer_log "BEGIN step 2:"
+    log "BEGIN step 2:"
 
-    installer_log "... step 2.1: initialising python"
+    log "... step 2.1: initialising python"
     _init_python
 
-    installer_log "END step 2"
+    log "END step 2"
 }
 
 # JIT install python 2.

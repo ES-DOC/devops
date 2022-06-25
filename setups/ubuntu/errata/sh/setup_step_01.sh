@@ -4,7 +4,7 @@ source $INSTALLER_HOME/sh/utils.sh
 # Main entry point.
 main()
 {
-    installer_log "... setting up application stack"
+    log "... setting up application stack"
 
     # Copy credentials & environment files.
     mkdir $HOME/.esdoc

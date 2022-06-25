@@ -4,18 +4,18 @@ source $INSTALLER_HOME/sh/utils.sh
 # Main entry point.
 main()
 {
-    installer_log "BEGIN step 1:"
+    log "BEGIN step 1:"
 
-    installer_log "... step 1.1: initialising system"
+    log "... step 1.1: initialising system"
     _init_sys
 
-    installer_log "... step 1.2: initialising services"
+    log "... step 1.2: initialising services"
     _init_services
 
-    installer_log "... step 1.3: initialising pyenv"
+    log "... step 1.3: initialising pyenv"
     _init_pyenv
 
-    installer_log "END step 1"
+    log "END step 1"
 }
 
 # Initialise operating system.

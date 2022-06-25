@@ -5,7 +5,7 @@
 # ###############################################################
 
 # Wraps standard echo by adding application prefix.
-function installer_log ()
+function log ()
 {
     # Set timestamp.
     declare now=`date +%Y-%m-%dT%H:%M:%S:000000`
@@ -30,7 +30,7 @@ function installer_log ()
 }
 
 # Wraps standard echo by adding application prefix.
-function installer_log_error ()
+function log_error ()
 {
     # Set timestamp.
     declare now=`date +%Y-%m-%dT%H:%M:%S:000000`
