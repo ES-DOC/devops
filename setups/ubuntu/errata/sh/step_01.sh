@@ -12,6 +12,9 @@ main()
     log "... step 1.2: initialising services"
     _init_services
 
+    log "... step 1.3: initialising permissions"
+    _init_permissions
+
     log "END step 1"
 }
 
@@ -66,6 +69,13 @@ function _init_services()
 
     apt install -qq nginx
     ufw allow 'Nginx Full'
+}
+
+# Initialise permissions.
+function _init_permissions()
+{
+    chmod 777 /opt
+    chmod 777 /var/lib
 }
 
 # Invoke entry point.
