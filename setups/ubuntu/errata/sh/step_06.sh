@@ -9,7 +9,7 @@ main()
 
     # log "... step 6.1: creating DB objects"
 	pushd /opt/esdoc-errata-ws
-	pipenv run python $INSTALLER_HOME/sh/step_05.py
+	pipenv run python $INSTALLER_HOME/sh/step_06.py
 	popd
 
     log "END step 6"
