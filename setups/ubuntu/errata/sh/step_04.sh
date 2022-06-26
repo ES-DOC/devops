@@ -19,6 +19,9 @@ main()
     log "... step 4.4: initialising ops directories"
     _install_ops_dirs
 
+    log "... step 4.5: initialising python venv"
+    _init_python_venv
+
     log "END step 4"
 }
 
@@ -100,6 +103,17 @@ _install_ops_dirs()
     if [[ ! -f /opt/esdoc-errata-ws/ops/config/supervisord.conf ]]; then
         cp $INSTALLER_HOME/templates/ws-supervisord.conf /opt/esdoc-errata-ws/ops/config/supervisord.conf
     fi
+}
+
+# Initialise python virtual environment.
+_init_python_venv()
+{
+    pushd /opt/esdoc-errata-ws
+    pyenv local --unset
+    pyenv local $INSTALLER_PYTHON_2
+    pip install pipenv
+    pipenv run pipenv install
+    popd
 }
 
 # Invoke entry point.
