@@ -1,20 +1,27 @@
 ```
 # ---------------------------------------------------------------------------
-# Step 01: Initialise system + services.
+# Step 00: Initialise installer.
 # ---------------------------------------------------------------------------
 
 sudo -s
 apt install git
-git clone https://github.com/ES-DOC/devops.git /opt/devops
-source /opt/devops/setups/ubuntu/errata/activate
-errata-installer-step-01
+chmod 777 /opt
 exit
 
 # ---------------------------------------------------------------------------
-# Step 02: Initialise pyenv.
+# Step 01: Initialise system + services.
 # ---------------------------------------------------------------------------
 
+git clone https://github.com/ES-DOC/devops.git /opt/devops
 source /opt/devops/setups/ubuntu/errata/activate
+
+errata-installer-step-01
+source ~/.bashrc
+
+# ---------------------------------------------------------------------------
+# Step 02: Initialise pyenv + python.
+# ---------------------------------------------------------------------------
+
 errata-installer-step-02
 source ~/.bashrc
 

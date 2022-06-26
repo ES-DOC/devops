@@ -4,10 +4,9 @@
 # ----------------------------------------------------------------------
 
 if [[ -d /opt/esdoc-errata-ws ]]; then
-    export ERRATA_DB_USER_SUPER=ws_errata_user_super
-    export ERRATA_DB_USER_APP=ws_errata_user_app
-    export ERRATA_DB_USER_ADMIN=ws_errata_user_admin
-    export ERRATA_DB_NAME=ws_errata
+    export ERRATA_DB_USER_ADMIN=errata_db_user_admin
+    export ERRATA_DB_USER_APP=errata_db_user_app
+    export ERRATA_DB_NAME=errata_db
 fi
 
 if [[ -f /opt/esdoc-errata-ws/sh/activate ]]; then
