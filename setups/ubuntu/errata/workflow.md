@@ -1,15 +1,17 @@
 ```
 # ---------------------------------------------------------------------------
-# Step 00: Setup installer.
+# Step 00: Initialises installer.
 # ---------------------------------------------------------------------------
 
 sudo -s
 apt install git
+exit
+chmod 777 /opt
 git clone https://github.com/ES-DOC/devops.git /opt/devops
 exit
 
 # ---------------------------------------------------------------------------
-# Step 01: Setup system.
+# Step 01: Initialises system + services.
 # ---------------------------------------------------------------------------
 
 sudo -s
@@ -18,26 +20,30 @@ errata-installer-step-01
 exit
 
 # ---------------------------------------------------------------------------
-# Step 02: Setup python.
+# Step 02: Initialises pyenv.
 # ---------------------------------------------------------------------------
 
 source /opt/devops/setups/ubuntu/errata/activate
 errata-installer-step-02
-exit
+source ~/.bashrc
 
 # ---------------------------------------------------------------------------
-# Step 03: Setup stack.
+# Step 03: Initialises python.
 # ---------------------------------------------------------------------------
 
-source /opt/devops/setups/ubuntu/errata/activate
 errata-installer-step-03
-exit
 
 # ---------------------------------------------------------------------------
-# Step 04: Setup database.
+# Step 04: Initialises stack.
 # ---------------------------------------------------------------------------
 
-source /opt/devops/setups/ubuntu/errata/activate
 errata-installer-step-04
-exit
+source ~/.bashrc
+
+# ---------------------------------------------------------------------------
+# Step 04: Initialises database.
+# ---------------------------------------------------------------------------
+
+errata-installer-step-05
+source ~/.bashrc
 ```

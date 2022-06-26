@@ -7,16 +7,32 @@ main()
 {
     log "BEGIN step 4:"
 
-    log "... step 4.1: initialising repos"
+    log "... step 4.1: initialising bashrc"
+    _init_bashrc
+
+    log "... step 4.2: initialising repos"
     _init_repos
 
-    log "... step 4.2: initialising environment"
+    log "... step 4.3: initialising environment"
     _init_env
 
-    log "... step 4.3: initialising ops directories"
+    log "... step 4.4: initialising ops directories"
     _install_ops_dirs
 
     log "END step 4"
+}
+
+# Initialises bashrc file.
+function _init_bashrc() {
+    if [[ ! -d /opt/pyessv-archive ]]; then
+        cat $INSTALLER_HOME/templates/shell-pyessv.txt >> $HOME/.bashrc
+    fi
+
+    if [[ ! -d /opt/esdoc-errata-ws ]]; then
+        cat $INSTALLER_HOME/templates/shell-postgresql.txt >> $HOME/.bashrc
+        cat $INSTALLER_HOME/templates/shell-pythonpath.txt >> $HOME/.bashrc
+        cat $INSTALLER_HOME/templates/shell-app.txt >> $HOME/.bashrc
+    fi
 }
 
 # Initialises source code repos.
@@ -24,7 +40,6 @@ function _init_repos() {
     if [[ ! -d /opt/pyessv-archive ]]; then
         pushd /opt    
         git clone -q https://github.com/ES-DOC/pyessv-archive.git
-        cat $INSTALLER_HOME/templates/shell-pyessv.txt >> $HOME/.bashrc
         popd
     else
         pushd /opt/pyessv-archive
@@ -46,8 +61,6 @@ function _init_repos() {
         pushd /opt    
         git clone -q https://github.com/ES-DOC/esdoc-errata-ws.git
         popd
-        cat $INSTALLER_HOME/templates/shell-pythonpath.txt >> $HOME/.bashrc
-        cat $INSTALLER_HOME/templates/shell-app.txt >> $HOME/.bashrc
     else
         pushd /opt/esdoc-errata-ws
         git pull -q
