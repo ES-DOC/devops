@@ -41,7 +41,7 @@ fi
 
 if [[ -d /opt/esdoc-errata-ws ]]; then
     export PYTHONPATH=/opt/esdoc-errata-ws:$PYTHONPATH
+    source /opt/esdoc-errata-ws/sh/activate
     export ERRATA_DB_USER=esdoc
     export ERRATA_DB_NAME=esdoc_errata
-    source /opt/esdoc-errata-ws/sh/activate
 fi
