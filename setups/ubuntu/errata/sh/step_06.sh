@@ -20,7 +20,7 @@ EOM
 
     sudo -i -u postgres psql -d $ERRATA_DB_NAME -q -f /opt/devops/tmp/creds.sql
 
-    rm /opt/devops/tmp/creds.sql
+    # rm /opt/devops/tmp/creds.sql
 
     # log "... step 6.1: creating DB objects"
 	# pushd /opt/esdoc-errata-ws
