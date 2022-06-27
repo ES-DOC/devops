@@ -7,35 +7,19 @@ main()
 {
     log "BEGIN step 4:"
 
-    log "... step 4.1: initialising bashrc"
-    _init_bashrc
-
-    log "... step 4.2: initialising repos"
+    log "... step 4.1: initialising repos"
     _init_repos
 
-    log "... step 4.3: initialising environment"
+    log "... step 4.2: initialising environment"
     _init_env
 
-    log "... step 4.4: initialising ops directories"
-    _install_ops_dirs
+    log "... step 4.3: initialising ops directories"
+    _install_ops
 
-    log "... step 4.5: initialising python venv"
-    _init_python_venv
+    log "... step 4.4: initialising python venv"
+    _init_venv
 
     log "END step 4"
-}
-
-# Initialises bashrc file.
-function _init_bashrc() {
-    if [[ ! -d /opt/pyessv-archive ]]; then
-        cat $INSTALLER_HOME/templates/shell-pyessv.txt >> $HOME/.bashrc
-    fi
-
-    if [[ ! -d /opt/esdoc-errata-ws ]]; then
-        cat $INSTALLER_HOME/templates/shell-postgresql.txt >> $HOME/.bashrc
-        cat $INSTALLER_HOME/templates/shell-pythonpath.txt >> $HOME/.bashrc
-        cat $INSTALLER_HOME/templates/shell-app.txt >> $HOME/.bashrc
-    fi
 }
 
 # Initialises source code repos.
@@ -75,10 +59,9 @@ function _init_repos() {
 function _init_env() {
     if [[ ! -d $HOME/.esdoc ]]; then
         mkdir $HOME/.esdoc
-    fi
-
-    if [[ ! -f $HOME/.esdoc/credentials.sh ]]; then
-        cp $INSTALLER_HOME/templates/credentials.txt $HOME/.esdoc/credentials.sh
+        cp $INSTALLER_HOME/templates/app_credentials.txt $HOME/.esdoc/credentials
+        cp $INSTALLER_HOME/templates/app_environment.txt $HOME/.esdoc/environment
+        cat $INSTALLER_HOME/templates/bashrc.txt >> $HOME/.bashrc
         cat >> $HOME/.esdoc/credentials.sh <<- EOM
 
 # Errata database password.
@@ -86,14 +69,10 @@ export ERRATA_DB_PWD=$(openssl rand -hex 16)
 
 EOM
     fi
-
-    if [[ ! -f $HOME/.esdoc/environment.sh ]]; then
-        cp $INSTALLER_HOME/templates/environment.txt $HOME/.esdoc/environment.sh
-    fi
 }
 
 # Initialise ops directories.
-_install_ops_dirs()
+_install_ops()
 {
     if [[ ! -d /opt/esdoc-errata-ws/ops ]]; then
         mkdir -p /opt/esdoc-errata-ws/ops
@@ -111,8 +90,8 @@ _install_ops_dirs()
     fi
 }
 
-# Initialise python virtual environment.
-_init_python_venv()
+# Initialise python virtual env.
+_init_venv()
 {
     pushd /opt/esdoc-errata-ws
     pyenv local --unset

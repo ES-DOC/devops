@@ -1,0 +1,12 @@
+
+# ----------------------------------------------------------------------
+# ESDOC environment + credentials
+# ----------------------------------------------------------------------
+
+if [[ -f $HOME/.esdoc/credentials ]]; then
+    source $HOME/.esdoc/credentials
+fi
+
+if [[ -f $HOME/.esdoc/environment ]]; then
+    source $HOME/.esdoc/environment
+fi
