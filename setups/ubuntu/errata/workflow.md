@@ -54,9 +54,9 @@ errata-installer-step-06
 source ~/.bashrc
 
 # ---------------------------------------------------------------------------
-# Step 07: Run web-service.
+# Step 07: Run web-service daemon.
 # ---------------------------------------------------------------------------
 
-errata-ws
+errata-ws-daemon
 
 ```
