@@ -47,13 +47,16 @@ errata-installer-step-05
 source ~/.bashrc
 
 # ---------------------------------------------------------------------------
-# Step 05: Initialise database.
+# Step 06: Initialise database.
 # ---------------------------------------------------------------------------
 
-sudo systemctl start postgresql.service
-sudo -i -u postgres createuser -d esdoc
-sudo -i -u postgres createuser -d esdoc
-psql
-createdb $ERRATA_DB_NAME
+errata-installer-step-06
+source ~/.bashrc
+
+# ---------------------------------------------------------------------------
+# Step 07: Initialise database Run web-service.
+# ---------------------------------------------------------------------------
+
+errata-ws
 
 ```
