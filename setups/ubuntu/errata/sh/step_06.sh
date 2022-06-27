@@ -8,6 +8,7 @@ main()
     log "BEGIN step 6:"
 
     sudo -i -u postgres createuser esdoc
+    sudo -i -u postgres createdb -O esdoc esdoc_errata
 
     if [[ ! -d /opt/devops/tmp ]]; then
         mkdir /opt/devops/tmp
