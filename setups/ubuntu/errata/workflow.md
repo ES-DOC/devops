@@ -54,7 +54,7 @@ errata-installer-step-06
 source ~/.bashrc
 
 # ---------------------------------------------------------------------------
-# Step 07: Initialise database Run web-service.
+# Step 07: Run web-service.
 # ---------------------------------------------------------------------------
 
 errata-ws
