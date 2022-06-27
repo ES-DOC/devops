@@ -16,9 +16,6 @@ main()
     log "... step 4.3: initialising ops directories"
     _install_ops
 
-    log "... step 4.4: initialising python venv"
-    _init_venv
-
     log "END step 4"
 }
 
@@ -62,7 +59,7 @@ function _init_env() {
         cp $INSTALLER_HOME/templates/app_credentials.txt $HOME/.esdoc/credentials
         cp $INSTALLER_HOME/templates/app_environment.txt $HOME/.esdoc/environment
         cat $INSTALLER_HOME/templates/bashrc.txt >> $HOME/.bashrc
-        cat >> $HOME/.esdoc/credentials.sh <<- EOM
+        cat >> $HOME/.esdoc/credentials <<- EOM
 
 # Errata database password.
 export ERRATA_DB_PWD=$(openssl rand -hex 16)
@@ -88,17 +85,6 @@ _install_ops()
     if [[ ! -f /opt/esdoc-errata-ws/ops/config/supervisord.conf ]]; then
         cp $INSTALLER_HOME/templates/ws-supervisord.conf /opt/esdoc-errata-ws/ops/config/supervisord.conf
     fi
-}
-
-# Initialise python virtual env.
-_init_venv()
-{
-    pushd /opt/esdoc-errata-ws
-    pyenv local --unset
-    pyenv local $INSTALLER_PYTHON_2
-    pip install pipenv
-    pipenv run pipenv install
-    popd
 }
 
 # Invoke entry point.

@@ -7,12 +7,21 @@ main()
 {
     log "BEGIN step 5:"
 
-    # log "... step 5.1: creating DB objects"
-	pushd /opt/esdoc-errata-ws
-	pipenv run python $INSTALLER_HOME/sh/step_05.py
-	popd
+    log "... step 5.1: initialising python venv"
+    _init_venv
 
     log "END step 5"
+}
+
+# Initialise python virtual env.
+_init_venv()
+{
+    pushd /opt/esdoc-errata-ws
+    pyenv local --unset
+    pyenv local $INSTALLER_PYTHON_2
+    pip install pipenv
+    pipenv run pipenv install
+    popd
 }
 
 # Invoke entry point.
