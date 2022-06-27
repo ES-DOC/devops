@@ -79,7 +79,7 @@ _install_ops()
     fi
 
     if [[ ! -f /opt/esdoc-errata-ws/ops/config/ws.conf ]]; then
-        cp $INSTALLER_HOME/templates/ws-app.conf /opt/esdoc-errata-ws/ops/config/ws.conf
+        cat $INSTALLER_HOME/templates/ws-app.conf >> /opt/esdoc-errata-ws/ops/config/ws.conf
     fi
 
     if [[ ! -f /opt/esdoc-errata-ws/ops/config/supervisord.conf ]]; then
