@@ -1,6 +1,6 @@
 # Imports.
-source $INSTALLER_GLOBAL/sh/utils.sh
-source $INSTALLER_GLOBAL/sh/init_sys.sh
+source $INSTALLER_SHARED/sh/utils.sh
+source $INSTALLER_SHARED/sh/init_sys.sh
 
 # Main entry point.
 main()

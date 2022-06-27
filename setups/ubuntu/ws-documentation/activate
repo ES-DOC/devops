@@ -7,11 +7,11 @@ shopt -s expand_aliases
 
 # Set home.
 export INSTALLER_HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-export INSTALLER_GLOBAL="$( cd "$( dirname "${INSTALLER_HOME[0]}" )" && pwd )"/global
+export INSTALLER_SHARED="$( cd "$( dirname "${INSTALLER_HOME[0]}" )" && pwd )"/shared
 
 # Ensure shell scripts are executable.
 chmod a+x $INSTALLER_HOME/sh/*.sh
-chmod a+x $INSTALLER_GLOBAL/sh/*.sh
+chmod a+x $INSTALLER_SHARED/sh/*.sh
 
 # ###############################################################
 # ALIASES
