@@ -1,0 +1,14 @@
+
+# ----------------------------------------------------------------------
+# PATHS
+# ----------------------------------------------------------------------
+
+# Ensure local binaries are available.
+PATH=$PATH:$HOME/bin
+
+# Pyenv path.
+if [[ -d $HOME/.pyenv ]]; then
+    export PATH="$HOME/.pyenv/bin:$PATH"        
+    eval "$(pyenv init --path)"
+    eval "$(pyenv virtualenv-init -)"
+fi

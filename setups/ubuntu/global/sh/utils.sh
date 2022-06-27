@@ -20,12 +20,12 @@ function log ()
             do
                 declare tabs+='\t'
             done
-            echo $now" [INFO] [$$] ERRATA :: "$tabs$1
+            echo $now" [INFO] [$$] INSTALLER :: "$tabs$1
         else
-            echo $now" [INFO] [$$] ERRATA :: "$1
+            echo $now" [INFO] [$$] INSTALLER :: "$1
         fi
     else
-        echo $now" [INFO] [$$] ERRATA :: "
+        echo $now" [INFO] [$$] INSTALLER :: "
     fi
 }
 
@@ -45,12 +45,12 @@ function log_error ()
             do
                 declare tabs+='\t'
             done
-            echo $now" [ERROR] [$$] ERRATA :: "$tabs$1
+            echo $now" [ERROR] [$$] INSTALLER :: "$tabs$1
         else
-            echo $now" [ERROR] [$$] ERRATA :: "$1
+            echo $now" [ERROR] [$$] INSTALLER :: "$1
         fi
     else
-        echo $now" [ERROR] [$$] ERRATA :: "
+        echo $now" [ERROR] [$$] INSTALLER :: "
     fi
 }
 

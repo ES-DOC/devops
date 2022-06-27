@@ -17,9 +17,8 @@ chmod a+x $INSTALLER_GLOBAL/sh/*.sh
 # ALIASES
 # ###############################################################
 
-alias errata-installer-step-01=$INSTALLER_HOME/sh/step_01.sh
-alias errata-installer-step-02=$INSTALLER_HOME/sh/step_02.sh
-alias errata-installer-step-03=$INSTALLER_HOME/sh/step_03.sh
-alias errata-installer-step-04=$INSTALLER_HOME/sh/step_04.sh
-alias errata-installer-step-05=$INSTALLER_HOME/sh/step_05.sh
-alias errata-installer-step-06=$INSTALLER_HOME/sh/step_06.sh
+alias pyessv-installer-step-01=$INSTALLER_HOME/sh/step_01.sh
+alias pyessv-installer-step-02=$INSTALLER_HOME/sh/step_02.sh
+alias pyessv-installer-step-03=$INSTALLER_HOME/sh/step_03.sh
+alias pyessv-installer-step-04=$INSTALLER_HOME/sh/step_04.sh
+alias pyessv-installer-step-05=$INSTALLER_HOME/sh/step_05.sh

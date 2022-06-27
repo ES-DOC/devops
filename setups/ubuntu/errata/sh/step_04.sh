@@ -1,6 +1,6 @@
 # Imports.
 source $INSTALLER_HOME/sh/constants.sh
-source $INSTALLER_HOME/sh/utils.sh
+source $INSTALLER_GLOBAL/sh/utils.sh
 
 # Main entry point.
 main()
@@ -58,7 +58,7 @@ function _init_env() {
         mkdir $HOME/.esdoc
         cp $INSTALLER_HOME/templates/app_credentials.txt $HOME/.esdoc/credentials
         cp $INSTALLER_HOME/templates/app_environment.txt $HOME/.esdoc/environment
-        cat $INSTALLER_HOME/templates/bashrc.txt >> $HOME/.bashrc
+        cat $INSTALLER_GLOBAL/templates/bashrc.txt >> $HOME/.bashrc
         cat >> $HOME/.esdoc/credentials <<- EOM
 
 # Errata database password.
