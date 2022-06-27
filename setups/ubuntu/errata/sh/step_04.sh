@@ -79,6 +79,12 @@ function _init_env() {
 
     if [[ ! -f $HOME/.esdoc/credentials.sh ]]; then
         cp $INSTALLER_HOME/templates/credentials.txt $HOME/.esdoc/credentials.sh
+        cat >> $HOME/.esdoc/credentials.sh <<- EOM
+
+# Errata database password.
+export ERRATA_DB_PWD=$(openssl rand -hex 16)
+
+EOM
     fi
 
     if [[ ! -f $HOME/.esdoc/environment.sh ]]; then
