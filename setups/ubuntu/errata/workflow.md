@@ -52,6 +52,8 @@ source ~/.bashrc
 
 sudo systemctl start postgresql.service
 sudo -i -u postgres createuser -d esdoc
+sudo -i -u postgres createuser -d esdoc
+psql
 createdb $ERRATA_DB_NAME
 
 ```
