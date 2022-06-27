@@ -39,9 +39,11 @@ errata-installer-step-04
 source ~/.bashrc
 
 # ---------------------------------------------------------------------------
-# Step 04: Initialise database.
+# Step 05: Initialise database.
 # ---------------------------------------------------------------------------
 
-errata-installer-step-05
-source ~/.bashrc
+sudo systemctl start postgresql.service
+sudo -i -u postgres createuser -d $(whoami)
+createdb $ERRATA_DB_NAME
+
 ```
