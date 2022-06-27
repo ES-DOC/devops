@@ -51,7 +51,7 @@ source ~/.bashrc
 # ---------------------------------------------------------------------------
 
 sudo systemctl start postgresql.service
-sudo -i -u postgres createuser -d $(whoami)
+sudo -i -u postgres createuser -d esdoc
 createdb $ERRATA_DB_NAME
 
 ```

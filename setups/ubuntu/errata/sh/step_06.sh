@@ -5,14 +5,14 @@ source $INSTALLER_HOME/sh/utils.sh
 # Main entry point.
 main()
 {
-    log "BEGIN step 5:"
+    log "BEGIN step 6:"
 
-    # log "... step 5.1: creating DB objects"
+    # log "... step 6.1: creating DB objects"
 	pushd /opt/esdoc-errata-ws
-	pipenv run python $INSTALLER_HOME/sh/step_05.py
+	pipenv run python $INSTALLER_HOME/sh/step_06.py
 	popd
 
-    log "END step 5"
+    log "END step 6"
 }
 
 # Invoke entry point.
