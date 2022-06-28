@@ -15,25 +15,18 @@ main()
 
 # Initialises source code repos.
 function _init_repos() {
-    if [[ ! -d /opt/pyessv-archive ]]; then
-        pushd /opt    
-        git clone -q https://github.com/ES-DOC/pyessv-archive.git
-        popd
-    else
-        pushd /opt/pyessv-archive
-        git pull -q
-        popd
-    fi
-
-    if [[ ! -d /opt/pyessv-ws ]]; then
-        pushd /opt    
-        git clone -q https://github.com/ES-DOC/pyessv-ws.git
-        popd
-    else
-        pushd /opt/pyessv-ws
-        git pull -q
-        popd
-    fi
+	for REPO in "${INSTALLER_REPOS[@]}"
+	do
+        if [[ ! -d /opt/$REPO ]]; then
+            pushd /opt    
+            git clone -q https://github.com/ES-DOC/$REPO.git
+            popd
+        else
+            pushd /opt/$REPO
+            git pull -q
+            popd
+        fi
+	done
 }
 
 # Invoke entry point.
