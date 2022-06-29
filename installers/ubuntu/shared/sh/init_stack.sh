@@ -16,13 +16,13 @@ function init_stack_env() {
 
 # Initialises stack repos.
 function init_stack_repos() {
-    local REPOS=${1}
+    local REPOS=${1[@]}
 
 	for REPO in "${REPOS[@]}"
 	do
         echo "$REPO 123"
         if [[ ! -d /opt/$REPO ]]; then
-            pushd /opt    
+            pushd /opt
             git clone -q https://github.com/ES-DOC/$REPO.git
             popd
         else
