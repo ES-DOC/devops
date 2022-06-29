@@ -27,6 +27,7 @@ init_venv()
     pyenv local --unset
     pyenv local $TARGET_PYTHON
     pip install pipenv
+    pip install supervisor
     pipenv run pipenv install
     popd
 }
