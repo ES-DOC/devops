@@ -13,7 +13,7 @@ function init_sys_libs()
     apt install -qq libffi-dev libssl-dev
 
     # Install basic utils.
-    apt install -qq wget curl git gh
+    apt install -qq wget curl git
 
     # Installs the headers and static libraries of python 3 that are used to compile and mount the language extensions.
     apt install -qq python3-dev python3-venv
