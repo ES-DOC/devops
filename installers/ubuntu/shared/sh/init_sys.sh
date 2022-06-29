@@ -38,7 +38,8 @@ function init_sys_libs()
         xz-utils \
         tk-dev \
         libxmlsec1-dev \
-        liblzma-dev
+        liblzma-dev \
+        ufw
 }
 
 # Initialise services.
