@@ -9,7 +9,10 @@ main()
     log "BEGIN step 4:"
 
     log "... step 4.1: initialising repos"
-    init_stack_repos $INSTALLER_REPOS
+	for REPO in "${INSTALLER_REPOS[@]}"
+	do
+        init_stack_repo $REPO
+	done
 
     log "... step 4.2: initialising environment"
     init_stack_env $INSTALLER_HOME
