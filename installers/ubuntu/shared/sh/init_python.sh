@@ -7,11 +7,13 @@ init_pyenv()
     fi
 }
 
-# JIT install python 2.
-init_python_2()
+# JIT install python.
+init_python()
 {
-    if [[ ! -d $HOME/.pyenv/versions/$INSTALLER_PYTHON_2 ]]; then
-        pyenv install $INSTALLER_PYTHON_2
+    local PYTHON_VERSION=${1}
+
+    if [[ ! -d $HOME/.pyenv/versions/$PYTHON_VERSION ]]; then
+        pyenv install $PYTHON_VERSION
     fi
 }
 
