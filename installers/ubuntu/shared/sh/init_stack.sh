@@ -20,6 +20,7 @@ function init_stack_repos() {
 
 	for REPO in "${REPOS[@]}"
 	do
+        echo "$REPO 123"
         if [[ ! -d /opt/$REPO ]]; then
             pushd /opt    
             git clone -q https://github.com/ES-DOC/$REPO.git
