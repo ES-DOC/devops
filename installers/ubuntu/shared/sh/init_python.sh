@@ -17,14 +17,6 @@ init_python()
     fi
 }
 
-# JIT install python 3.
-init_python_3()
-{
-    if [[ ! -d $HOME/.pyenv/versions/$INSTALLER_PYTHON_3 ]]; then
-        pyenv install $INSTALLER_PYTHON_3
-    fi
-}
-
 # JIT install python virtual environment.
 init_venv()
 {
