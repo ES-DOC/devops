@@ -13,7 +13,7 @@ exit
 # ---------------------------------------------------------------------------
 
 git clone https://github.com/ES-DOC/devops.git /opt/devops
-source /opt/devops/installers/ubuntu/errata/activate
+source /opt/devops/installers/ubuntu/ws-errata/activate
 
 errata-installer-step-01
 source ~/.bashrc
