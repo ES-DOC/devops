@@ -17,6 +17,7 @@ declare -a OPAL_LIBS=(
     'esdoc-api'
     'esdoc-cdf2cim-ws'
     'esdoc-errata-ws'
+	'pyessv-docs'
 	'pyessv-ws'
 
     # ... front-ends
