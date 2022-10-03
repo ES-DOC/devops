@@ -11,7 +11,7 @@ main()
     init_sys_libs
 
     log "... step 1.2: initialising services"
-    init_sys_services
+    init_sys_service_nginx
 
     log "... step 1.3: initialising permissions"
     init_sys_permissions

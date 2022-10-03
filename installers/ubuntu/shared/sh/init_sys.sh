@@ -42,13 +42,20 @@ function init_sys_libs()
         ufw
 }
 
-# Initialise services.
-function init_sys_services()
+# Initialise service - postgreSQL.
+function init_sys_service_pgres()
 {
     apt install -qq postgresql postgresql-contrib
     cat $INSTALLER_HOME/templates/shell-postgresql.txt >> $HOME/.bashrc
     systemctl start postgresql.service
 
+    apt install -qq nginx
+    ufw allow 'Nginx Full'
+}
+
+# Initialise service - nginx.
+function init_sys_service_nginx()
+{
     apt install -qq nginx
     ufw allow 'Nginx Full'
 }
