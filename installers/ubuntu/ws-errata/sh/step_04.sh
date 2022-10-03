@@ -17,10 +17,10 @@ main()
     log "... step 4.2: initialising environment"
     init_stack_env $INSTALLER_HOME
 
-    log "... step 4.2: initialising credentials"
+    log "... step 4.3: initialising credentials"
     _init_credentials
 
-    log "... step 4.3: initialising ops directories"
+    log "... step 4.4: initialising ops directories"
     _install_ops
 
     log "END step 4"
