@@ -7,6 +7,7 @@ source $INSTALLER_SHARED/sh/constants.sh
 declare -a INSTALLER_REPOS=(
     'pyessv'
     'pyessv-archive'
+    'pyessv-config'
     'pyessv-js'
     'pyessv-writers'
     'pyessv-ws'
