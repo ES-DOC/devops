@@ -32,15 +32,15 @@ fi
 # ESDOC - CDF2CIM ARCHIVE
 # ----------------------------------------------------------------------
 
-if [[ -d /opt/cdf2cim-archive ]]; then
-    export CDF2CIM_ARCHIVE_HOME=/opt/cdf2cim-archive
+if [[ -d /opt/esdoc-cdf2cim-archive ]]; then
+    export CDF2CIM_ARCHIVE_HOME=/opt/esdoc-cdf2cim-archive
 fi
 
 # ----------------------------------------------------------------------
 # ESDOC - CDF2CIM WEB SERVICE
 # ----------------------------------------------------------------------
 
-if [[ -d /opt/esdoc-errata-ws ]]; then
+if [[ -d /opt/esdoc-cdf2cim-ws ]]; then
     export PYTHONPATH=/opt/esdoc-cdf2cim-ws:$PYTHONPATH
     source /opt/esdoc-cdf2cim-ws/sh/activate
 fi
