@@ -1,0 +1,25 @@
+# ###############################################################
+# PROLOGUE
+# ###############################################################
+
+# Ensure that environment supports alias expansion.
+shopt -s expand_aliases
+
+# Set home.
+export INSTALLER_HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+export INSTALLER_SHARED="$( cd "$( dirname "${INSTALLER_HOME[0]}" )" && pwd )"/shared
+
+# Ensure shell scripts are executable.
+chmod a+x $INSTALLER_HOME/sh/*.sh
+chmod a+x $INSTALLER_SHARED/sh/*.sh
+
+# ###############################################################
+# ALIASES
+# ###############################################################
+
+alias cdf2cim-installer-step-01=$INSTALLER_HOME/sh/step_01.sh
+alias cdf2cim-installer-step-02=$INSTALLER_HOME/sh/step_02.sh
+alias cdf2cim-installer-step-03=$INSTALLER_HOME/sh/step_03.sh
+alias cdf2cim-installer-step-04=$INSTALLER_HOME/sh/step_04.sh
+alias cdf2cim-installer-step-05=$INSTALLER_HOME/sh/step_05.sh
+alias cdf2cim-installer-step-06=$INSTALLER_HOME/sh/step_06.sh
