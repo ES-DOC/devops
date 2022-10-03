@@ -20,7 +20,7 @@ export PATH=/usr/lib/postgresql/14/bin:$PATH
 export PGDATA=/var/lib/pgsql/data
 
 # --------------------------------------------------------------------
-# CREDENTIALS
+# ESDOC - CREDENTIALS
 # --------------------------------------------------------------------
 
 if [[ -f $HOME/.esdoc/credentials ]]; then

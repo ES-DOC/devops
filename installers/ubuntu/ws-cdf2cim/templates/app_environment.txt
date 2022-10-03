@@ -1,5 +1,5 @@
 # ----------------------------------------------------------------------
-# PATHS
+# SYSTEM - PATHS
 # ----------------------------------------------------------------------
 
 # Ensure local binaries are available.
@@ -12,13 +12,6 @@ if [[ -d $HOME/.pyenv ]]; then
     eval "$(pyenv virtualenv-init -)"
 fi
 
-# ----------------------------------------------------------------------
-# POSTGRESQL
-# ----------------------------------------------------------------------
-
-export PATH=/usr/lib/postgresql/14/bin:$PATH
-export PGDATA=/var/lib/pgsql/data
-
 # --------------------------------------------------------------------
 # ESDOC - CREDENTIALS
 # --------------------------------------------------------------------
@@ -28,20 +21,18 @@ if [[ -f $HOME/.esdoc/credentials ]]; then
 fi
 
 # ----------------------------------------------------------------------
-# ESDOC - PYESSV ARCHIVE
+# ESDOC - CDF2CIM ARCHIVE
 # ----------------------------------------------------------------------
 
-if [[ -d /opt/pyessv-archive ]]; then
-    export PYESSV_ARCHIVE_HOME=/opt/pyessv-archive
+if [[ -d /opt/cdf2cim-archive ]]; then
+    export CDF2CIM_ARCHIVE_HOME=/opt/cdf2cim-archive
 fi
 
 # ----------------------------------------------------------------------
-# ESDOC - ERRATA WEB SERVICE
+# ESDOC - CDF2CIM WEB SERVICE
 # ----------------------------------------------------------------------
 
 if [[ -d /opt/esdoc-errata-ws ]]; then
-    export PYTHONPATH=/opt/esdoc-errata-ws:$PYTHONPATH
-    source /opt/esdoc-errata-ws/sh/activate
-    export ERRATA_DB_USER=esdoc
-    export ERRATA_DB_NAME=esdoc_errata
+    export PYTHONPATH=/opt/esdoc-cdf2cim-ws:$PYTHONPATH
+    source /opt/esdoc-cdf2cim-ws/sh/activate
 fi
