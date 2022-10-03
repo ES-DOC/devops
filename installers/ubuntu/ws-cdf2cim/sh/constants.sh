@@ -7,4 +7,5 @@ source $INSTALLER_SHARED/sh/constants.sh
 declare -a INSTALLER_REPOS=(
     'esdoc-cdf2cim-ws'
     'esdoc-cdf2cim-archive'
+    'pyessv-archive'
 )
