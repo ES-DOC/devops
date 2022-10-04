@@ -3,7 +3,7 @@ init_pyenv()
 {
     if [[ ! -f $HOME/.pyenv/bin/pyenv ]]; then
         curl https://pyenv.run | bash
-        cat $INSTALLER_SHARED/templates/shell-paths.txt >> $HOME/.bashrc
+        cat $INSTALLER_HOME/templates/shell-paths.txt >> $HOME/.bashrc
     fi
 }
 
@@ -18,7 +18,7 @@ init_python()
 }
 
 # JIT install python virtual environment.
-init_venv()
+init_python_venv()
 {
     local TARGET_DIR=${1}
     local TARGET_PYTHON=${2}

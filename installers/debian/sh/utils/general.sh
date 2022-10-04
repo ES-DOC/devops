@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-# ###############################################################
-# UTILS: helper functions
-# ###############################################################
-
 # Wraps standard echo by adding application prefix.
 function log ()
 {

@@ -10,7 +10,7 @@ function init_stack_env() {
         if [[ -f $INSTALLER_HOME/templates/app_environment.txt ]]; then
             cp $INSTALLER_HOME/templates/app_environment.txt $HOME/.esdoc/environment
         fi
-        cat $INSTALLER_SHARED/templates/bashrc.txt >> $HOME/.bashrc
+        cat $INSTALLER_HOME/templates/bashrc.txt >> $HOME/.bashrc
     fi
 }
 
@@ -35,7 +35,6 @@ function init_stack_repos() {
 
 	for REPO in "${REPOS[@]}"
 	do
-        echo "$REPO 123"
         if [[ ! -d /opt/$REPO ]]; then
             pushd /opt
             git clone -q https://github.com/ES-DOC/$REPO.git

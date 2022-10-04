@@ -1,6 +1,6 @@
 # Imports.
-source $INSTALLER_SHARED/sh/utils.sh
-source $INSTALLER_SHARED/sh/init_sys.sh
+source $INSTALLER_HOME/sh/utils/general.sh
+source $INSTALLER_HOME/sh/utils/sys.sh
 
 # Main entry point.
 main()
@@ -12,6 +12,7 @@ main()
 
     log "... step 1.2: initialising services"
     init_sys_service_nginx
+    init_sys_service_pgres
 
     log "... step 1.3: initialising permissions"
     init_sys_permissions

@@ -1,6 +1,6 @@
 # Imports.
-source $INSTALLER_SHARED/sh/init_python.sh
-source $INSTALLER_SHARED/sh/utils.sh
+source $INSTALLER_HOME/sh/utils/general.sh
+source $INSTALLER_HOME/sh/utils/python.sh
 
 # Main entry point.
 main()
