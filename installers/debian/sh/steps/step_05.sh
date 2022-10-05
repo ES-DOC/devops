@@ -1,7 +1,7 @@
 # Imports.
-source $INSTALLER_SHARED/sh/utils/constants.sh
-source $INSTALLER_SHARED/sh/utils/general.sh
-source $INSTALLER_SHARED/sh/utils/python.sh
+source $INSTALLER_HOME/sh/utils/constants.sh
+source $INSTALLER_HOME/sh/utils/general.sh
+source $INSTALLER_HOME/sh/utils/python.sh
 
 # Main entry point.
 main()
