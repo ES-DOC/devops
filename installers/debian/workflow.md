@@ -1,62 +1,64 @@
 ```
 # ---------------------------------------------------------------------------
-# Step 00: Initialise installer.
+# Step 00: Prelude.
 # ---------------------------------------------------------------------------
 
 sudo -s
 apt install git
 chmod 777 /opt
-exit
 
 # ---------------------------------------------------------------------------
-# Step 01: Initialise system + services.
+# Step 01: Initialise operating system.
 # ---------------------------------------------------------------------------
 
 git clone https://github.com/ES-DOC/devops.git /opt/devops
 source /opt/devops/installers/ubuntu/errata/activate
 
-errata-installer-step-01
+esdoc-installer-step-01
 source ~/.bashrc
 
 # ---------------------------------------------------------------------------
-# Step 02: Initialise pyenv + python.
+# Step 02: Initialise pyenv.
 # ---------------------------------------------------------------------------
 
-errata-installer-step-02
+esdoc-installer-step-02
 source ~/.bashrc
 
 # ---------------------------------------------------------------------------
 # Step 03: Initialise python.
 # ---------------------------------------------------------------------------
 
-errata-installer-step-03
+esdoc-installer-step-03
 source ~/.bashrc
 
 # ---------------------------------------------------------------------------
 # Step 04: Initialise stack.
 # ---------------------------------------------------------------------------
 
-errata-installer-step-04
+esdoc-installer-step-04
 source ~/.bashrc
 
 # ---------------------------------------------------------------------------
 # Step 05: Initialise virtual environment.
 # ---------------------------------------------------------------------------
 
-errata-installer-step-05
+esdoc-installer-step-05
 source ~/.bashrc
 
 # ---------------------------------------------------------------------------
 # Step 06: Initialise database.
 # ---------------------------------------------------------------------------
 
-errata-installer-step-06
+esdoc-installer-step-06
 source ~/.bashrc
 
 # ---------------------------------------------------------------------------
-# Step 07: Run web-service daemon.
+# Step 07: Run web-service daemons.
 # ---------------------------------------------------------------------------
 
+cdf2cim-ws-daemon
+documentation-ws-daemon
 errata-ws-daemon
+pyessv-ws-daemon
 
 ```
