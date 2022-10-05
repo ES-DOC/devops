@@ -28,3 +28,16 @@ function init_stack_repo() {
         popd
     fi
 }
+
+# Initialise stack ops directories.
+init_stack_ops_dirs()
+{
+    local TARGET_DIR_NAME=${1}
+    
+    if [[ ! -d /opt/$TARGET_DIR_NAME/ops ]]; then
+        mkdir -p /opt/$TARGET_DIR_NAME/ops
+        mkdir -p /opt/$TARGET_DIR_NAME/ops/config
+        mkdir -p /opt/$TARGET_DIR_NAME/ops/daemon
+        mkdir -p /opt/$TARGET_DIR_NAME/ops/logs
+    fi
+}
