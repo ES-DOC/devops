@@ -9,7 +9,6 @@ shopt -s expand_aliases
 export INSTALLER_HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Ensure shell scripts are executable.
-chmod a+x $INSTALLER_HOME/sh/*.sh
 chmod a+x $INSTALLER_HOME/sh/*/*.sh
 
 # ###############################################################
