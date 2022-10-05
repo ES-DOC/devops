@@ -45,6 +45,7 @@ _install_ops()
     _install_ops_cdf2cim_ws
     _install_ops_documentation_ws
     _install_ops_errata_ws
+    _install_ops_pyessv_ws
 }
 
 # Initialise ops directories - cdf2cim web service.
@@ -101,6 +102,25 @@ _install_ops_errata_ws()
 
     if [[ ! -f /opt/esdoc-errata-ws/ops/config/supervisord.conf ]]; then
         cp $INSTALLER_HOME/templates/ws-supervisord-errata.conf /opt/esdoc-errata-ws/ops/config/supervisord.conf
+    fi
+}
+
+# Initialise ops directories - pyessv web service.
+_install_ops_pyessv_ws()
+{
+    if [[ ! -d /opt/pyessv-ws/ops ]]; then
+        mkdir -p /opt/pyessv-ws/ops
+        mkdir -p /opt/pyessv-ws/ops/config
+        mkdir -p /opt/pyessv-ws/ops/daemon
+        mkdir -p /opt/pyessv-ws/ops/logs
+    fi
+
+    if [[ ! -f /opt/pyessv-ws/ops/config/ws.conf ]]; then
+        cat $INSTALLER_HOME/templates/ws-app-pyessv.conf >> /opt/pyessv-ws/ops/config/ws.conf
+    fi
+
+    if [[ ! -f /opt/pyessv-ws/ops/config/supervisord.conf ]]; then
+        cp $INSTALLER_HOME/templates/ws-supervisord-pyessv.conf /opt/pyessv-ws/ops/config/supervisord.conf
     fi
 }
 
