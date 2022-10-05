@@ -20,8 +20,8 @@ init_python()
 # JIT install python virtual environment.
 init_python_venv()
 {
-    local TARGET_DIR=${1}
-    local TARGET_PYTHON=${2}
+    local TARGET_PYTHON=${1}
+    local TARGET_DIR=${2}
 
     pushd $TARGET_DIR
     pyenv local --unset
