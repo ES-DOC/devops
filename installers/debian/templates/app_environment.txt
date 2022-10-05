@@ -28,11 +28,19 @@ if [[ -f $HOME/.esdoc/credentials ]]; then
 fi
 
 # ----------------------------------------------------------------------
-# ESDOC - PYESSV ARCHIVE
+# ESDOC - ARCHIVES
 # ----------------------------------------------------------------------
 
+if [[ -d /opt/documentation-archive ]]; then
+    source /opt/documentation-archive/sh/activate
+fi
+
+if [[ -d /opt/esdoc-cdf2cim-archive ]]; then
+    source /opt/esdoc-cdf2cim-archive/sh/activate
+fi
+
 if [[ -d /opt/pyessv-archive ]]; then
-    export PYESSV_ARCHIVE_HOME=/opt/pyessv-archive
+    source /opt/pyessv-archive/sh/activate
 fi
 
 # ----------------------------------------------------------------------

@@ -26,6 +26,7 @@ init_python_venv()
     pushd $TARGET_DIR
     pyenv local --unset
     pyenv local $TARGET_PYTHON
+    pip install --upgrade pip
     pip install pipenv
     pip install supervisor
     pipenv run pipenv install
