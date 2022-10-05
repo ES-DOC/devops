@@ -36,12 +36,29 @@ if [[ -d /opt/pyessv-archive ]]; then
 fi
 
 # ----------------------------------------------------------------------
-# ESDOC - ERRATA WEB SERVICE
+# ESDOC - WEB SERVICES
 # ----------------------------------------------------------------------
+
+if [[ -d /opt/esdoc-cdf2cim-ws ]]; then
+    export PYTHONPATH=/opt/esdoc-cdf2cim-ws:$PYTHONPATH
+    source /opt/esdoc-cdf2cim-ws/sh/activate
+fi
+
+if [[ -d /opt/esdoc-documentation-ws ]]; then
+    export PYTHONPATH=/opt/esdoc-documentation-ws:$PYTHONPATH
+    source /opt/esdoc-documentation-ws/sh/activate
+    export ERRATA_DB_USER=esdoc
+    export ERRATA_DB_NAME=esdoc_errata
+fi
 
 if [[ -d /opt/esdoc-errata-ws ]]; then
     export PYTHONPATH=/opt/esdoc-errata-ws:$PYTHONPATH
     source /opt/esdoc-errata-ws/sh/activate
     export ERRATA_DB_USER=esdoc
     export ERRATA_DB_NAME=esdoc_errata
+fi
+
+if [[ -d /opt/pyessv-ws ]]; then
+    export PYTHONPATH=/opt/pyessv-ws:$PYTHONPATH
+    source /opt/pyessv-ws/sh/activate
 fi
