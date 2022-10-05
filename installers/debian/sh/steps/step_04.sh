@@ -21,7 +21,7 @@ main()
     _install_ops
 
     log "... step 4.4: initialising credentials"
-    _install_ops
+    _init_credentials
 
     log "END step 4"
 }
