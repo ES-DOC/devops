@@ -32,15 +32,15 @@ fi
 # ----------------------------------------------------------------------
 
 if [[ -d /opt/documentation-archive ]]; then
-    source /opt/documentation-archive/sh/activate
+    export ESDOC_ARCHIVE_HOME=/opt/documentation-archive
 fi
 
 if [[ -d /opt/esdoc-cdf2cim-archive ]]; then
-    source /opt/esdoc-cdf2cim-archive/sh/activate
+    export CDF2CIM_ARCHIVE_HOME=/opt/esdoc-cdf2cim-archive
 fi
 
 if [[ -d /opt/pyessv-archive ]]; then
-    source /opt/pyessv-archive/sh/activate
+    export PYESSV_ARCHIVE_HOME=/opt/pyessv-archive
 fi
 
 # ----------------------------------------------------------------------
