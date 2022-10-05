@@ -28,21 +28,3 @@ function init_stack_repo() {
         popd
     fi
 }
-
-# Initialises stack repos.
-function init_stack_repos() {
-    local REPOS=${1[@]}
-
-	for REPO in "${REPOS[@]}"
-	do
-        if [[ ! -d /opt/$REPO ]]; then
-            pushd /opt
-            git clone -q https://github.com/ES-DOC/$REPO.git
-            popd
-        else
-            pushd /opt/$REPO
-            git pull -q
-            popd
-        fi
-	done
-}
