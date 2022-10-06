@@ -1,6 +1,6 @@
 # Imports.
-source $INSTALLER_HOME/sh/constants.sh
-source $INSTALLER_SHARED/sh/utils.sh
+source $INSTALLER_HOME/sh/utils/constants.sh
+source $INSTALLER_HOME/sh/utils/general.sh
 
 # Main entry point.
 main()
