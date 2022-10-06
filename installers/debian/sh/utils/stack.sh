@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Initialises stack environment.
 function init_stack_env() {
     local INSTALLER_HOME=${1}
@@ -14,6 +16,19 @@ function init_stack_env() {
     fi
 }
 
+# Initialise stack ops directories.
+init_stack_ops_dirs()
+{
+    local TARGET_DIR_NAME=${1}
+    
+    if [[ ! -d /opt/$TARGET_DIR_NAME/ops ]]; then
+        mkdir -p /opt/$TARGET_DIR_NAME/ops
+        mkdir -p /opt/$TARGET_DIR_NAME/ops/config
+        mkdir -p /opt/$TARGET_DIR_NAME/ops/daemon
+        mkdir -p /opt/$TARGET_DIR_NAME/ops/logs
+    fi
+}
+
 # Initialises stack repo.
 function init_stack_repo() {
     local REPO=${1}
@@ -26,18 +41,5 @@ function init_stack_repo() {
         pushd /opt/$REPO
         git pull -q
         popd
-    fi
-}
-
-# Initialise stack ops directories.
-init_stack_ops_dirs()
-{
-    local TARGET_DIR_NAME=${1}
-    
-    if [[ ! -d /opt/$TARGET_DIR_NAME/ops ]]; then
-        mkdir -p /opt/$TARGET_DIR_NAME/ops
-        mkdir -p /opt/$TARGET_DIR_NAME/ops/config
-        mkdir -p /opt/$TARGET_DIR_NAME/ops/daemon
-        mkdir -p /opt/$TARGET_DIR_NAME/ops/logs
     fi
 }

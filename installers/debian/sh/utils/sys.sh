@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Initialise operating system.
 function init_sys_libs()
 {
