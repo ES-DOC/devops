@@ -22,6 +22,20 @@ main()
     log "END step 6"
 }
 
+# Configures application database: documentation.
+function _configure_db_documentation() {
+	pushd /opt/esdoc-documentation-ws
+	pipenv run python $INSTALLER_HOME/sh/steps/step_06_db_documentation.py
+	popd
+}
+
+# Configures application database: errata.
+function _configure_db_errata() {
+	pushd /opt/esdoc-errata-ws
+	pipenv run python $INSTALLER_HOME/sh/steps/step_06_db_errata.py
+	popd
+}
+
 # Initialises application database: documentation.
 function _init_db_documentation() {
     echo "TODO: initialise documentation database"
@@ -42,20 +56,6 @@ ALTER USER $ERRATA_DB_USER PASSWORD '$ERRATA_DB_PWD';
 EOM
     sudo -i -u postgres psql -d $ERRATA_DB_NAME -q -f /opt/devops/tmp/creds.sql
     rm /opt/devops/tmp/creds.sql
-}
-
-# Configures application database: documentation.
-function _configure_db_documentation() {
-	pushd /opt/esdoc-documentation-ws
-	pipenv run python $INSTALLER_HOME/sh/steps/step_06_db_documentation.py
-	popd
-}
-
-# Configures application database: errata.
-function _configure_db_errata() {
-	pushd /opt/esdoc-errata-ws
-	pipenv run python $INSTALLER_HOME/sh/steps/step_06_db_errata.py
-	popd
 }
 
 # Invoke entry point.
