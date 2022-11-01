@@ -29,8 +29,8 @@ init_python_venv()
     pyenv local --unset
     pyenv local $TARGET_PYTHON
     pip install --upgrade pip
-    pip install pipenv
-    pip install supervisor
+    pip install --upgrade pipenv
+    pip install --upgrade supervisor
     pipenv run pipenv install
     popd
 }

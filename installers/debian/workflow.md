@@ -3,16 +3,27 @@
 # Step 00: Prelude.
 # ---------------------------------------------------------------------------
 
+# This assumes a fresh debian 11+ install.
 sudo -s
+
+# Install git.
 apt install git
-chmod 777 /opt
+
+# Initialise install directory.
+if [[ ! -d $INSTALLER_TARGET_DIR ]]; then
+    mkdir /opt/esdoc
+    chmod 777 /opt/esdoc
+fi
+
+# Clone installer.
+git clone https://github.com/ES-DOC/devops.git /opt/esdoc/devops
+
+# Activate installer.
+source /opt/esdoc/devops/installers/ubuntu/errata/activate
 
 # ---------------------------------------------------------------------------
 # Step 01: Initialise operating system.
 # ---------------------------------------------------------------------------
-
-git clone https://github.com/ES-DOC/devops.git /opt/devops
-source /opt/devops/installers/ubuntu/errata/activate
 
 esdoc-installer-step-01
 source ~/.bashrc
@@ -56,9 +67,7 @@ source ~/.bashrc
 # Step 07: Run web-service daemons.
 # ---------------------------------------------------------------------------
 
-cdf2cim-ws-daemon
-documentation-ws-daemon
-errata-ws-daemon
-pyessv-ws-daemon
+esdoc-installer-step-07
+source ~/.bashrc
 
 ```

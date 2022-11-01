@@ -21,11 +21,11 @@ init_stack_ops_dirs()
 {
     local TARGET_DIR_NAME=${1}
     
-    if [[ ! -d /opt/$TARGET_DIR_NAME/ops ]]; then
-        mkdir -p /opt/$TARGET_DIR_NAME/ops
-        mkdir -p /opt/$TARGET_DIR_NAME/ops/config
-        mkdir -p /opt/$TARGET_DIR_NAME/ops/daemon
-        mkdir -p /opt/$TARGET_DIR_NAME/ops/logs
+    if [[ ! -d $INSTALLER_TARGET_DIR/$TARGET_DIR_NAME/ops ]]; then
+        mkdir -p $INSTALLER_TARGET_DIR/$TARGET_DIR_NAME/ops
+        mkdir -p $INSTALLER_TARGET_DIR/$TARGET_DIR_NAME/ops/config
+        mkdir -p $INSTALLER_TARGET_DIR/$TARGET_DIR_NAME/ops/daemon
+        mkdir -p $INSTALLER_TARGET_DIR/$TARGET_DIR_NAME/ops/logs
     fi
 }
 
@@ -33,12 +33,12 @@ init_stack_ops_dirs()
 function init_stack_repo() {
     local REPO=${1}
 
-    if [[ ! -d /opt/$REPO ]]; then
+    if [[ ! -d $INSTALLER_TARGET_DIR/$REPO ]]; then
         pushd /opt
         git clone -q https://github.com/ES-DOC/$REPO.git
         popd
     else
-        pushd /opt/$REPO
+        pushd $INSTALLER_TARGET_DIR/$REPO
         git pull -q
         popd
     fi

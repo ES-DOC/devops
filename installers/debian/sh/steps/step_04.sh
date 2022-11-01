@@ -45,32 +45,36 @@ EOM
 # Initialise ops directories.
 _install_ops_config()
 {
-    if [[ ! -f /opt/esdoc-cdf2cim-ws/ops/config/ws.conf ]]; then
-        cat $INSTALLER_HOME/templates/ws-app-cdf2cim.conf >> /opt/esdoc-cdf2cim-ws/ops/config/ws.conf
+    # Config -> cdf2cim-ws.
+    if [[ ! -f $INSTALLER_TARGET_DIR/esdoc-cdf2cim-ws/ops/config/ws.conf ]]; then
+        cat $INSTALLER_HOME/templates/ws-app-cdf2cim.conf >> $INSTALLER_TARGET_DIR/esdoc-cdf2cim-ws/ops/config/ws.conf
     fi
-    if [[ ! -f /opt/esdoc-cdf2cim-ws/ops/config/supervisord.conf ]]; then
-        cp $INSTALLER_HOME/templates/ws-supervisord-cdf2cim.conf /opt/esdoc-cdf2cim-ws/ops/config/supervisord.conf
-    fi
-
-    if [[ ! -f /opt/esdoc-documentation-ws/ops/config/ws.conf ]]; then
-        cat $INSTALLER_HOME/templates/ws-app-documentation.conf >> /opt/esdoc-documentation-ws/ops/config/ws.conf
-    fi
-    if [[ ! -f /opt/esdoc-documentation-ws/ops/config/supervisord.conf ]]; then
-        cp $INSTALLER_HOME/templates/ws-supervisord-documentation.conf /opt/esdoc-documentation-ws/ops/config/supervisord.conf
+    if [[ ! -f $INSTALLER_TARGET_DIR/esdoc-cdf2cim-ws/ops/config/supervisord.conf ]]; then
+        cp $INSTALLER_HOME/templates/ws-supervisord-cdf2cim.conf $INSTALLER_TARGET_DIR/esdoc-cdf2cim-ws/ops/config/supervisord.conf
     fi
 
-    if [[ ! -f /opt/esdoc-errata-ws/ops/config/ws.conf ]]; then
-        cat $INSTALLER_HOME/templates/ws-app-errata.conf >> /opt/esdoc-errata-ws/ops/config/ws.conf
+    # Config -> documentation-ws.
+    if [[ ! -f $INSTALLER_TARGET_DIR/esdoc-documentation-ws/ops/config/ws.conf ]]; then
+        cat $INSTALLER_HOME/templates/ws-app-documentation.conf >> $INSTALLER_TARGET_DIR/esdoc-documentation-ws/ops/config/ws.conf
     fi
-    if [[ ! -f /opt/esdoc-errata-ws/ops/config/supervisord.conf ]]; then
-        cp $INSTALLER_HOME/templates/ws-supervisord-errata.conf /opt/esdoc-errata-ws/ops/config/supervisord.conf
+    if [[ ! -f $INSTALLER_TARGET_DIR/esdoc-documentation-ws/ops/config/supervisord.conf ]]; then
+        cp $INSTALLER_HOME/templates/ws-supervisord-documentation.conf $INSTALLER_TARGET_DIR/esdoc-documentation-ws/ops/config/supervisord.conf
     fi
 
-    if [[ ! -f /opt/pyessv-ws/ops/config/ws.conf ]]; then
-        cat $INSTALLER_HOME/templates/ws-app-pyessv.conf >> /opt/pyessv-ws/ops/config/ws.conf
+    # Config -> errata-ws.
+    if [[ ! -f $INSTALLER_TARGET_DIR/esdoc-errata-ws/ops/config/ws.conf ]]; then
+        cat $INSTALLER_HOME/templates/ws-app-errata.conf >> $INSTALLER_TARGET_DIR/esdoc-errata-ws/ops/config/ws.conf
     fi
-    if [[ ! -f /opt/pyessv-ws/ops/config/supervisord.conf ]]; then
-        cp $INSTALLER_HOME/templates/ws-supervisord-pyessv.conf /opt/pyessv-ws/ops/config/supervisord.conf
+    if [[ ! -f $INSTALLER_TARGET_DIR/esdoc-errata-ws/ops/config/supervisord.conf ]]; then
+        cp $INSTALLER_HOME/templates/ws-supervisord-errata.conf $INSTALLER_TARGET_DIR/esdoc-errata-ws/ops/config/supervisord.conf
+    fi
+
+    # Config -> pyessv-ws.
+    if [[ ! -f $INSTALLER_TARGET_DIR/pyessv-ws/ops/config/ws.conf ]]; then
+        cat $INSTALLER_HOME/templates/ws-app-pyessv.conf >> $INSTALLER_TARGET_DIR/pyessv-ws/ops/config/ws.conf
+    fi
+    if [[ ! -f $INSTALLER_TARGET_DIR/pyessv-ws/ops/config/supervisord.conf ]]; then
+        cp $INSTALLER_HOME/templates/ws-supervisord-pyessv.conf $INSTALLER_TARGET_DIR/pyessv-ws/ops/config/supervisord.conf
     fi
 }
 

@@ -8,6 +8,12 @@ shopt -s expand_aliases
 # Set home.
 export INSTALLER_HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+# Set installer target.
+export INSTALLER_TARGET_DIR=/opt/esdoc
+if [[ ! -d $INSTALLER_TARGET_DIR ]]; then
+    mkdir $INSTALLER_TARGET_DIR
+fi
+
 # Ensure shell scripts are executable.
 chmod a+x $INSTALLER_HOME/sh/*/*.sh
 
@@ -21,3 +27,4 @@ alias esdoc-installer-step-03=$INSTALLER_HOME/sh/steps/step_03.sh
 alias esdoc-installer-step-04=$INSTALLER_HOME/sh/steps/step_04.sh
 alias esdoc-installer-step-05=$INSTALLER_HOME/sh/steps/step_05.sh
 alias esdoc-installer-step-06=$INSTALLER_HOME/sh/steps/step_06.sh
+alias esdoc-installer-step-07=$INSTALLER_HOME/sh/steps/step_07.sh

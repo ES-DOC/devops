@@ -24,14 +24,14 @@ main()
 
 # Configures application database: documentation.
 function _configure_db_documentation() {
-	pushd /opt/esdoc-documentation-ws
+	pushd $INSTALLER_TARGET_DIR/esdoc-documentation-ws
 	pipenv run python $INSTALLER_HOME/sh/steps/step_06_db_documentation.py
 	popd
 }
 
 # Configures application database: errata.
 function _configure_db_errata() {
-	pushd /opt/esdoc-errata-ws
+	pushd $INSTALLER_TARGET_DIR/esdoc-errata-ws
 	pipenv run python $INSTALLER_HOME/sh/steps/step_06_db_errata.py
 	popd
 }
@@ -48,14 +48,14 @@ function _init_db_errata() {
     sudo -i -u postgres createdb -O esdoc esdoc_errata
 
     # Set db credentials.
-    if [[ ! -d /opt/devops/tmp ]]; then
-        mkdir /opt/devops/tmp
+    if [[ ! -d $INSTALLER_TARGET_DIR/devops/tmp ]]; then
+        mkdir $INSTALLER_TARGET_DIR/devops/tmp
     fi
-    cat >> /opt/devops/tmp/creds.sql <<- EOM
+    cat >> $INSTALLER_TARGET_DIR/devops/tmp/creds.sql <<- EOM
 ALTER USER $ERRATA_DB_USER PASSWORD '$ERRATA_DB_PWD';
 EOM
-    sudo -i -u postgres psql -d $ERRATA_DB_NAME -q -f /opt/devops/tmp/creds.sql
-    rm /opt/devops/tmp/creds.sql
+    sudo -i -u postgres psql -d $ERRATA_DB_NAME -q -f $INSTALLER_TARGET_DIR/devops/tmp/creds.sql
+    rm $INSTALLER_TARGET_DIR/devops/tmp/creds.sql
 }
 
 # Invoke entry point.
