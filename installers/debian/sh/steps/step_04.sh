@@ -15,7 +15,7 @@ main()
 	done
 
     log "... step 4.2: initialising environment"
-    init_stack_env $INSTALLER_HOME
+    init_stack_env
 
     log "... step 4.3: initialising ops directories"
     _install_ops_fsys
@@ -31,14 +31,24 @@ main()
 
 # Initialises application credentials.
 function _init_credentials() {
+    # DB password -> documentation.
+    _init_credential "DOCUMENTATION" "DB"
+
+    # DB password -> errata.
+    _init_credential "ERRATA" "DB"
+}
+
+# Initialises application credential.
+function _init_credential() {
+    local NAME_OF_APP=${1}
+    local TYPE_OF_CREDENTIAL=${2}
+    local NAME_OF_ENV_VAR="${NAME_OF_APP}_${TYPE_OF_CREDENTIAL}_PWD"
+
+    # DB password -> errata.
     cat >> $HOME/.esdoc/credentials <<- EOM
 
-# Errata database password.
-export ERRATA_DB_PWD=$(openssl rand -hex 16)
-
-# Document database password.
-export DOCUMENTATION_DB_PWD=$(openssl rand -hex 16)
-
+# Password: $(NAME_OF_APP) $(TYPE_OF_CREDENTIAL).
+export $(NAME_OF_ENV_VAR)=$(openssl rand -hex 16)
 EOM
 }
 

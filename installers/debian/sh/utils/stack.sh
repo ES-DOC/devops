@@ -2,8 +2,6 @@
 
 # Initialises stack environment.
 function init_stack_env() {
-    local INSTALLER_HOME=${1}
-
     if [[ ! -d $HOME/.esdoc ]]; then
         mkdir $HOME/.esdoc
         if [[ -f $INSTALLER_HOME/templates/app_credentials.txt ]]; then
@@ -19,13 +17,13 @@ function init_stack_env() {
 # Initialise stack ops directories.
 init_stack_ops_dirs()
 {
-    local TARGET_DIR_NAME=${1}
+    local REPO=${1}
     
-    if [[ ! -d $INSTALLER_TARGET_DIR/$TARGET_DIR_NAME/ops ]]; then
-        mkdir -p $INSTALLER_TARGET_DIR/$TARGET_DIR_NAME/ops
-        mkdir -p $INSTALLER_TARGET_DIR/$TARGET_DIR_NAME/ops/config
-        mkdir -p $INSTALLER_TARGET_DIR/$TARGET_DIR_NAME/ops/daemon
-        mkdir -p $INSTALLER_TARGET_DIR/$TARGET_DIR_NAME/ops/logs
+    if [[ ! -d $INSTALLER_TARGET_DIR/$REPO/ops ]]; then
+        mkdir -p $INSTALLER_TARGET_DIR/$REPO/ops
+        mkdir -p $INSTALLER_TARGET_DIR/$REPO/ops/config
+        mkdir -p $INSTALLER_TARGET_DIR/$REPO/ops/daemon
+        mkdir -p $INSTALLER_TARGET_DIR/$REPO/ops/logs
     fi
 }
 
@@ -34,7 +32,7 @@ function init_stack_repo() {
     local REPO=${1}
 
     if [[ ! -d $INSTALLER_TARGET_DIR/$REPO ]]; then
-        pushd /opt
+        pushd $INSTALLER_TARGET_DIR
         git clone -q https://github.com/ES-DOC/$REPO.git
         popd
     else

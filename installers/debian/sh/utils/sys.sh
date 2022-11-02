@@ -65,6 +65,6 @@ function init_sys_service_nginx()
 # Initialise permissions.
 function init_sys_permissions()
 {
-    chmod 777 /opt
+    chmod 777 /opt/esdoc
     chmod 777 /var/lib
 }
