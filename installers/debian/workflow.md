@@ -18,7 +18,6 @@ fi
 # Clone installer.
 git clone https://github.com/ES-DOC/devops.git /opt/esdoc/devops
 
-
 # Create installer tmp folder.
 mkdir /opt/esdoc/devops/tmp
 
