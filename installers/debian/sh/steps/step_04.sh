@@ -31,24 +31,14 @@ main()
 
 # Initialises application credentials.
 function _init_credentials() {
-    # DB password -> documentation.
-    _init_credential "DOCUMENTATION" "DB"
-
-    # DB password -> errata.
-    _init_credential "ERRATA" "DB"
-}
-
-# Initialises application credential.
-function _init_credential() {
-    local NAME_OF_APP=${1}
-    local TYPE_OF_CREDENTIAL=${2}
-    local NAME_OF_ENV_VAR="${NAME_OF_APP}_${TYPE_OF_CREDENTIAL}_PWD"
-
-    # DB password -> errata.
     cat >> $HOME/.esdoc/credentials <<- EOM
 
-# Password: $(NAME_OF_APP) $(TYPE_OF_CREDENTIAL).
-export $(NAME_OF_ENV_VAR)=$(openssl rand -hex 16)
+# Password: DB -> DOCUMENTATION.
+export DOCUMENTATION_DB_PWD=$(openssl rand -hex 16)
+
+# Password: DB -> ERRATA.
+export ERRATA_DB_PWD=$(openssl rand -hex 16)
+
 EOM
 }
 
