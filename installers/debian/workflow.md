@@ -10,7 +10,7 @@ sudo -s
 apt install git
 
 # Initialise install directory.
-if [[ ! -d $INSTALLER_TARGET_DIR ]]; then
+if [[ ! -d /opt/esdoc ]]; then
     mkdir /opt/esdoc
     chmod 777 /opt/esdoc
 fi
