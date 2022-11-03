@@ -22,7 +22,7 @@ git clone https://github.com/ES-DOC/devops.git /opt/esdoc/devops
 mkdir /opt/esdoc/devops/tmp
 
 # Activate installer.
-source /opt/esdoc/devops/installers/ubuntu/errata/activate
+source /opt/esdoc/devops/installers/debian/activate
 
 # ---------------------------------------------------------------------------
 # Step 01: Initialise operating system.

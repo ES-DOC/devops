@@ -19,7 +19,7 @@ init_python()
     fi
 }
 
-# JIT install python virtual environment.
+# Initialise python virtual environment.
 init_python_venv()
 {
     local TARGET_PYTHON=${1}
