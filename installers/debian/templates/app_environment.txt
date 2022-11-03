@@ -72,8 +72,8 @@ fi
 # ----------------------------------------------------------------------
 
 if [[ -d $INSTALLER_TARGET_DIR/esdoc-documentation-ws ]]; then
-    export ERRATA_DB_USER=esdoc_dbuser_documentation
-    export ERRATA_DB_NAME=esdoc_db_documentation
+    export DOCUMENTATION_DB_USER=esdoc_dbuser_documentation
+    export DOCUMENTATION_DB_NAME=esdoc_db_documentation
 fi
 
 if [[ -d $INSTALLER_TARGET_DIR/esdoc-errata-ws ]]; then
