@@ -35,7 +35,7 @@ ALTER USER esdoc_dbuser_documentation PASSWORD '$(DOCUMENTATION_DB_PWD)';
 ALTER USER esdoc_dbuser_errata        PASSWORD '$(ERRATA_DB_PWD)';
 EOM
 
-    # Regsiter credentials with postgres.
+    # Register credentials with postgres.
     sudo -i -u postgres psql -q -f $INSTALLER_TARGET_DIR/devops/tmp/creds.sql
 
     # Remove temporary db credentials file.
