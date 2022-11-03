@@ -31,52 +31,52 @@ fi
 # ESDOC - ARCHIVES
 # ----------------------------------------------------------------------
 
-if [[ -d $INSTALLER_TARGET_DIR/documentation-archive ]]; then
-    export ESDOC_ARCHIVE_HOME=$INSTALLER_TARGET_DIR/documentation-archive
+if [[ -d /opt/esdoc/documentation-archive ]]; then
+    export ESDOC_ARCHIVE_HOME=/opt/esdoc/documentation-archive
 fi
 
-if [[ -d $INSTALLER_TARGET_DIR/esdoc-cdf2cim-archive ]]; then
-    export CDF2CIM_ARCHIVE_HOME=$INSTALLER_TARGET_DIR/esdoc-cdf2cim-archive
+if [[ -d /opt/esdoc/esdoc-cdf2cim-archive ]]; then
+    export CDF2CIM_ARCHIVE_HOME=/opt/esdoc/esdoc-cdf2cim-archive
 fi
 
-if [[ -d $INSTALLER_TARGET_DIR/pyessv-archive ]]; then
-    export PYESSV_ARCHIVE_HOME=$INSTALLER_TARGET_DIR/pyessv-archive
+if [[ -d /opt/esdoc/pyessv-archive ]]; then
+    export PYESSV_ARCHIVE_HOME=/opt/esdoc/pyessv-archive
 fi
 
 # ----------------------------------------------------------------------
 # ESDOC - WEB SERVICES
 # ----------------------------------------------------------------------
 
-if [[ -d $INSTALLER_TARGET_DIR/esdoc-cdf2cim-ws ]]; then
-    export PYTHONPATH=$INSTALLER_TARGET_DIR/esdoc-cdf2cim-ws:$PYTHONPATH
-    source $INSTALLER_TARGET_DIR/esdoc-cdf2cim-ws/sh/activate
+if [[ -d /opt/esdoc/esdoc-cdf2cim-ws ]]; then
+    export PYTHONPATH=/opt/esdoc/esdoc-cdf2cim-ws:$PYTHONPATH
+    source /opt/esdoc/esdoc-cdf2cim-ws/sh/activate
 fi
 
-if [[ -d $INSTALLER_TARGET_DIR/esdoc-documentation-ws ]]; then
-    export PYTHONPATH=$INSTALLER_TARGET_DIR/esdoc-documentation-ws:$PYTHONPATH
-    source $INSTALLER_TARGET_DIR/esdoc-documentation-ws/sh/activate
+if [[ -d /opt/esdoc/esdoc-documentation-ws ]]; then
+    export PYTHONPATH=/opt/esdoc/esdoc-documentation-ws:$PYTHONPATH
+    source /opt/esdoc/esdoc-documentation-ws/sh/activate
 fi
 
-if [[ -d $INSTALLER_TARGET_DIR/esdoc-errata-ws ]]; then
-    export PYTHONPATH=$INSTALLER_TARGET_DIR/esdoc-errata-ws:$PYTHONPATH
-    source $INSTALLER_TARGET_DIR/esdoc-errata-ws/sh/activate
+if [[ -d /opt/esdoc/esdoc-errata-ws ]]; then
+    export PYTHONPATH=/opt/esdoc/esdoc-errata-ws:$PYTHONPATH
+    source /opt/esdoc/esdoc-errata-ws/sh/activate
 fi
 
-if [[ -d $INSTALLER_TARGET_DIR/pyessv-ws ]]; then
-    export PYTHONPATH=$INSTALLER_TARGET_DIR/pyessv-ws:$PYTHONPATH
-    source $INSTALLER_TARGET_DIR/pyessv-ws/sh/activate
+if [[ -d /opt/esdoc/pyessv-ws ]]; then
+    export PYTHONPATH=/opt/esdoc/pyessv-ws:$PYTHONPATH
+    source /opt/esdoc/pyessv-ws/sh/activate
 fi
 
 # ----------------------------------------------------------------------
 # ESDOC - DATABASES
 # ----------------------------------------------------------------------
 
-if [[ -d $INSTALLER_TARGET_DIR/esdoc-documentation-ws ]]; then
+if [[ -d /opt/esdoc/esdoc-documentation-ws ]]; then
     export DOCUMENTATION_DB_USER=esdoc_dbuser_documentation
     export DOCUMENTATION_DB_NAME=esdoc_db_documentation
 fi
 
-if [[ -d $INSTALLER_TARGET_DIR/esdoc-errata-ws ]]; then
+if [[ -d /opt/esdoc/esdoc-errata-ws ]]; then
     export ERRATA_DB_USER=esdoc_dbuser_errata
     export ERRATA_DB_NAME=esdoc_db_errata
 fi
