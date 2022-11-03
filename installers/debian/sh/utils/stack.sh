@@ -32,6 +32,7 @@ function init_stack_repo() {
     local REPO=${1}
 
     if [[ ! -d $INSTALLER_TARGET_DIR/$REPO ]]; then
+        log "... ... cloning repo: "$REPO
         pushd $INSTALLER_TARGET_DIR
         git clone -q https://github.com/ES-DOC/$REPO.git
         popd

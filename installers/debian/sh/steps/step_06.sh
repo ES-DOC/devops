@@ -31,8 +31,8 @@ function _init_db_users() {
 
     # Set temporary db credentials file.
     cat >> $INSTALLER_TARGET_DIR/devops/tmp/creds.sql <<- EOM
-ALTER USER esdoc_dbuser_documentation PASSWORD '$DOCUMENTATION_DB_PWD';
-ALTER USER esdoc_dbuser_errata        PASSWORD '$ERRATA_DB_PWD';
+ALTER USER esdoc_dbuser_documentation PASSWORD '$(DOCUMENTATION_DB_PWD)';
+ALTER USER esdoc_dbuser_errata        PASSWORD '$(ERRATA_DB_PWD)';
 EOM
 
     # Regsiter credentials with postgres.
