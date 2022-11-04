@@ -31,8 +31,9 @@ function _init_db_users() {
 
     # Set temporary db credentials file.
     cat >> $INSTALLER_TARGET_DIR/devops/tmp/creds.sql <<- EOM
-ALTER USER esdoc_dbuser_documentation PASSWORD '$(DOCUMENTATION_DB_PWD)';
-ALTER USER esdoc_dbuser_errata        PASSWORD '$(ERRATA_DB_PWD)';
+ALTER USER esdoc_dbuser_documentation PASSWORD '$ADMIN_DB_PWD';
+ALTER USER esdoc_dbuser_documentation PASSWORD '$DOCUMENTATION_DB_PWD';
+ALTER USER esdoc_dbuser_errata        PASSWORD '$ERRATA_DB_PWD';
 EOM
 
     # Register credentials with postgres.
@@ -52,7 +53,7 @@ function _init_db_objects() {
 function _init_db_permissions() {
     psql -U esdoc_dbuser_admin -d esdoc_db_documentation -q -f $INSTALLER_HOME/templates/db-permissions-documentation.sql
     psql -U esdoc_dbuser_admin -d esdoc_db_errata -q -f $INSTALLER_HOME/templates/db-permissions-errata.sql
-}
+}   
 
 # Configures application databases.
 function _setup_databases() {
