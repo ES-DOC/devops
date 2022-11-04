@@ -50,9 +50,6 @@ function init_sys_service_pgres()
     apt install -qq postgresql postgresql-contrib
     cat $INSTALLER_HOME/templates/shell-postgresql.txt >> $HOME/.bashrc
     systemctl start postgresql.service
-
-    apt install -qq nginx
-    ufw allow 'Nginx Full'
 }
 
 # Initialise service - nginx.

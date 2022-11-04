@@ -64,11 +64,9 @@ EOM
 function _init_env() {
     if [[ ! -d $HOME/.esdoc ]]; then
         mkdir $HOME/.esdoc
-        if [[ -f $INSTALLER_HOME/templates/app_environment.txt ]]; then
-            cp $INSTALLER_HOME/templates/app_environment.txt $HOME/.esdoc/environment
-        fi
         cat $INSTALLER_HOME/templates/bashrc.txt >> $HOME/.bashrc
     fi
+    cp $INSTALLER_HOME/templates/app_environment.txt $HOME/.esdoc/environment
 }
 
 # Initialise ops directories.
