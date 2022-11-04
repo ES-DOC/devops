@@ -29,6 +29,11 @@ function _init_db_users() {
     sudo -i -u postgres createuser esdoc_dbuser_documentation
     sudo -i -u postgres createuser esdoc_dbuser_errata
 
+    # Remove temporary db credentials file.
+    if [[ -f $INSTALLER_TARGET_DIR/devops/tmp/creds.sql ]]; then
+        rm $INSTALLER_TARGET_DIR/devops/tmp/creds.sql
+    fi
+
     # Set temporary db credentials file.
     cat >> $INSTALLER_TARGET_DIR/devops/tmp/creds.sql <<- EOM
 ALTER USER esdoc_dbuser_documentation PASSWORD '$ADMIN_DB_PWD';
@@ -38,9 +43,6 @@ EOM
 
     # Register credentials with postgres.
     sudo -i -u postgres psql -q -f $INSTALLER_TARGET_DIR/devops/tmp/creds.sql
-
-    # Remove temporary db credentials file.
-    rm $INSTALLER_TARGET_DIR/devops/tmp/creds.sql
 }
 
 # Initialises database objects.
