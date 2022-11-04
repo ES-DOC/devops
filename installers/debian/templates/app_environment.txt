@@ -16,7 +16,7 @@ fi
 # POSTGRESQL
 # ----------------------------------------------------------------------
 
-export PATH=/usr/lib/postgresql/14/bin:$PATH
+export PATH=/usr/lib/postgresql/13/bin:$PATH
 export PGDATA=/var/lib/pgsql/data
 
 # --------------------------------------------------------------------
